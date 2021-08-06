@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:resume/Screens/PersonalInfo.dart';
 
+import 'TemplateList.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -169,17 +171,25 @@ class HomePage extends StatelessWidget {
             Center(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 40,
-                  width: 160,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color(0xFF6558F5),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Choose Templete',
-                      style: TextStyle(color: Colors.white),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TemplateList()));
+                  },
+                  child: Container(
+                    height: 40,
+                    width: 160,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xFF6558F5),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Choose Templete',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
