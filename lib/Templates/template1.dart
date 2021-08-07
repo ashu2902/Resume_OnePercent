@@ -16,7 +16,7 @@ class PdfApi {
               //     style: pw.TextStyle(fontSize: 48),
               //   ),
               // ),
-              pw.Column(children: [pw.Text('Your Name')])),
+              pw.Column(children: [pw.Text(text)])),
     );
 
     return saveDocument(name: 'my_resume.pdf', pdf: pdf);

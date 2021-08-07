@@ -11,12 +11,12 @@ class TemplateList extends StatelessWidget {
         child: Center(
           child: Container(
             child: TextButton(
-                onPressed: () async {
-                  final pdfFile =
-                      await PdfApi.generateCenteredText('Sample Text');
-                  PdfApi.openFile(pdfFile);
-                },
-                child: Text('Template1')),
+              onPressed: () async {
+                final pdfFile = await PdfApi.generateText('Sample Text');
+                PdfApi.openFile(pdfFile);
+              },
+              child: Text('Template1'),
+            ),
           ),
         ),
       ),

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:resume/Widgets/ProfilePic.dart';
 
 class PersonalInfo extends StatefulWidget {
-  const PersonalInfo({Key? key}) : super(key: key);
-
   @override
   _PersonalInfoState createState() => _PersonalInfoState();
 }
@@ -14,6 +12,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
 
+    var username, add, e_mail, phoneNo, aboutInfo;
     return Scaffold(
       appBar: AppBar(
         title: Text('Enter Personal Information'),
@@ -27,7 +26,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextInputs(),
-              )
+              ),
             ],
           ),
         ),
@@ -44,41 +43,88 @@ class TextInputs extends StatefulWidget {
 }
 
 class _TextInputsState extends State<TextInputs> {
+  var name = '';
+  TextEditingController nameController = TextEditingController();
+  var address = '';
+  TextEditingController addressController = TextEditingController();
+  var email = '';
+  TextEditingController emailController = TextEditingController();
+  var phone = '';
+  TextEditingController phoneController = TextEditingController();
+  var about = '';
+  TextEditingController aboutController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
-    return Container(
-      alignment: Alignment.center,
-      width: _width / 1.2,
-      child: Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            TextField(
-              decoration: InputDecoration(
-                  hintText: 'Name', border: OutlineInputBorder()),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                  hintText: 'Address', border: OutlineInputBorder()),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                  hintText: 'Email', border: OutlineInputBorder()),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                  hintText: 'Phone', border: OutlineInputBorder()),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                  hintText: 'About', border: OutlineInputBorder()),
-            ),
-          ],
+    return Center(
+      child: Container(
+        alignment: Alignment.center,
+        width: _width / 1.2,
+        child: Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              TextField(
+                decoration: InputDecoration(
+                    hintText: 'Name', border: OutlineInputBorder()),
+                onEditingComplete: () {
+                  name = nameController.text;
+                },
+                controller: nameController,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    hintText: 'Address', border: OutlineInputBorder()),
+                onEditingComplete: () {
+                  address = addressController.text;
+                },
+                controller: addressController,
+              ),
+              TextField(
+                  decoration: InputDecoration(
+                      hintText: 'Email', border: OutlineInputBorder()),
+                  onEditingComplete: () {
+                    email = emailController.text;
+                  },
+                  controller: emailController),
+              TextField(
+                decoration: InputDecoration(
+                    hintText: 'Phone', border: OutlineInputBorder()),
+                onEditingComplete: () {
+                  phone = phoneController.text;
+                },
+                controller: phoneController,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    hintText: 'About', border: OutlineInputBorder()),
+                onEditingComplete: () {
+                  about = aboutController.text;
+                },
+                controller: aboutController,
+              ),
+              Center(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        getDetails(
+                            nameController.text,
+                            addressController.text,
+                            emailController.text,
+                            phoneController.text,
+                            aboutController.text);
+                      },
+                      child: Text('Save Details')))
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  getDetails(var userName, add, eMail, phoneNo, aboutInfo) {
+    print('{$userName, $add, $eMail,$phoneNo,$aboutInfo }');
   }
 }
