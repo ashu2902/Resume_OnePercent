@@ -140,6 +140,58 @@ class PdfApi {
                                         style: pw.TextStyle(fontSize: 18)),
                                     pw.Container(
                                         width: 30, child: pw.Divider()),
+                                    pw.Text('Institution Name',
+                                        style: pw.TextStyle(
+                                            fontSize: 16,
+                                            color: PdfColors.blue300)),
+                                    pw.Text('Degree or certification'),
+                                    pw.Text('Date-date'),
+                                    pw.SizedBox(height: 15),
+                                    pw.Text('Institution Name',
+                                        style: pw.TextStyle(
+                                            fontSize: 16,
+                                            color: PdfColors.blue300)),
+                                    pw.Text('Degree or certification'),
+                                    pw.Text('Date-date'),
+                                    pw.SizedBox(height: 30),
+
+                                    //Projects&Volunteer
+                                    pw.Text('Projects & Volunteer',
+                                        style: pw.TextStyle(fontSize: 18)),
+                                    pw.Container(
+                                        width: 30, child: pw.Divider()),
+                                    pw.Text('$jobTitle1, $organization1}',
+                                        style: pw.TextStyle(
+                                            fontSize: 16,
+                                            color: PdfColors.blue300)),
+                                    //Date
+                                    pw.Text('Date- $date1'),
+                                    //Achievement or Responsibility
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Text('$jobTitle1, $organization1}',
+                                        style: pw.TextStyle(
+                                            fontSize: 16,
+                                            color: PdfColors.blue300)),
+                                    //Date
+                                    pw.Text('Date- $date1'),
+                                    //Achievement or Responsibility
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
                                   ])))
                     ])
               ])),
