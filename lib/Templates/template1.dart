@@ -7,8 +7,8 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 class PdfApi {
-  static Future<File> generateText(
-      String name, address, phone, email, about) async {
+  static Future<File> generateText(String name, address, phone, email, about,
+      jobTitle1, organization1, date1, skills) async {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -55,6 +55,7 @@ class PdfApi {
                 //Experience and Education
                 pw.Row(
                     mainAxisAlignment: pw.MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
                       //Experience,Skills
                       pw.Expanded(
@@ -67,7 +68,64 @@ class PdfApi {
                                   children: [
                                     pw.Text('Experience',
                                         style: pw.TextStyle(fontSize: 18)),
-                                    pw.Container(width: 30, child: pw.Divider())
+                                    pw.Container(
+                                        width: 30, child: pw.Divider()),
+                                    pw.Text('$jobTitle1, $organization1}',
+                                        style: pw.TextStyle(
+                                            fontSize: 16,
+                                            color: PdfColors.blue300)),
+                                    //Date
+                                    pw.Text('Date- $date1'),
+                                    //Achievement or Responsibility
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Text('$jobTitle1, $organization1}',
+                                        style: pw.TextStyle(
+                                            fontSize: 16,
+                                            color: PdfColors.blue300)),
+                                    //Date
+                                    pw.Text('Date- $date1'),
+                                    //Achievement or Responsibility
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Text('$jobTitle1, $organization1}',
+                                        style: pw.TextStyle(
+                                            fontSize: 16,
+                                            color: PdfColors.blue300)),
+                                    //Date
+                                    pw.Text('Date- $date1'),
+                                    //Achievement or Responsibility
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.Bullet(
+                                        text:
+                                            'Notable Achievement/Responsibility'),
+                                    pw.SizedBox(height: 30),
+
+                                    //SKILLS
+                                    pw.Text('Skills',
+                                        style: pw.TextStyle(fontSize: 18)),
+                                    pw.Container(
+                                        width: 30, child: pw.Divider()),
+                                    pw.Text(skills),
                                   ]))),
                       //Education, Projects,
                       pw.Expanded(
@@ -80,7 +138,8 @@ class PdfApi {
                                   children: [
                                     pw.Text('Education',
                                         style: pw.TextStyle(fontSize: 18)),
-                                    pw.Container(width: 30, child: pw.Divider())
+                                    pw.Container(
+                                        width: 30, child: pw.Divider()),
                                   ])))
                     ])
               ])),
