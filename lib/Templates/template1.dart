@@ -1,14 +1,25 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 class PdfApi {
-  static Future<File> generateText(String name, address, phone, email, about,
-      jobTitle1, organization1, date1, skills) async {
+  static Future<File> generateText(
+      String name,
+      address,
+      phone,
+      email,
+      about,
+      jobTitle1,
+      organization1,
+      date1,
+      skills,
+      instName1,
+      course1,
+      edDate1,
+      edDate2) async {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -140,19 +151,19 @@ class PdfApi {
                                         style: pw.TextStyle(fontSize: 18)),
                                     pw.Container(
                                         width: 30, child: pw.Divider()),
-                                    pw.Text('Institution Name',
+                                    pw.Text(instName1,
                                         style: pw.TextStyle(
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
-                                    pw.Text('Degree or certification'),
-                                    pw.Text('Date-date'),
+                                    pw.Text(course1),
+                                    pw.Text('Date- $edDate1'),
                                     pw.SizedBox(height: 15),
                                     pw.Text('Institution Name',
                                         style: pw.TextStyle(
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
                                     pw.Text('Degree or certification'),
-                                    pw.Text('Date-date'),
+                                    pw.Text('Date- $edDate2'),
                                     pw.SizedBox(height: 30),
 
                                     //Projects&Volunteer

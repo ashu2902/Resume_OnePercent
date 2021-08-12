@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:resume/Screens/PersonalInfo.dart';
 import 'package:resume/Templates/template1.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -29,7 +28,11 @@ class _TemplateListState extends State<TemplateList> {
                     'Sample Title-1',
                     'Sample Organization',
                     '01-02-20XX',
-                    'skill-1,skill-2,skill-3');
+                    'skill-1,skill-2,skill-3',
+                    "${prefs.getString('Instname')}",
+                    '${prefs.getString('course')}',
+                    '${prefs.getString('EdDate1')}',
+                    '${prefs.getString('EdDate2')}');
                 PdfApi.openFile(pdfFile);
               },
               child: Text('Template1'),

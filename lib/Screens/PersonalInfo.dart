@@ -13,7 +13,6 @@ class _PersonalInfoState extends State<PersonalInfo> {
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
 
-    var username, add, e_mail, phoneNo, aboutInfo;
     return Scaffold(
       appBar: AppBar(
         title: Text('Enter Personal Information'),
@@ -148,5 +147,6 @@ Future<bool> savePersonalInfo(
   prefs.setString('email', email);
   prefs.setInt('phone', phone);
   prefs.setString('about', about);
+  // ignore: deprecated_member_use
   return prefs.commit();
 }
