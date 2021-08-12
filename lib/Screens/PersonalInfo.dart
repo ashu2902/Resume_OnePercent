@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resume/Widgets/ProfilePic.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PersonalInfo extends StatefulWidget {
   @override
@@ -107,24 +108,45 @@ class _TextInputsState extends State<TextInputs> {
                 controller: aboutController,
               ),
               Center(
-                  child: ElevatedButton(
-                      onPressed: () {
-                        getDetails(
-                            nameController.text,
-                            addressController.text,
-                            emailController.text,
-                            phoneController.text,
-                            aboutController.text);
-                      },
-                      child: Text('Save Details')))
+                child: ElevatedButton(
+                  onPressed: () {
+                    PersonalData(
+                        nameController.text, about, address, email, phone);
+                    print(nameController.text);
+                    savePersonalInfo(
+                        nameController.text,
+                        addressController.text,
+                        emailController.text,
+                        int.parse(phoneController.text),
+                        aboutController.text);
+                  },
+                  child: Text('Save Details'),
+                ),
+              )
             ],
           ),
         ),
       ),
     );
   }
+}
 
-  getDetails(var userName, add, eMail, phoneNo, aboutInfo) {
-    print('{$userName, $add, $eMail,$phoneNo,$aboutInfo }');
-  }
+class PersonalData {
+  var name;
+  var address;
+  var email;
+  var phone;
+  var about;
+  PersonalData(this.name, this.about, this.address, this.email, this.phone);
+}
+
+Future<bool> savePersonalInfo(
+    String name, String address, email, int phone, about) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString('name', name);
+  prefs.setString('address', address);
+  prefs.setString('email', email);
+  prefs.setInt('phone', phone);
+  prefs.setString('about', about);
+  return prefs.commit();
 }
