@@ -24,12 +24,7 @@ class PdfApi {
     pdf.addPage(
       pw.Page(
           build: (context) =>
-              // pw.Center(
-              //   child: pw.Text(
-              //     text,
-              //     style: pw.TextStyle(fontSize: 48),
-              //   ),
-              // ),
+
               pw.Column(children: [
                 //Name
                 pw.Container(

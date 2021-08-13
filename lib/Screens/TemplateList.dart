@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resume/Templates/template1.dart';
+import 'package:resume/Templates/templete2.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemplateList extends StatefulWidget {
@@ -15,28 +16,58 @@ class _TemplateListState extends State<TemplateList> {
     return Scaffold(
       body: Container(
         child: Center(
-          child: Container(
-            child: TextButton(
-              onPressed: () async {
-                SharedPreferences prefs = await SharedPreferences.getInstance();
-                final pdfFile = await PdfApi.generateText(
-                    '${prefs.getString('name')}',
-                    '${prefs.getString('address')}',
-                    '${prefs.getInt('phone')}',
-                    '${prefs.getString('email')}',
-                    "${prefs.getString('about')}",
-                    'Sample Title-1',
-                    'Sample Organization',
-                    '01-02-20XX',
-                    'skill-1,skill-2,skill-3',
-                    '${prefs.getString('Instname')}',
-                    '${prefs.getString('course')}',
-                    '${prefs.getString('Eddate1')}',
-                    '${prefs.getString('Eddate2')}');
-                PdfApi.openFile(pdfFile);
-              },
-              child: Text('Template1'),
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: TextButton(
+                  onPressed: () async {
+                    SharedPreferences prefs = await SharedPreferences.getInstance();
+                    final pdfFile = await PdfApi.generateText(
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
+                        '${prefs.getString('email')}',
+                        "${prefs.getString('about')}",
+                        'Sample Title-1',
+                        'Sample Organization',
+                        '01-02-20XX',
+                        'skill-1,skill-2,skill-3',
+                        '${prefs.getString('Instname')}',
+                        '${prefs.getString('course')}',
+                        '${prefs.getString('Eddate1')}',
+                        '${prefs.getString('Eddate2')}');
+                    PdfApi.openFile(pdfFile);
+                  },
+                  child: Text('Template1'),
+                ),
+              ),
+
+              Container(
+                child: TextButton(
+                  onPressed: () async {
+                    SharedPreferences prefs = await SharedPreferences.getInstance();
+                    final pdfFile = await PdfApi1.generateText(
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
+                        '${prefs.getString('email')}',
+                        "${prefs.getString('about')}",
+                        'Sample Title-2',
+                        'Sample Organization',
+                        '01-02-20XX',
+                        'skill-1,skill-2,skill-3',
+                        '${prefs.getString('Instname')}',
+                        '${prefs.getString('course')}',
+                        '${prefs.getString('Eddate1')}',
+                        '${prefs.getString('Eddate2')}'
+                    );
+                    PdfApi1.openFile(pdfFile);
+                  },
+                  child: Text('Template2'),
+                ),
+              ),
+            ],
           ),
         ),
       ),
