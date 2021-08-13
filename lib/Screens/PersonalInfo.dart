@@ -10,7 +10,7 @@ class PersonalInfo extends StatefulWidget {
 class _PersonalInfoState extends State<PersonalInfo> {
   @override
   Widget build(BuildContext context) {
-    final _width = MediaQuery.of(context).size.width;
+    // final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -57,7 +57,7 @@ class _TextInputsState extends State<TextInputs> {
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
-    final _height = MediaQuery.of(context).size.height;
+    // final _height = MediaQuery.of(context).size.height;
     return Center(
       child: Container(
         alignment: Alignment.center,
@@ -111,7 +111,7 @@ class _TextInputsState extends State<TextInputs> {
                   onPressed: () {
                     PersonalData(
                         nameController.text, about, address, email, phone);
-                    print(nameController.text);
+                    print('Details saved');
                     savePersonalInfo(
                         nameController.text,
                         addressController.text,

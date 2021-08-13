@@ -6,15 +6,17 @@ class EducationInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final _height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text('Education Information'),
       ),
       body: SingleChildScrollView(
-        child: Center(
-          child: Container(
+        child: Container(
+          child: Center(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -40,7 +42,6 @@ class _TextFieldsState extends State<TextFields> {
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
-    final _height = MediaQuery.of(context).size.height;
 
     TextEditingController _name = TextEditingController();
     TextEditingController _course = TextEditingController();
@@ -56,26 +57,39 @@ class _TextFieldsState extends State<TextFields> {
     var course2 = '';
     var date2 = '';
     return Container(
+      width: _width,
       child: Center(
         child: Column(
           children: [
-            Text('Education details :1'),
-            Container(
-              width: _width / 2,
-              child: TextField(
-                decoration: InputDecoration(hintText: 'Enter Institution Name'),
-                onEditingComplete: () {
-                  setState(() {
-                    name = _name.text;
-                  });
-                },
+            //Education Details 1
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Text('Education details :1'),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: _width / 2,
+                child: TextField(
+                  controller: _name,
+                  decoration: InputDecoration(
+                      hintText: 'Enter Institution Name',
+                      border: OutlineInputBorder()),
+                  onEditingComplete: () {
+                    setState(() {
+                      name = _name.text;
+                    });
+                  },
+                ),
               ),
             ),
             Container(
               width: _width / 2,
               child: TextField(
+                controller: _course,
                 decoration: InputDecoration(
-                    hintText: 'Enter your Degree/Certification'),
+                    hintText: 'Enter your Degree/Certification',
+                    border: OutlineInputBorder()),
                 onEditingComplete: () {
                   setState(() {
                     course = _course.text;
@@ -83,38 +97,60 @@ class _TextFieldsState extends State<TextFields> {
                 },
               ),
             ),
-            Container(
-              width: _width / 2,
-              child: TextField(
-                decoration:
-                    InputDecoration(hintText: 'Enter Date of completion'),
-                onEditingComplete: () {
-                  setState(() {
-                    date = _date.text;
-                  });
-                },
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: _width / 2,
+                child: TextField(
+                  controller: _date,
+                  decoration: InputDecoration(
+                      hintText: 'Enter Date of completion',
+                      border: OutlineInputBorder()),
+                  onEditingComplete: () {
+                    setState(() {
+                      date = _date.text;
+                    });
+                  },
+                ),
               ),
             ),
-            Divider(
-              color: Colors.black,
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Divider(
+                color: Colors.black.withOpacity(0.3),
+                thickness: 3,
+              ),
             ),
-            Text('Education details :2'),
-            Container(
-              width: _width / 2,
-              child: TextField(
-                decoration: InputDecoration(hintText: 'Enter Institution Name'),
-                onEditingComplete: () {
-                  setState(() {
-                    name2 = _name2.text;
-                  });
-                },
+
+            // Education details 2
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Text('Education details :2'),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: _width / 2,
+                child: TextField(
+                  controller: _name2,
+                  decoration: InputDecoration(
+                      hintText: 'Enter Institution Name',
+                      border: OutlineInputBorder()),
+                  onEditingComplete: () {
+                    setState(() {
+                      name2 = _name2.text;
+                    });
+                  },
+                ),
               ),
             ),
             Container(
               width: _width / 2,
               child: TextField(
+                controller: _course2,
                 decoration: InputDecoration(
-                    hintText: 'Enter your Degree/Certification'),
+                    hintText: 'Enter your Degree/Certification',
+                    border: OutlineInputBorder()),
                 onEditingComplete: () {
                   setState(() {
                     course2 = _course2.text;
@@ -122,25 +158,29 @@ class _TextFieldsState extends State<TextFields> {
                 },
               ),
             ),
-            Container(
-              width: _width / 2,
-              child: TextField(
-                decoration:
-                    InputDecoration(hintText: 'Enter Date of completion'),
-                onEditingComplete: () {
-                  setState(() {
-                    date2 = _date2.text;
-                  });
-                },
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: _width / 2,
+                child: TextField(
+                  controller: _date2,
+                  decoration: InputDecoration(
+                      hintText: 'Enter Date of completion',
+                      border: OutlineInputBorder()),
+                  onEditingComplete: () {
+                    setState(() {
+                      date2 = _date2.text;
+                    });
+                  },
+                ),
               ),
             ),
             ElevatedButton(
               onPressed: () {
-                print('');
-                setState(() {
-                  savePersonalInfo(_name.text, _course.text, _date.text,
-                      _name2.text, _course2.text, _date2.text);
-                });
+                print('$name,$course,$date,$name2,$course2,$date2');
+                print(_name.text);
+                savePersonalInfo(_name.text, _course.text, _date.text,
+                    _name2.text, _course2.text, _date2.text);
               },
               child: Text('Save Details'),
             ),
@@ -151,7 +191,7 @@ class _TextFieldsState extends State<TextFields> {
   }
 
   Future<bool> savePersonalInfo(
-      String name, String course, date, name2, course2, date2) async {
+      name, course, date, name2, course2, date2) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('Instname', name);
     prefs.setString('course', course);

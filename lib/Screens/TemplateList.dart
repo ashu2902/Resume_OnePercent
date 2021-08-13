@@ -29,10 +29,10 @@ class _TemplateListState extends State<TemplateList> {
                     'Sample Organization',
                     '01-02-20XX',
                     'skill-1,skill-2,skill-3',
-                    "${prefs.getString('Instname')}",
+                    '${prefs.getString('Instname')}',
                     '${prefs.getString('course')}',
-                    '${prefs.getString('EdDate1')}',
-                    '${prefs.getString('EdDate2')}');
+                    '${prefs.getString('Eddate1')}',
+                    '${prefs.getString('Eddate2')}');
                 PdfApi.openFile(pdfFile);
               },
               child: Text('Template1'),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:resume/Screens/EducationInfo.dart';
+import 'package:resume/Screens/ExperienceInfo.dart';
 import 'package:resume/Screens/PersonalInfo.dart';
+import 'package:resume/Screens/ProjectsInfo.dart';
+import 'package:resume/Screens/SkillsInfo.dart';
 import 'package:resume/Widgets/FieldButton.dart';
 
 import 'TemplateList.dart';
@@ -20,9 +23,9 @@ class HomePage extends StatelessWidget {
           children: [
             FieldButton(text: 'Personal Information', path: PersonalInfo()),
             FieldButton(text: 'Education', path: EducationInfo()),
-            FieldButton(text: 'Experience', path: null),
-            FieldButton(text: 'Skills', path: null),
-            FieldButton(text: 'Projects', path: null),
+            FieldButton(text: 'Experience', path: ExperienceInfo()),
+            FieldButton(text: 'Skills', path: SkillsInfo()),
+            FieldButton(text: 'Projects', path: ProjectsInfo()),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,

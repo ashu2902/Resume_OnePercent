@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class FieldButton extends StatelessWidget {
   FieldButton({required this.text, required this.path});
-  String text;
-  dynamic path;
+  final String text;
+  final dynamic path;
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
