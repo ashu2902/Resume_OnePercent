@@ -5,27 +5,28 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
-class PdfApi {
+class Template1 {
   static Future<File> generateText(
-      String name,
-      address,
-      phone,
-      email,
-      about,
-      jobTitle1,
-      organization1,
-      date1,
-      skills,
-      instName1,
-      course1,
-      edDate1,
-      edDate2) async {
+    String name,
+    address,
+    phone,
+    email,
+    about,
+    jobTitle1,
+    organization1,
+    date1,
+    skills,
+    instName1,
+    course1,
+    edDate1,
+    instName2,
+    course2,
+    edDate2,
+  ) async {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
-          build: (context) =>
-
-              pw.Column(children: [
+          build: (context) => pw.Column(children: [
                 //Name
                 pw.Container(
                     alignment: pw.Alignment.centerLeft,
@@ -153,11 +154,11 @@ class PdfApi {
                                     pw.Text(course1),
                                     pw.Text('Date- $edDate1'),
                                     pw.SizedBox(height: 15),
-                                    pw.Text('Institution Name',
+                                    pw.Text(instName2,
                                         style: pw.TextStyle(
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
-                                    pw.Text('Degree or certification'),
+                                    pw.Text(course2),
                                     pw.Text('Date- $edDate2'),
                                     pw.SizedBox(height: 30),
 

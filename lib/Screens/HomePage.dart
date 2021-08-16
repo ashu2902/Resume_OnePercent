@@ -19,21 +19,24 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-            child: Column(
-          children: [
-            FieldButton(text: 'Personal Information', path: PersonalInfo()),
-            FieldButton(text: 'Education', path: EducationInfo()),
-            FieldButton(text: 'Experience', path: ExperienceInfo()),
-            FieldButton(text: 'Skills', path: SkillsInfo()),
-            FieldButton(text: 'Projects', path: ProjectsInfo()),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TemplateList()));
-                },
-                child: Text('Select Template'))
-          ],
-        )),
+          child: Column(
+            children: [
+              FieldButton(text: 'Personal Information', path: PersonalInfo()),
+              FieldButton(text: 'Education', path: EducationInfo()),
+              FieldButton(text: 'Experience', path: ExperienceInfo()),
+              FieldButton(text: 'Skills', path: SkillsInfo()),
+              FieldButton(text: 'Projects', path: ProjectsInfo()),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TemplateList()));
+                  },
+                  child: Text('Select Template'))
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -39,27 +39,47 @@ class TextFields extends StatefulWidget {
 }
 
 class _TextFieldsState extends State<TextFields> {
+  TextEditingController _name = TextEditingController();
+  TextEditingController _course = TextEditingController();
+  TextEditingController _date = TextEditingController();
+
+  TextEditingController _name2 = TextEditingController();
+  TextEditingController _course2 = TextEditingController();
+  TextEditingController _date2 = TextEditingController();
+  String? name = '';
+  var course = '';
+  var date = '';
+  var name2 = '';
+  var course2 = '';
+  var date2 = '';
+
+  Future<Null> getSharedPrefs() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _name = new TextEditingController(text: prefs.getString("Instname"));
+      _course = new TextEditingController(text: prefs.getString("course"));
+      _date = new TextEditingController(text: prefs.getString("Eddate1"));
+      _name2 = new TextEditingController(text: prefs.getString("Instname2"));
+      _course2 = new TextEditingController(text: prefs.getString("course2"));
+      _date2 = new TextEditingController(text: prefs.getString("Eddate2"));
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    getSharedPrefs();
+  }
+
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
 
-    TextEditingController _name = TextEditingController();
-    TextEditingController _course = TextEditingController();
-    TextEditingController _date = TextEditingController();
-
-    TextEditingController _name2 = TextEditingController();
-    TextEditingController _course2 = TextEditingController();
-    TextEditingController _date2 = TextEditingController();
-    var name = '';
-    var course = '';
-    var date = '';
-    var name2 = '';
-    var course2 = '';
-    var date2 = '';
     return Container(
-      width: _width,
-      child: Center(
-        child: Column(
+        width: _width,
+        child: Center(
+            child: Column(
           children: [
             //Education Details 1
             Padding(
@@ -75,11 +95,6 @@ class _TextFieldsState extends State<TextFields> {
                   decoration: InputDecoration(
                       hintText: 'Enter Institution Name',
                       border: OutlineInputBorder()),
-                  onEditingComplete: () {
-                    setState(() {
-                      name = _name.text;
-                    });
-                  },
                 ),
               ),
             ),
@@ -90,11 +105,6 @@ class _TextFieldsState extends State<TextFields> {
                 decoration: InputDecoration(
                     hintText: 'Enter your Degree/Certification',
                     border: OutlineInputBorder()),
-                onEditingComplete: () {
-                  setState(() {
-                    course = _course.text;
-                  });
-                },
               ),
             ),
             Padding(
@@ -159,22 +169,20 @@ class _TextFieldsState extends State<TextFields> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: _width / 2,
-                child: TextField(
-                  controller: _date2,
-                  decoration: InputDecoration(
-                      hintText: 'Enter Date of completion',
-                      border: OutlineInputBorder()),
-                  onEditingComplete: () {
-                    setState(() {
-                      date2 = _date2.text;
-                    });
-                  },
-                ),
-              ),
-            ),
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                    width: _width / 2,
+                    child: TextField(
+                      controller: _date2,
+                      decoration: InputDecoration(
+                          hintText: 'Enter Date of completion',
+                          border: OutlineInputBorder()),
+                      onEditingComplete: () {
+                        setState(() {
+                          date2 = _date2.text;
+                        });
+                      },
+                    ))),
             ElevatedButton(
               onPressed: () {
                 print('$name,$course,$date,$name2,$course2,$date2');
@@ -185,9 +193,7 @@ class _TextFieldsState extends State<TextFields> {
               child: Text('Save Details'),
             ),
           ],
-        ),
-      ),
-    );
+        )));
   }
 
   Future<bool> savePersonalInfo(
@@ -199,7 +205,6 @@ class _TextFieldsState extends State<TextFields> {
     prefs.setString('Instname2', name2);
     prefs.setString('course2', course2);
     prefs.setString('Eddate2', date2);
-
     // ignore: deprecated_member_use
     return prefs.commit();
   }
