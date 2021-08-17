@@ -2,11 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:resume/Templates/template1.dart';
-<<<<<<< HEAD
 import 'package:resume/Templates/template4.dart';
-=======
 import 'package:resume/Templates/template2.dart';
->>>>>>> d78e380a86d85ac0629b012454531555e762674d
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemplateList extends StatefulWidget {
