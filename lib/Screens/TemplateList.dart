@@ -63,7 +63,7 @@ class _TemplateListState extends State<TemplateList> {
                         '${prefs.getString('course')}',
                         '${prefs.getString('Eddate1')}',
                         '${prefs.getString('Eddate2')}');
-                    PdfApi.openFile(pdf);
+                    Pdf.openFile(pdf);
                   },
                   child: Text('Template3'),
                 ),
