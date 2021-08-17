@@ -1,6 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:resume/Templates/template1.dart';
+<<<<<<< HEAD
 import 'package:resume/Templates/template4.dart';
+=======
+import 'package:resume/Templates/template2.dart';
+>>>>>>> d78e380a86d85ac0629b012454531555e762674d
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemplateList extends StatefulWidget {
@@ -66,14 +72,25 @@ class _TemplateListState extends State<TemplateList> {
                         '${prefs.getString('course')}',
                         '${prefs.getString('Eddate1')}',
                         '${prefs.getString('Eddate2')}');
-                    PdfApi.openFile(template4);
+                    Template4.openFile(template4);
                   },
                   child: Text('Template4'),
                 ),
 
               ),
+              Container(
+                child: TextButton(
+                  onPressed: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    final pdfFile2 = await PdfApi2();
+                    PdfApi2.openFile(pdfFile2);
+                  },
+                  child: Text('template2'),
+                ),
+              ),
             ],
-          ),
+          )
         ),
       ),
     );
