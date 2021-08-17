@@ -21,12 +21,13 @@ class _TemplateListState extends State<TemplateList> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              //template 1
               Container(
                 child: TextButton(
                   onPressed: () async {
                     SharedPreferences prefs =
                         await SharedPreferences.getInstance();
-                    final pdfFile = await PdfApi.generateText(
+                    final pdfFile = await Template1.generateText(
                         '${prefs.getString('name')}',
                         '${prefs.getString('address')}',
                         '${prefs.getInt('phone')}',
@@ -39,8 +40,10 @@ class _TemplateListState extends State<TemplateList> {
                         '${prefs.getString('Instname')}',
                         '${prefs.getString('course')}',
                         '${prefs.getString('Eddate1')}',
+                        '${prefs.getString('Instname2')}',
+                        '${prefs.getString('course2')}',
                         '${prefs.getString('Eddate2')}');
-                    PdfApi.openFile(pdfFile);
+                    Template1.openFile(pdfFile);
                   },
                   child: Text('Template1'),
                 ),
