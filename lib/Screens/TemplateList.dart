@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:resume/Templates/template1.dart';
+import 'package:resume/Templates/template2.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemplateList extends StatefulWidget {
@@ -42,8 +45,19 @@ class _TemplateListState extends State<TemplateList> {
                   child: Text('Template1'),
                 ),
               ),
+              Container(
+                child: TextButton(
+                  onPressed: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    final pdfFile2 = await PdfApi2();
+                    PdfApi2.openFile(pdfFile2);
+                  },
+                  child: Text('template2'),
+                ),
+              ),
             ],
-          ),
+          )
         ),
       ),
     );
