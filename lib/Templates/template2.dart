@@ -4,9 +4,10 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
+// template 2
 class PdfApi2 {
 static Future<File> generateText2(
-    String name,
+    String name,git
     address,
     phone,
     email,
