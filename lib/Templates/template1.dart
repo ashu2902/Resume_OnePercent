@@ -24,7 +24,6 @@ class PdfApi {
     pdf.addPage(
       pw.Page(
           build: (context) =>
-
               pw.Column(children: [
                 //Name
                 pw.Container(
