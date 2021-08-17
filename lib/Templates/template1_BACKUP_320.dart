@@ -26,7 +26,12 @@ class Template1 {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
+<<<<<<< HEAD
+          build: (context) =>
+              pw.Column(children: [
+=======
           build: (context) => pw.Column(children: [
+>>>>>>> 0a8ae1dbea8e9e067d7601b1b67765902114e68c
                 //Name
                 pw.Container(
                     alignment: pw.Alignment.centerLeft,
