@@ -46,6 +46,7 @@ class _TemplateListState extends State<TemplateList> {
                       '${prefs.getString('Instname')}',
                       '${prefs.getString('course')}',
                       '${prefs.getString('Eddate1')}',
+                      'About Information ',
                       '${prefs.getString('Instname2')}',
                       '${prefs.getString('course2')}',
                       '${prefs.getString('Eddate2')}',
@@ -58,7 +59,31 @@ class _TemplateListState extends State<TemplateList> {
                 child: Text('Template1'),
               ),
             ),
-
+            //template4
+            Container(
+              child: TextButton(
+                onPressed: () async {
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  final template4 = await Template4.generateTemplate(
+                      '${prefs.getString('name')}',
+                      '${prefs.getString('address')}',
+                      '${prefs.getInt('phone')}',
+                      '${prefs.getString('email')}',
+                      "${prefs.getString('about')}",
+                      'Sample Title-1',
+                      'Sample Organization',
+                      '01-02-20XX',
+                      'skill-1,skill-2,skill-3',
+                      '${prefs.getString('Instname')}',
+                      '${prefs.getString('course')}',
+                      '${prefs.getString('Eddate1')}',
+                      '${prefs.getString('Eddate2')}');
+                  Template4.openFile(template4);
+                },
+                child: Text('Template4'),
+              ),
+            ),
             Container(
               child: TextButton(
                 onPressed: () async {
@@ -86,23 +111,25 @@ class _TemplateListState extends State<TemplateList> {
             Container(
               child: TextButton(
                 onPressed: () async {
-                  final pdfFile = await Template4.generateTemplate(
-                      'name',
-                      'address',
-                      'phone',
-                      'email',
-                      'about',
-                      'jobTitle1',
-                      'organization1',
-                      'date1',
-                      'skills',
-                      'instName1',
-                      'course1',
-                      'edDate1',
-                      'edDate2');
-                  Template4.openFile(pdfFile);
+                  SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+                  final template6 = await Template6.generateTemplate(
+                      '${prefs.getString('name')}',
+                      '${prefs.getString('address')}',
+                      '${prefs.getInt('phone')}',
+                      '${prefs.getString('email')}',
+                      "${prefs.getString('about')}",
+                      'Sample Title-1',
+                      'Sample Organization',
+                      '01-02-20XX',
+                      'skill-1,skill-2,skill-3',
+                      '${prefs.getString('Instname')}',
+                      '${prefs.getString('course')}',
+                      '${prefs.getString('Eddate1')}',
+                      '${prefs.getString('Eddate2')}');
+                  Template6.openFile(template6);
                 },
-                child: Text('Template4'),
+                child: Text('Template6'),
               ),
             ),
             Container(
@@ -128,7 +155,7 @@ class _TemplateListState extends State<TemplateList> {
                       '${prefs.getString('Eddate2')}');
                   Template7.openFile(pdfFile);
                 },
-                child: Text('Template6'),
+                child: Text('Template7'),
 
               ),
             ),

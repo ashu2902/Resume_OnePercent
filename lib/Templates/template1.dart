@@ -24,6 +24,7 @@ class Template1 {
       instName1,
       course1,
       edDate1,
+      experienceAbout1,
       instName2,
       course2,
       edDate2,
@@ -96,9 +97,8 @@ class Template1 {
                                     //Achievement or Responsibility
                                     pw.Container(
                                         height: 51,
-                                        child: pw.Bullet(
-                                            text:
-                                                'Notable Achievement/Responsibility')),
+                                        child:
+                                            pw.Bullet(text: experienceAbout1)),
 
                                     pw.Text('$jobTitle2, $organization2}',
                                         style: pw.TextStyle(
