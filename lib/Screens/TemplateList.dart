@@ -4,6 +4,7 @@ import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template4.dart';
+import 'package:resume/Templates/template6.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemplateList extends StatefulWidget {
@@ -105,23 +106,25 @@ class _TemplateListState extends State<TemplateList> {
             Container(
               child: TextButton(
                 onPressed: () async {
-                  final pdfFile = await Template4.generateTemplate(
-                      'name',
-                      'address',
-                      'phone',
-                      'email',
-                      'about',
-                      'jobTitle1',
-                      'organization1',
-                      'date1',
-                      'skills',
-                      'instName1',
-                      'course1',
-                      'edDate1',
-                      'edDate2');
-                  Template4.openFile(pdfFile);
+                  SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+                  final template6 = await Template6.generateTemplate(
+                      '${prefs.getString('name')}',
+                      '${prefs.getString('address')}',
+                      '${prefs.getInt('phone')}',
+                      '${prefs.getString('email')}',
+                      "${prefs.getString('about')}",
+                      'Sample Title-1',
+                      'Sample Organization',
+                      '01-02-20XX',
+                      'skill-1,skill-2,skill-3',
+                      '${prefs.getString('Instname')}',
+                      '${prefs.getString('course')}',
+                      '${prefs.getString('Eddate1')}',
+                      '${prefs.getString('Eddate2')}');
+                  Template6.openFile(template6);
                 },
-                child: Text('Template4'),
+                child: Text('Template6'),
               ),
             ),
           ],
