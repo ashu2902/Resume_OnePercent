@@ -48,7 +48,7 @@ class _TemplateListState extends State<TemplateList> {
                       '${prefs.getString('Instname')}',
                       '${prefs.getString('course')}',
                       '${prefs.getString('Eddate1')}',
-                      'About Information ',
+                      '${prefs.getString('Summary1')}',
                       '${prefs.getString('Instname2')}',
                       '${prefs.getString('course2')}',
                       '${prefs.getString('Eddate2')}',
@@ -66,23 +66,32 @@ class _TemplateListState extends State<TemplateList> {
             Container(
               child: TextButton(
                   onPressed: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
                     final template2 = await PdfApi2.generateText2(
-                        "name",
-                        "address",
-                        "phone",
-                        "email",
-                        "website",
-                        "companyname1",
-                        "location1",
-                        "startdate1",
-                        "enddate1",
-                        "companyname2",
-                        "location2",
-                        "startdate2",
-                        "enddate2",
-                        "schoolname",
-                        "slocation",
-                        "sdegree",
+                        '${prefs.getString('name')}',
+                        "${prefs.getString('address')}",
+                        "${prefs.getInt('phone')}",
+                        "${prefs.getString('email')}",
+                        "${prefs.getString('about')}",
+                        "${prefs.getString('CompName1')}",
+                        "${prefs.getString('CompLocation1')}",
+                        "${prefs.getString('CompStartDate1')}",
+                        "${prefs.getString('CompEndDate1')}",
+                        '${prefs.getString('Summary1')}',
+                        "${prefs.getString('CompName2')}",
+                        "${prefs.getString('CompLocation1')}",
+                        "${prefs.getString('CompStartDate1')}",
+                        "${prefs.getString('CompEndDate2')}",
+                        '${prefs.getString('Summary2')}',
+                        "${prefs.getString('Instname')}",
+                        "${prefs.getString('EdLocation1')}",
+                        "${prefs.getString('course')}",
+                        "${prefs.getString('EdSummary1')}",
+                        "${prefs.getString('Instname2')}",
+                        "${prefs.getString('EdLocation2')}",
+                        "${prefs.getString('course2')}",
+                        "${prefs.getString('EdSummary2')}",
                         "referenceName",
                         "rCompany",
                         "rContactInformation");
@@ -140,6 +149,7 @@ class _TemplateListState extends State<TemplateList> {
                 child: Text('Template4'),
               ),
             ),
+            //Template5
             Container(
               child: TextButton(
                 onPressed: () async {
@@ -149,6 +159,7 @@ class _TemplateListState extends State<TemplateList> {
                 child: Text('Template5'),
               ),
             ),
+            //Template6
             Container(
               child: TextButton(
                 onPressed: () async {
@@ -160,6 +171,7 @@ class _TemplateListState extends State<TemplateList> {
                 child: Text('Template6'),
               ),
             ),
+            //Template7
             Container(
               child: TextButton(
                 onPressed: () async {

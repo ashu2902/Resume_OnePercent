@@ -20,20 +20,7 @@ class Template6 {
     color: PdfColors.lightBlueAccent,
   );
 
-  static Future<File> generateTemplate(
-      String name,
-      address,
-      phone,
-      email,
-      about,
-      jobTitle1,
-      organization1,
-      date1,
-      skills,
-      instName1,
-      course1,
-      edDate1,
-      edDate2) async {
+  static Future<File> generateTemplate() async {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -74,10 +61,10 @@ class Template6 {
                     pw.Container(
                       width: 300,
                       child: pw.Text(
-                        'Lorem ipsum dolor sit amet, '+
-                            'consectetur adipiscing elit, '+
-                            'sed do eiusmod tempor incididunt '+
-                            'ut labore et dolore magna aliqua. '+
+                        'Lorem ipsum dolor sit amet, ' +
+                            'consectetur adipiscing elit, ' +
+                            'sed do eiusmod tempor incididunt ' +
+                            'ut labore et dolore magna aliqua. ' +
                             'Ut enim ad minim veniam, quis nostrud',
                         style: kNormalTextStyle,
                         maxLines: 5,
@@ -93,7 +80,7 @@ class Template6 {
                     ),
                     pw.SizedBox(height: 10),
                     pw.Container(
-                      child:  pw.Container(
+                      child: pw.Container(
                         width: 300,
                         child: pw.Text(
                           'Sample Title - 1' +
@@ -107,28 +94,25 @@ class Template6 {
                     ),
                     pw.Container(
                       child: pw.Bullet(
-                        text:
-                        'Notable Achievement/Responsibility',
+                        text: 'Notable Achievement/Responsibility',
                         style: kNormalTextStyle,
                       ),
                     ),
                     pw.Container(
                       child: pw.Bullet(
-                        text:
-                        'Notable Achievement/Responsibility',
+                        text: 'Notable Achievement/Responsibility',
                         style: kNormalTextStyle,
                       ),
                     ),
                     pw.Container(
                       child: pw.Bullet(
-                        text:
-                        'Notable Achievement/Responsibility',
+                        text: 'Notable Achievement/Responsibility',
                         style: kNormalTextStyle,
                       ),
                     ),
                     pw.SizedBox(height: 10),
                     pw.Container(
-                      child:  pw.Container(
+                      child: pw.Container(
                         width: 300,
                         child: pw.Text(
                           'Sample Title - 2' +
@@ -142,22 +126,19 @@ class Template6 {
                     ),
                     pw.Container(
                       child: pw.Bullet(
-                        text:
-                        'Notable Achievement/Responsibility',
+                        text: 'Notable Achievement/Responsibility',
                         style: kNormalTextStyle,
                       ),
                     ),
                     pw.Container(
                       child: pw.Bullet(
-                        text:
-                        'Notable Achievement/Responsibility',
+                        text: 'Notable Achievement/Responsibility',
                         style: kNormalTextStyle,
                       ),
                     ),
                     pw.Container(
                       child: pw.Bullet(
-                        text:
-                        'Notable Achievement/Responsibility',
+                        text: 'Notable Achievement/Responsibility',
                         style: kNormalTextStyle,
                       ),
                     ),
@@ -172,17 +153,18 @@ class Template6 {
                     pw.SizedBox(height: 10),
                     pw.Container(
                       child: pw.Text(
-                        'Associate of Computer Science - Santa Maria University'
-                            + '\n' + 'Sep 2012 - Sep2016',
-                        style: kNormalTextStyle.copyWith(fontWeight: pw.FontWeight.bold),
+                        'Associate of Computer Science - Santa Maria University' +
+                            '\n' +
+                            'Sep 2012 - Sep2016',
+                        style: kNormalTextStyle.copyWith(
+                            fontWeight: pw.FontWeight.bold),
                       ),
                     ),
                     pw.Container(
                         child: pw.Text(
-                          'Graduated with highest honor',
-                          style: kNormalTextStyle.copyWith(color: PdfColors.grey),
-                        )
-                    ),
+                      'Graduated with highest honor',
+                      style: kNormalTextStyle.copyWith(color: PdfColors.grey),
+                    )),
                   ]),
             ),
           ),
@@ -194,48 +176,49 @@ class Template6 {
                   children: [
                     //Details
                     pw.Container(
-                      child: pw.Text(
-                          'Details',
-                          style: kTitleTextStyle
-                      ),
+                      child: pw.Text('Details', style: kTitleTextStyle),
                     ),
                     pw.SizedBox(height: 10),
                     pw.Container(
                         child: pw.Text(
-                          '4670 Garret Street'
-                              + '\n' + 'Philadelphia, US'
-                              + '\n' + 'Tel 123456789',
-                          style: kNormalTextStyle,
-                        )
-                    ),
+                      '4670 Garret Street' +
+                          '\n' +
+                          'Philadelphia, US' +
+                          '\n' +
+                          'Tel 123456789',
+                      style: kNormalTextStyle,
+                    )),
                     pw.Container(
                         child: pw.Text(
-                          'example@example.com',
-                          style: kNormalTextStyle.copyWith(color: PdfColors.lightBlueAccent),
-                        )
-                    ),
+                      'example@example.com',
+                      style: kNormalTextStyle.copyWith(
+                          color: PdfColors.lightBlueAccent),
+                    )),
                     pw.SizedBox(height: 30),
                     pw.Container(
                         child: pw.Text(
-                            'Professional Skills',
-                            style: kTitleTextStyle.copyWith(fontSize: 17),
-                        )
-                    ),
+                      'Professional Skills',
+                      style: kTitleTextStyle.copyWith(fontSize: 17),
+                    )),
                     pw.SizedBox(height: 10),
                     pw.Container(
                         child: pw.Text(
-                          'HTML' + '\n' + 'CSS' + '\n' + 'JavaScript' + '\n' + 'Bootstrap',
-                          style: kNormalTextStyle,
-                        )
-                    ),
+                      'HTML' +
+                          '\n' +
+                          'CSS' +
+                          '\n' +
+                          'JavaScript' +
+                          '\n' +
+                          'Bootstrap',
+                      style: kNormalTextStyle,
+                    )),
                     //Project Management
                     pw.SizedBox(height: 30),
                     pw.Container(
                         child: pw.Text(
-                          'Project Management',
-                          style: kTitleTextStyle.copyWith(fontSize: 17),
-                        )
-                    ),
+                      'Project Management',
+                      style: kTitleTextStyle.copyWith(fontSize: 17),
+                    )),
                     pw.SizedBox(height: 10),
                     pw.Container(
                       child: pw.Text(
@@ -247,10 +230,9 @@ class Template6 {
                     pw.SizedBox(height: 30),
                     pw.Container(
                         child: pw.Text(
-                          'Languages',
-                          style: kTitleTextStyle,
-                        )
-                    ),
+                      'Languages',
+                      style: kTitleTextStyle,
+                    )),
                     pw.SizedBox(height: 10),
                     pw.Container(
                       child: pw.Text(
@@ -258,8 +240,7 @@ class Template6 {
                         style: kNormalTextStyle,
                       ),
                     ),
-                  ]
-              ),
+                  ]),
             ),
           ),
         ]),
