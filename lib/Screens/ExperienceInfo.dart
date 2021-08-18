@@ -8,7 +8,7 @@ class ExperienceInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Experience'),
+        title: Text('Experience Information'),
       ),
       body: SingleChildScrollView(
         child: Container(
