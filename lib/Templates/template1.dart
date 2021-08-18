@@ -7,22 +7,30 @@ import 'package:pdf/widgets.dart' as pw;
 
 class Template1 {
   static Future<File> generateText(
-    String name,
-    address,
-    phone,
-    email,
-    about,
-    jobTitle1,
-    organization1,
-    date1,
-    skills,
-    instName1,
-    course1,
-    edDate1,
-    instName2,
-    course2,
-    edDate2,
-  ) async {
+      String name,
+      address,
+      phone,
+      email,
+      about,
+      jobTitle1,
+      organization1,
+      startdate1,
+      enddate1,
+      jobTitle2,
+      organization2,
+      startdate2,
+      enddate2,
+      skills,
+      instName1,
+      course1,
+      edDate1,
+      instName2,
+      course2,
+      edDate2,
+      projTitle1,
+      projDate1,
+      projTitle2,
+      projDate2) async {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -77,54 +85,29 @@ class Template1 {
                                         style: pw.TextStyle(fontSize: 18)),
                                     pw.Container(
                                         width: 30, child: pw.Divider()),
-                                    pw.Text('$jobTitle1, $organization1}',
+                                    pw.Container(
+                                        child: pw.Text(
+                                            '$jobTitle1, $organization1}',
+                                            style: pw.TextStyle(
+                                                fontSize: 16,
+                                                color: PdfColors.blue300))),
+                                    //Date
+                                    pw.Text('Date- $startdate1 to $enddate1'),
+                                    //Achievement or Responsibility
+                                    pw.Container(
+                                        height: 51,
+                                        child: pw.Bullet(
+                                            text:
+                                                'Notable Achievement/Responsibility')),
+
+                                    pw.Text('$jobTitle2, $organization2}',
                                         style: pw.TextStyle(
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
                                     //Date
-                                    pw.Text('Date- $date1'),
+                                    pw.Text('Date- $startdate2 to $enddate2'),
                                     //Achievement or Responsibility
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Text('$jobTitle1, $organization1}',
-                                        style: pw.TextStyle(
-                                            fontSize: 16,
-                                            color: PdfColors.blue300)),
-                                    //Date
-                                    pw.Text('Date- $date1'),
-                                    //Achievement or Responsibility
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Text('$jobTitle1, $organization1}',
-                                        style: pw.TextStyle(
-                                            fontSize: 16,
-                                            color: PdfColors.blue300)),
-                                    //Date
-                                    pw.Text('Date- $date1'),
-                                    //Achievement or Responsibility
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
+
                                     pw.SizedBox(height: 30),
 
                                     //SKILLS
@@ -167,12 +150,12 @@ class Template1 {
                                         style: pw.TextStyle(fontSize: 18)),
                                     pw.Container(
                                         width: 30, child: pw.Divider()),
-                                    pw.Text('$jobTitle1, $organization1}',
+                                    pw.Text('$projTitle1, }',
                                         style: pw.TextStyle(
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
                                     //Date
-                                    pw.Text('Date- $date1'),
+                                    pw.Text('Date- $projDate1'),
                                     //Achievement or Responsibility
                                     pw.Bullet(
                                         text:
@@ -183,12 +166,12 @@ class Template1 {
                                     pw.Bullet(
                                         text:
                                             'Notable Achievement/Responsibility'),
-                                    pw.Text('$jobTitle1, $organization1}',
+                                    pw.Text('$projTitle2, }',
                                         style: pw.TextStyle(
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
                                     //Date
-                                    pw.Text('Date- $date1'),
+                                    pw.Text('Date- $projDate2'),
                                     //Achievement or Responsibility
                                     pw.Bullet(
                                         text:
