@@ -44,7 +44,7 @@ class _TemplateListState extends State<TemplateList> {
                       "${prefs.getString('CompName2')}",
                       "${prefs.getString('CompStartDate2')}",
                       "${prefs.getString('CompEndDate2')}",
-                      'skill-1,skill-2,skill-3',
+                      '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
                       '${prefs.getString('Instname')}',
                       '${prefs.getString('course')}',
                       '${prefs.getString('Eddate1')}',
@@ -52,10 +52,11 @@ class _TemplateListState extends State<TemplateList> {
                       '${prefs.getString('Instname2')}',
                       '${prefs.getString('course2')}',
                       '${prefs.getString('Eddate2')}',
-                      'ProjectTitle1',
-                      'ProjectDate1',
-                      'ProjectTitle2',
-                      'ProjectDate2');
+                      '${prefs.getString('Summary2')}',
+                      '${prefs.getString('ProjectTitle1')}',
+                      '${prefs.getString('ProjectDesc1')}',
+                      '${prefs.getString('ProjectTitle2')}',
+                      '${prefs.getString('ProjectDesc2')}');
                   Template1.openFile(pdfFile);
                 },
                 child: Text('Template1'),
