@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:resume/Templates/Tamplate3.dart';
 import 'package:resume/Templates/template1.dart';
+import 'package:resume/Templates/template4.dart';
+import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template4.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -56,32 +59,29 @@ class _TemplateListState extends State<TemplateList> {
                 child: Text('Template1'),
               ),
             ),
+
             Container(
               child: TextButton(
                 onPressed: () async {
-                  final pdfFile2 = await PdfApi2.generateText2(
-                      'Sample Name',
-                      "Sample Address",
-                      "Sample Phone",
-                      "Sample Email",
-                      "Sample Website",
-                      "Company Name 1",
-                      "Location 1 ",
-                      "Start Date1",
-                      'enddate1',
-                      'companyname2',
-                      'location2',
-                      'startdate2',
-                      'enddate2',
-                      'schoolname',
-                      'slocation',
-                      'sdegree',
-                      'referenceName',
-                      'rCompany',
-                      'rContactInformation');
-                  PdfApi2.openFile(pdfFile2);
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  final pdf = await Pdf.generateText(
+                      '${prefs.getString('name')}',
+                      '${prefs.getString('address')}',
+                      '${prefs.getInt('phone')}',
+                      '${prefs.getString('email')}',
+                      "${prefs.getString('about')}",
+                      'Sample Title-1',
+                      'Sample Organization',
+                      '01-02-20XX',
+                      'skill-1,skill-2,skill-3',
+                      '${prefs.getString('Instname')}',
+                      '${prefs.getString('course')}',
+                      '${prefs.getString('Eddate1')}',
+                      '${prefs.getString('Eddate2')}');
+                  Pdf.openFile(pdf);
                 },
-                child: Text('template2'),
+                child: Text('Template3'),
               ),
             ),
             Container(
