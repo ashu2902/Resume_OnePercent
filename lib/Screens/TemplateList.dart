@@ -1,9 +1,8 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:resume/Templates/template1.dart';
 import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template2.dart';
+import 'package:resume/Templates/template5.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemplateList extends StatefulWidget {
@@ -71,14 +70,11 @@ class _TemplateListState extends State<TemplateList> {
                   },
                   child: Text('Template4'),
                 ),
-
               ),
                 Container(
-              child: TextButton(
-                onPressed: () async {
-                  SharedPreferences prefs =
-                      await SharedPreferences.getInstance();
-                  final pdfFile2 = await PdfApi2.generateText2(
+                  child: TextButton(
+                   onPressed: () async {
+                   final pdfFile2 = await PdfApi2.generateText2(
                       'Sample Name',
                       "Sample Address",
                       "Sample Phone",
@@ -103,7 +99,38 @@ class _TemplateListState extends State<TemplateList> {
                 child: Text('template2'),
               ),
             ),
-              ],
+            Container(
+              child: TextButton(
+                onPressed: () async {
+                  final pdfFile5 = await Template5.generateText5();
+                  Template5.openFile(pdfFile5);
+                },
+                child: Text('template5'),
+              ),
+            ),
+            Container(
+              child: TextButton(
+                onPressed: () async {
+                  final pdfFile = await Template4.generateTemplate(
+                      'name',
+                      'address',
+                      'phone',
+                      'email',
+                      'about',
+                      'jobTitle1',
+                      'organization1',
+                      'date1',
+                      'skills',
+                      'instName1',
+                      'course1',
+                      'edDate1',
+                      'edDate2');
+                  Template4.openFile(pdfFile);
+                },
+                child: Text('Template4'),
+              ),
+            ),
+          ],
         )),
       ),
     );
