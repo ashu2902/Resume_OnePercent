@@ -5,6 +5,7 @@ import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template4.dart';
+import 'package:resume/Templates/template6.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemplateList extends StatefulWidget {
@@ -98,11 +99,40 @@ class _TemplateListState extends State<TemplateList> {
                 child: Text('Template4'),
               ),
             ),
+            Container(
+              child: TextButton(
+                onPressed: () async {
+                  SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+                  final pdfFile = await Template6.generateText(
+                      '${prefs.getString('name')}',
+                      '${prefs.getString('address')}',
+                      '${prefs.getInt('phone')}',
+                      '${prefs.getString('email')}',
+                      "${prefs.getString('about')}",
+                      'Sample Title-1',
+                      'Sample Organization',
+                      '01-02-20XX',
+                      'skill-1,skill-2,skill-3',
+                      '${prefs.getString('Instname')}',
+                      '${prefs.getString('course')}',
+                      '${prefs.getString('Eddate1')}',
+                      '${prefs.getString('Instname2')}',
+                      '${prefs.getString('course2')}',
+                      '${prefs.getString('Eddate2')}');
+                  Template6.openFile(pdfFile);
+                },
+                child: Text('Template6'),
+
+              ),
+            ),
           ],
         )),
       ),
     );
   }
 }
+
+
 
 
