@@ -137,23 +137,10 @@ class _TemplateListState extends State<TemplateList> {
                 onPressed: () async {
                   SharedPreferences prefs =
                   await SharedPreferences.getInstance();
-                  final pdfFile = await Template7.generateText(
-                      '${prefs.getString('name')}',
-                      '${prefs.getString('address')}',
-                      '${prefs.getInt('phone')}',
-                      '${prefs.getString('email')}',
-                      "${prefs.getString('about')}",
-                      'Sample Title-1',
-                      'Sample Organization',
-                      '01-02-20XX',
-                      'skill-1,skill-2,skill-3',
-                      '${prefs.getString('Instname')}',
-                      '${prefs.getString('course')}',
-                      '${prefs.getString('Eddate1')}',
-                      '${prefs.getString('Instname2')}',
-                      '${prefs.getString('course2')}',
-                      '${prefs.getString('Eddate2')}');
-                  Template7.openFile(pdfFile);
+                  final pdf7 = await Template7.generateText(
+
+                  );
+                  Template7.openFile(pdf7);
                 },
                 child: Text('Template7'),
 
