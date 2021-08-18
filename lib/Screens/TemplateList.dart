@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:resume/Templates/Tamplate3.dart';
 import 'package:resume/Templates/template1.dart';
 import 'package:resume/Templates/template4.dart';
-import 'package:resume/Templates/template2.dart';
-import 'package:resume/Templates/template2.dart';
-import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template6.dart';
+import 'package:resume/Templates/template7.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemplateList extends StatefulWidget {
@@ -36,28 +34,36 @@ class _TemplateListState extends State<TemplateList> {
                       '${prefs.getInt('phone')}',
                       '${prefs.getString('email')}',
                       "${prefs.getString('about')}",
-                      'Sample Title-1',
-                      'Sample Organization',
-                      '01-02-20XX',
+                      "${prefs.getString('JobTitle1')}",
+                      "${prefs.getString('CompName1')}",
+                      "${prefs.getString('CompStartDate1')}",
+                      "${prefs.getString('CompEndDate1')}",
+                      "${prefs.getString('JobTitle2')}",
+                      "${prefs.getString('CompName2')}",
+                      "${prefs.getString('CompStartDate2')}",
+                      "${prefs.getString('CompEndDate2')}",
                       'skill-1,skill-2,skill-3',
                       '${prefs.getString('Instname')}',
                       '${prefs.getString('course')}',
                       '${prefs.getString('Eddate1')}',
                       '${prefs.getString('Instname2')}',
                       '${prefs.getString('course2')}',
-                      '${prefs.getString('Eddate2')}');
+                      '${prefs.getString('Eddate2')}',
+                      'ProjectTitle1',
+                      'ProjectDate1',
+                      'ProjectTitle2',
+                      'ProjectDate2');
                   Template1.openFile(pdfFile);
                 },
                 child: Text('Template1'),
-
-        ),
+              ),
             ),
 
             Container(
               child: TextButton(
                 onPressed: () async {
                   SharedPreferences prefs =
-                  await SharedPreferences.getInstance();
+                      await SharedPreferences.getInstance();
                   final pdf = await Pdf.generateText(
                       '${prefs.getString('name')}',
                       '${prefs.getString('address')}',
@@ -104,7 +110,7 @@ class _TemplateListState extends State<TemplateList> {
                 onPressed: () async {
                   SharedPreferences prefs =
                   await SharedPreferences.getInstance();
-                  final pdfFile = await Template6.generateText(
+                  final pdfFile = await Template7.generateText(
                       '${prefs.getString('name')}',
                       '${prefs.getString('address')}',
                       '${prefs.getInt('phone')}',
@@ -120,7 +126,7 @@ class _TemplateListState extends State<TemplateList> {
                       '${prefs.getString('Instname2')}',
                       '${prefs.getString('course2')}',
                       '${prefs.getString('Eddate2')}');
-                  Template6.openFile(pdfFile);
+                  Template7.openFile(pdfFile);
                 },
                 child: Text('Template6'),
 
@@ -132,7 +138,4 @@ class _TemplateListState extends State<TemplateList> {
     );
   }
 }
-
-
-
 

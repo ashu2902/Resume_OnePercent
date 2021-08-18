@@ -6,7 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
-class Template6 {
+class Template7 {
   static Future<File> generateText(
       String name,
       address,
@@ -30,11 +30,12 @@ class Template6 {
           build: (context) => pw.Column(children: [
             //Name
             pw.Container(
-              height: 60,
-              decoration: pw.BoxDecoration(shape: pw.BoxShape.rectangle,color: PdfColors.blue),
+                height: 60,
+                width: double.infinity,
+                decoration: pw.BoxDecoration(shape: pw.BoxShape.rectangle,color: PdfColors.blue),
                 alignment: pw.Alignment.topLeft,
 
-                child: pw.Text(name, style: pw.TextStyle(fontSize: 30,fontWeight: pw.FontWeight.bold,color: PdfColors.white),)
+                child: pw.Text(name,style: pw.TextStyle(fontSize: 30,fontWeight: pw.FontWeight.bold,color: PdfColors.white,),)
             ),
             //Address, Phone , Email
             pw.Container(
