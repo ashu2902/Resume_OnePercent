@@ -95,9 +95,11 @@ class Template4 {
             ),
             pw.SizedBox(height: 10),
             pw.Container(
+              width: 300,
               alignment: pw.Alignment.topLeft,
               child: pw.Text(
-                'This is about somebody',
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                maxLines: 5,
                 style: pw.TextStyle(
                   fontSize: 20,
                 ),
@@ -180,9 +182,85 @@ class Template4 {
                       ),
                       pw.SizedBox(height: 10),
                       pw.Container(
+                        width: 300,
                         child: pw.Text(
-                          organization1 + '\n' + date1,
-                          style: pw.TextStyle(fontSize: 20),
+                          'Sample Title - 1' +
+                              '\n' +
+                              'Sample Organization - 1' +
+                              '\n' +
+                              'Date - 01-02-20XX',
+                          style: pw.TextStyle(
+                              fontSize: 20, color: PdfColors.black),
+                        ),
+                      ),
+                      pw.Container(
+                        width: 300,
+                        child: pw.Bullet(
+                          text:
+                          'Notable Achievement/Responsibility',
+                          style: pw.TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      pw.Container(
+                        width: 300,
+                        child: pw.Bullet(
+                          text:
+                          'Notable Achievement/Responsibility',
+                          style: pw.TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      pw.Container(
+                        width: 300,
+                        child: pw.Bullet(
+                          text:
+                          'Notable Achievement/Responsibility',
+                          style: pw.TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      pw.SizedBox(height: 10),
+                      pw.Text(
+                        'Sample Title - 2' +
+                            '\n' +
+                            'Sample Organization - 2' +
+                            '\n' +
+                            'Date - 01-02-20XX',
+                        style: pw.TextStyle(fontSize: 20),
+                      ),
+
+                      pw.Container(
+                        width: 300,
+                        child: pw.Bullet(
+                          text:
+                          'Notable Achievement/Responsibility',
+                          style: pw.TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      pw.Container(
+                        width: 300,
+                        child: pw.Bullet(
+                          text:
+                          'Notable Achievement/Responsibility',
+                          style: pw.TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      pw.Container(
+                        width: 300,
+                        child: pw.Bullet(
+                          text:
+                          'Notable Achievement/Responsibility',
+                          style: pw.TextStyle(
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                     ]),
