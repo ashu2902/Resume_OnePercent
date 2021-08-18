@@ -90,7 +90,7 @@ static Future<File> generateText2(
                // References
                pw.Container(
                    alignment: pw.Alignment.topLeft,
-                   child: pw.Text('Communication',style: pw.TextStyle(fontSize: 20))),
+                   child: pw.Text('References',style: pw.TextStyle(fontSize: 20))),
                pw.SizedBox(height: 10),
                pw.Container( child: pw.Text("[$referenceName+','+$rCompany]")),
                pw.SizedBox(height: 10),
