@@ -47,6 +47,7 @@ class _TemplateListState extends State<TemplateList> {
                       '${prefs.getString('Instname')}',
                       '${prefs.getString('course')}',
                       '${prefs.getString('Eddate1')}',
+                      'About Information ',
                       '${prefs.getString('Instname2')}',
                       '${prefs.getString('course2')}',
                       '${prefs.getString('Eddate2')}',
