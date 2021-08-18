@@ -49,13 +49,9 @@ Future<bool> saveData(
 }
 
 class _TextFieldsState extends State<TextFields> {
-  var projectTitle1 = '';
   TextEditingController _projectTitle1 = TextEditingController();
-  var projectDesc1 = '';
   TextEditingController _projectDesc1 = TextEditingController();
-  var projectTitle2 = '';
   TextEditingController _projectTitle2 = TextEditingController();
-  var projectDesc2 = '';
   TextEditingController _projectDesc2 = TextEditingController();
 
   @override
