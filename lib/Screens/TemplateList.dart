@@ -93,6 +93,7 @@ class _TemplateListState extends State<TemplateList> {
                       "${prefs.getString('EdLocation2')}",
                       "${prefs.getString('course2')}",
                       "${prefs.getString('EdSummary2')}",
+                      '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
                     );
                     PdfApi2.openFile(template2);
                   },
@@ -113,7 +114,7 @@ class _TemplateListState extends State<TemplateList> {
                       'Sample Title-1',
                       'Sample Organization',
                       '01-02-20XX',
-                      'skill-1,skill-2,skill-3',
+                      '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
                       '${prefs.getString('Instname')}',
                       '${prefs.getString('course')}',
                       '${prefs.getString('Eddate1')}',

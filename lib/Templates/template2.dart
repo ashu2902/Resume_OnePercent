@@ -7,30 +7,30 @@ import 'package:pdf/widgets.dart' as pw;
 // template 2
 class PdfApi2 {
   static Future<File> generateText2(
-    name,
-    address,
-    phone,
-    email,
-    about,
-    companyname1,
-    location1,
-    startdate1,
-    enddate1,
-    summary1,
-    companyname2,
-    location2,
-    startdate2,
-    enddate2,
-    summary2,
-    schoolname,
-    slocation,
-    sdegree,
-    edSummary1,
-    schoolname2,
-    slocation2,
-    sdegree2,
-    edSummary2,
-  ) async {
+      name,
+      address,
+      phone,
+      email,
+      about,
+      companyname1,
+      location1,
+      startdate1,
+      enddate1,
+      summary1,
+      companyname2,
+      location2,
+      startdate2,
+      enddate2,
+      summary2,
+      schoolname,
+      slocation,
+      sdegree,
+      edSummary1,
+      schoolname2,
+      slocation2,
+      sdegree2,
+      edSummary2,
+      skills) async {
     final pdf2 = pw.Document();
     pdf2.addPage(
       pw.Page(
@@ -122,7 +122,7 @@ class PdfApi2 {
                         pw.Text('SKILLS', style: pw.TextStyle(fontSize: 20))),
                 pw.SizedBox(height: 10),
                 pw.Container(
-                    child: pw.Text("Skills",
+                    child: pw.Text("$skills",
                         style: pw.TextStyle(
                             color: PdfColors.blueGrey500, fontSize: 14))),
                 pw.SizedBox(height: 10),
