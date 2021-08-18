@@ -7,32 +7,30 @@ import 'package:pdf/widgets.dart' as pw;
 // template 2
 class PdfApi2 {
   static Future<File> generateText2(
-      name,
-      address,
-      phone,
-      email,
-      about,
-      companyname1,
-      location1,
-      startdate1,
-      enddate1,
-      summary1,
-      companyname2,
-      location2,
-      startdate2,
-      enddate2,
-      summary2,
-      schoolname,
-      slocation,
-      sdegree,
-      edSummary1,
-      schoolname2,
-      slocation2,
-      sdegree2,
-      edSummary2,
-      referenceName,
-      rCompany,
-      rContactInformation) async {
+    name,
+    address,
+    phone,
+    email,
+    about,
+    companyname1,
+    location1,
+    startdate1,
+    enddate1,
+    summary1,
+    companyname2,
+    location2,
+    startdate2,
+    enddate2,
+    summary2,
+    schoolname,
+    slocation,
+    sdegree,
+    edSummary1,
+    schoolname2,
+    slocation2,
+    sdegree2,
+    edSummary2,
+  ) async {
     final pdf2 = pw.Document();
     pdf2.addPage(
       pw.Page(
@@ -120,18 +118,14 @@ class PdfApi2 {
                 // References
                 pw.Container(
                     alignment: pw.Alignment.topLeft,
-                    child: pw.Text('References',
-                        style: pw.TextStyle(fontSize: 20))),
+                    child:
+                        pw.Text('SKILLS', style: pw.TextStyle(fontSize: 20))),
                 pw.SizedBox(height: 10),
                 pw.Container(
-                    child: pw.Text("[$referenceName,$rCompany]",
+                    child: pw.Text("Skills",
                         style: pw.TextStyle(
                             color: PdfColors.blueGrey500, fontSize: 14))),
                 pw.SizedBox(height: 10),
-                pw.Container(
-                    child: pw.Text("[$rContactInformation]",
-                        style: pw.TextStyle(
-                            color: PdfColors.blueGrey500, fontSize: 14))),
               ]),
         ]),
       ),
