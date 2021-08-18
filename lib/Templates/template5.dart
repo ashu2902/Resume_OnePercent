@@ -110,7 +110,6 @@ class Template5 {
          //     pw.Text('Sh. Hari Krishan Sharma'),
          //   ]
          // ),
-
          // DECLARATION
           pw.SizedBox(height: 15),
           pw.Container(
