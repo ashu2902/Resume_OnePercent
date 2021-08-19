@@ -32,7 +32,6 @@ class _SkillsInfoState extends State<SkillsInfo> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getSharedPrefs();
   }
