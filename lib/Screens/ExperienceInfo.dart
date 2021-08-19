@@ -38,29 +38,17 @@ class TextFields extends StatefulWidget {
 }
 
 class _TextFieldsState extends State<TextFields> {
-  var jobTitle1 = '';
   TextEditingController _jobTitle1 = TextEditingController();
-  var compName1 = '';
   TextEditingController _compName1 = TextEditingController();
-  var location1 = '';
   TextEditingController _location1 = TextEditingController();
-  var startDate1 = '';
   TextEditingController _startDate1 = TextEditingController();
-  var endDate1 = '';
   TextEditingController _endDate1 = TextEditingController();
-  var summary1 = '';
   TextEditingController _summary1 = TextEditingController();
-  var jobTitle2 = '';
   TextEditingController _jobTitle2 = TextEditingController();
-  var compName2 = '';
   TextEditingController _compName2 = TextEditingController();
-  var location2 = '';
   TextEditingController _location2 = TextEditingController();
-  var startDate2 = '';
   TextEditingController _startDate2 = TextEditingController();
-  var endDate2 = '';
   TextEditingController _endDate2 = TextEditingController();
-  var summary2 = '';
   TextEditingController _summary2 = TextEditingController();
 
   Future<bool> savePersonalInfo(
@@ -136,218 +124,213 @@ class _TextFieldsState extends State<TextFields> {
 
     return Container(
       width: _width,
-      child: Center(
-        child: Container(
-          width: _width,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Text(
+              'Experience:1',
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          //Job Title 1
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: _width / 1.2,
+              child: TextField(
+                controller: _jobTitle1,
+                decoration: InputDecoration(
+                    hintText: 'Enter Job Title', border: OutlineInputBorder()),
+              ),
+            ),
+          ),
+          //Company name 1
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: _width / 1.2,
+              child: TextField(
+                controller: _compName1,
+                decoration: InputDecoration(
+                    hintText: 'Enter Company Name',
+                    border: OutlineInputBorder()),
+              ),
+            ),
+          ),
+          //location
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: _width / 1.2,
+              child: TextField(
+                controller: _location1,
+                decoration: InputDecoration(
+                    hintText: 'Enter Company Location',
+                    border: OutlineInputBorder()),
+              ),
+            ),
+          ),
+          //start date&endDate
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Text(
-                  'Experience:1',
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-              //Job Title 1
-              Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  width: _width / 1.2,
+                  width: _width / 3,
                   child: TextField(
-                    controller: _jobTitle1,
+                    controller: _startDate1,
                     decoration: InputDecoration(
-                        hintText: 'Enter Job Title',
+                        hintText: 'Enter Start Date',
                         border: OutlineInputBorder()),
                   ),
                 ),
               ),
-              //Company name 1
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  width: _width / 1.2,
+                  width: _width / 3,
                   child: TextField(
-                    controller: _compName1,
+                    controller: _endDate1,
                     decoration: InputDecoration(
-                        hintText: 'Enter Company Name',
+                        hintText: 'Enter end Date',
                         border: OutlineInputBorder()),
                   ),
                 ),
-              ),
-              //location
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: _width / 1.2,
-                  child: TextField(
-                    controller: _location1,
-                    decoration: InputDecoration(
-                        hintText: 'Enter Company Location',
-                        border: OutlineInputBorder()),
-                  ),
-                ),
-              ),
-              //start date&endDate
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: _width / 3,
-                      child: TextField(
-                        controller: _startDate1,
-                        decoration: InputDecoration(
-                            hintText: 'Enter Start Date',
-                            border: OutlineInputBorder()),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: _width / 3,
-                      child: TextField(
-                        controller: _endDate1,
-                        decoration: InputDecoration(
-                            hintText: 'Enter end Date',
-                            border: OutlineInputBorder()),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              //summary/description
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: _width / 1.2,
-                  child: TextField(
-                    controller: _summary1,
-                    decoration: InputDecoration(
-                        hintText: 'Enter Summary / Description',
-                        border: OutlineInputBorder()),
-                  ),
-                ),
-              ),
-
-              Divider(
-                color: Colors.black,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Text(
-                  'Experience:2',
-                  style: TextStyle(fontSize: 20),
-                ),
-                //job Title 2
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: _width / 1.2,
-                  child: TextField(
-                    controller: _jobTitle2,
-                    decoration: InputDecoration(
-                        hintText: 'Enter Job Title',
-                        border: OutlineInputBorder()),
-                  ),
-                ),
-              ),
-              //Company name 1
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: _width / 1.2,
-                  child: TextField(
-                    controller: _compName2,
-                    decoration: InputDecoration(
-                        hintText: 'Enter Company Name',
-                        border: OutlineInputBorder()),
-                  ),
-                ),
-              ),
-              //location
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: _width / 1.2,
-                  child: TextField(
-                    controller: _location2,
-                    decoration: InputDecoration(
-                        hintText: 'Enter Company Location',
-                        border: OutlineInputBorder()),
-                  ),
-                ),
-              ),
-              //start date&endDate
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: _width / 3,
-                      child: TextField(
-                        controller: _startDate2,
-                        decoration: InputDecoration(
-                            hintText: 'Enter Start Date',
-                            border: OutlineInputBorder()),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: _width / 3,
-                      child: TextField(
-                        controller: _endDate2,
-                        decoration: InputDecoration(
-                            hintText: 'Enter end Date',
-                            border: OutlineInputBorder()),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              //summary/description
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: _width / 1.2,
-                  child: TextField(
-                    controller: _summary2,
-                    decoration: InputDecoration(
-                        hintText: 'Enter Summary / Description',
-                        border: OutlineInputBorder()),
-                  ),
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  print('Details Saved');
-                  print(_jobTitle1.text);
-                  savePersonalInfo(
-                      _jobTitle1.text,
-                      _compName1.text,
-                      _location1.text,
-                      _startDate1.text,
-                      _endDate1.text,
-                      _summary1.text,
-                      _jobTitle2.text,
-                      _compName2.text,
-                      _location2.text,
-                      _startDate2.text,
-                      _endDate2.text,
-                      _summary2.text);
-                },
-                child: Text('Save Details'),
               ),
             ],
           ),
-        ),
+          //summary/description
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: _width / 1.2,
+              child: TextField(
+                maxLines: 5,
+                controller: _summary1,
+                decoration: InputDecoration(
+                    hintText: 'Enter Summary / Description',
+                    border: OutlineInputBorder()),
+              ),
+            ),
+          ),
+
+          Divider(
+            color: Colors.black,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Text(
+              'Experience:2',
+              style: TextStyle(fontSize: 20),
+            ),
+            //job Title 2
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: _width / 1.2,
+              child: TextField(
+                controller: _jobTitle2,
+                decoration: InputDecoration(
+                    hintText: 'Enter Job Title', border: OutlineInputBorder()),
+              ),
+            ),
+          ),
+          //Company name 1
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: _width / 1.2,
+              child: TextField(
+                controller: _compName2,
+                decoration: InputDecoration(
+                    hintText: 'Enter Company Name',
+                    border: OutlineInputBorder()),
+              ),
+            ),
+          ),
+          //location
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: _width / 1.2,
+              child: TextField(
+                controller: _location2,
+                decoration: InputDecoration(
+                    hintText: 'Enter Company Location',
+                    border: OutlineInputBorder()),
+              ),
+            ),
+          ),
+          //start date&endDate
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: _width / 3,
+                  child: TextField(
+                    controller: _startDate2,
+                    decoration: InputDecoration(
+                        hintText: 'Enter Start Date',
+                        border: OutlineInputBorder()),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: _width / 3,
+                  child: TextField(
+                    controller: _endDate2,
+                    decoration: InputDecoration(
+                        hintText: 'Enter end Date',
+                        border: OutlineInputBorder()),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          //summary/description
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: _width / 1.2,
+              child: TextField(
+                maxLines: 5,
+                controller: _summary2,
+                decoration: InputDecoration(
+                    hintText: 'Enter Summary / Description',
+                    border: OutlineInputBorder()),
+              ),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              print('Details Saved');
+              print(_jobTitle1.text);
+              savePersonalInfo(
+                  _jobTitle1.text,
+                  _compName1.text,
+                  _location1.text,
+                  _startDate1.text,
+                  _endDate1.text,
+                  _summary1.text,
+                  _jobTitle2.text,
+                  _compName2.text,
+                  _location2.text,
+                  _startDate2.text,
+                  _endDate2.text,
+                  _summary2.text);
+            },
+            child: Text('Save Details'),
+          ),
+        ],
       ),
     );
   }

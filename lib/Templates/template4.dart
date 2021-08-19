@@ -196,8 +196,7 @@ class Template4 {
                       pw.Container(
                         width: 300,
                         child: pw.Bullet(
-                          text:
-                          'Notable Achievement/Responsibility',
+                          text: 'Notable Achievement/Responsibility',
                           style: pw.TextStyle(
                             fontSize: 20,
                           ),
@@ -206,8 +205,7 @@ class Template4 {
                       pw.Container(
                         width: 300,
                         child: pw.Bullet(
-                          text:
-                          'Notable Achievement/Responsibility',
+                          text: 'Notable Achievement/Responsibility',
                           style: pw.TextStyle(
                             fontSize: 20,
                           ),
@@ -216,8 +214,7 @@ class Template4 {
                       pw.Container(
                         width: 300,
                         child: pw.Bullet(
-                          text:
-                          'Notable Achievement/Responsibility',
+                          text: 'Notable Achievement/Responsibility',
                           style: pw.TextStyle(
                             fontSize: 20,
                           ),
@@ -232,12 +229,10 @@ class Template4 {
                             'Date - 01-02-20XX',
                         style: pw.TextStyle(fontSize: 20),
                       ),
-
                       pw.Container(
                         width: 300,
                         child: pw.Bullet(
-                          text:
-                          'Notable Achievement/Responsibility',
+                          text: 'Notable Achievement/Responsibility',
                           style: pw.TextStyle(
                             fontSize: 20,
                           ),
@@ -246,8 +241,7 @@ class Template4 {
                       pw.Container(
                         width: 300,
                         child: pw.Bullet(
-                          text:
-                          'Notable Achievement/Responsibility',
+                          text: 'Notable Achievement/Responsibility',
                           style: pw.TextStyle(
                             fontSize: 20,
                           ),
@@ -256,8 +250,7 @@ class Template4 {
                       pw.Container(
                         width: 300,
                         child: pw.Bullet(
-                          text:
-                          'Notable Achievement/Responsibility',
+                          text: 'Notable Achievement/Responsibility',
                           style: pw.TextStyle(
                             fontSize: 20,
                           ),

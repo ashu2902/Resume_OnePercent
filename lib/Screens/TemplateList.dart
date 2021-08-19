@@ -44,73 +44,99 @@ class _TemplateListState extends State<TemplateList> {
                       "${prefs.getString('CompName2')}",
                       "${prefs.getString('CompStartDate2')}",
                       "${prefs.getString('CompEndDate2')}",
-                      'skill-1,skill-2,skill-3',
+                      '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
                       '${prefs.getString('Instname')}',
                       '${prefs.getString('course')}',
                       '${prefs.getString('Eddate1')}',
-                      'About Information ',
+                      '${prefs.getString('Summary1')}',
                       '${prefs.getString('Instname2')}',
                       '${prefs.getString('course2')}',
                       '${prefs.getString('Eddate2')}',
-                      'ProjectTitle1',
-                      'ProjectDate1',
-                      'ProjectTitle2',
-                      'ProjectDate2');
+                      '${prefs.getString('Summary2')}',
+                      '${prefs.getString('ProjectTitle1')}',
+                      '${prefs.getString('ProjectDesc1')}',
+                      '${prefs.getString('ProjectTitle2')}',
+                      '${prefs.getString('ProjectDesc2')}');
                   Template1.openFile(pdfFile);
                 },
                 child: Text('Template1'),
               ),
             ),
-            //template4
+
+            //template2
             Container(
-              child: TextButton(onPressed: ()async {
-                final template2 = await PdfApi2.generateText2("name",
-                    "address",
-                    "phone",
-                    "email",
-                    "website",
-                    "companyname1",
-                    "location1",
-                    "startdate1",
-                    "enddate1",
-                    "companyname2",
-                    "location2",
-                    "startdate2",
-                    "enddate2",
-                    "schoolname",
-                    "slocation",
-                    "sdegree",
-                    "referenceName",
-                    "rCompany",
-                    "rContactInformation");
-                PdfApi2.openFile(template2);
-              },
-              child: Text('Template2')),
+              child: TextButton(
+                  onPressed: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    final template2 = await PdfApi2.generateText2(
+                      '${prefs.getString('name')}',
+                      "${prefs.getString('address')}",
+                      "${prefs.getInt('phone')}",
+                      "${prefs.getString('email')}",
+                      "${prefs.getString('about')}",
+                      "${prefs.getString('CompName1')}",
+                      "${prefs.getString('CompLocation1')}",
+                      "${prefs.getString('CompStartDate1')}",
+                      "${prefs.getString('CompEndDate1')}",
+                      '${prefs.getString('Summary1')}',
+                      "${prefs.getString('CompName2')}",
+                      "${prefs.getString('CompLocation1')}",
+                      "${prefs.getString('CompStartDate1')}",
+                      "${prefs.getString('CompEndDate2')}",
+                      '${prefs.getString('Summary2')}',
+                      "${prefs.getString('Instname')}",
+                      "${prefs.getString('EdLocation1')}",
+                      "${prefs.getString('course')}",
+                      "${prefs.getString('EdSummary1')}",
+                      "${prefs.getString('Instname2')}",
+                      "${prefs.getString('EdLocation2')}",
+                      "${prefs.getString('course2')}",
+                      "${prefs.getString('EdSummary2')}",
+                      '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
+                    );
+                    PdfApi2.openFile(template2);
+                  },
+                  child: Text('Template2')),
             ),
+            //Template 3
             Container(
               child: TextButton(
                 onPressed: () async {
                   SharedPreferences prefs =
-                  await SharedPreferences.getInstance();
+                      await SharedPreferences.getInstance();
                   final pdf = await Pdf.generateText(
-                      '${prefs.getString('name')}',
-                      '${prefs.getString('address')}',
-                      '${prefs.getInt('phone')}',
-                      '${prefs.getString('email')}',
-                      "${prefs.getString('about')}",
-                      'Sample Title-1',
-                      'Sample Organization',
-                      '01-02-20XX',
-                      'skill-1,skill-2,skill-3',
-                      '${prefs.getString('Instname')}',
-                      '${prefs.getString('course')}',
-                      '${prefs.getString('Eddate1')}',
-                      '${prefs.getString('Eddate2')}');
+                    '${prefs.getString('name')}',
+                    '${prefs.getString('address')}',
+                    "${prefs.getInt('phone')}",
+                    "${prefs.getString('email')}",
+                    "${prefs.getString('about')}",
+                    "${prefs.getString('CompStartDate1')}",
+                    "${prefs.getString('JobTitle1')}",
+                    "${prefs.getString('CompName1')}",
+                    '${prefs.getString('Summary1')}',
+                    "${prefs.getString('CompStartDate2')}",
+                    "${prefs.getString('JobTitle2')}",
+                    "${prefs.getString('CompName2')}",
+                    '${prefs.getString('Summary2')}',
+                    '${prefs.getString('ProjectTitle1')}',
+                    '${prefs.getString('ProjectDesc1')}',
+                    '${prefs.getString('ProjectTitle2')}',
+                    '${prefs.getString('ProjectDesc2')}',
+                    '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
+                    '${prefs.getString('Instname')}',
+                    "${prefs.getString('course')}",
+                    '${prefs.getString('Eddate1')}',
+                    '${prefs.getString('Instname2')}',
+                    "${prefs.getString('course2')}",
+                    '${prefs.getString('Eddate2')}',
+                  );
                   Pdf.openFile(pdf);
                 },
                 child: Text('Template3'),
               ),
             ),
+            //Template4
             Container(
               child: TextButton(
                 onPressed: () async {
@@ -135,51 +161,38 @@ class _TemplateListState extends State<TemplateList> {
                 child: Text('Template4'),
               ),
             ),
+            //Template5
             Container(
               child: TextButton(
-                onPressed: ()async {
+                onPressed: () async {
                   final template5 = await Template5.generateText5();
                   Template5.openFile(template5);
                 },
                 child: Text('Template5'),
               ),
             ),
+            //Template6
             Container(
               child: TextButton(
                 onPressed: () async {
                   SharedPreferences prefs =
-                  await SharedPreferences.getInstance();
-                  final template6 = await Template6.generateTemplate(
-                      '${prefs.getString('name')}',
-                      '${prefs.getString('address')}',
-                      '${prefs.getInt('phone')}',
-                      '${prefs.getString('email')}',
-                      "${prefs.getString('about')}",
-                      'Sample Title-1',
-                      'Sample Organization',
-                      '01-02-20XX',
-                      'skill-1,skill-2,skill-3',
-                      '${prefs.getString('Instname')}',
-                      '${prefs.getString('course')}',
-                      '${prefs.getString('Eddate1')}',
-                      '${prefs.getString('Eddate2')}');
+                      await SharedPreferences.getInstance();
+                  final template6 = await Template6.generateTemplate();
                   Template6.openFile(template6);
                 },
                 child: Text('Template6'),
               ),
             ),
+            //Template7
             Container(
               child: TextButton(
                 onPressed: () async {
                   SharedPreferences prefs =
-                  await SharedPreferences.getInstance();
-                  final pdf7 = await Template7.generateText(
-
-                  );
+                      await SharedPreferences.getInstance();
+                  final pdf7 = await Template7.generateText();
                   Template7.openFile(pdf7);
                 },
                 child: Text('Template7'),
-
               ),
             ),
           ],
@@ -188,4 +201,3 @@ class _TemplateListState extends State<TemplateList> {
     );
   }
 }
-

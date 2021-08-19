@@ -28,10 +28,11 @@ class Template1 {
       instName2,
       course2,
       edDate2,
+      experienceAbout2,
       projTitle1,
-      projDate1,
+      projectDesc1,
       projTitle2,
-      projDate2) async {
+      projectDesc2) async {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -88,7 +89,7 @@ class Template1 {
                                         width: 30, child: pw.Divider()),
                                     pw.Container(
                                         child: pw.Text(
-                                            '$jobTitle1, $organization1}',
+                                            '$jobTitle1, $organization1',
                                             style: pw.TextStyle(
                                                 fontSize: 16,
                                                 color: PdfColors.blue300))),
@@ -99,15 +100,19 @@ class Template1 {
                                         height: 51,
                                         child:
                                             pw.Bullet(text: experienceAbout1)),
+                                    pw.SizedBox(height: 30),
 
-                                    pw.Text('$jobTitle2, $organization2}',
+                                    pw.Text('$jobTitle2, $organization2',
                                         style: pw.TextStyle(
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
                                     //Date
                                     pw.Text('Date- $startdate2 to $enddate2'),
                                     //Achievement or Responsibility
-
+                                    pw.Container(
+                                        height: 51,
+                                        child:
+                                            pw.Bullet(text: experienceAbout2)),
                                     pw.SizedBox(height: 30),
 
                                     //SKILLS
@@ -134,7 +139,8 @@ class Template1 {
                                         style: pw.TextStyle(
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
-                                    pw.Text(course1),
+                                    pw.Text(course1), pw.SizedBox(height: 10),
+
                                     pw.Text('Date- $edDate1'),
                                     pw.SizedBox(height: 15),
                                     pw.Text(instName2,
@@ -150,38 +156,23 @@ class Template1 {
                                         style: pw.TextStyle(fontSize: 18)),
                                     pw.Container(
                                         width: 30, child: pw.Divider()),
-                                    pw.Text('$projTitle1, }',
+                                    pw.SizedBox(height: 20),
+
+                                    pw.Text('$projTitle1',
                                         style: pw.TextStyle(
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
-                                    //Date
-                                    pw.Text('Date- $projDate1'),
+
                                     //Achievement or Responsibility
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Text('$projTitle2, }',
+                                    pw.Bullet(text: '$projectDesc1'),
+                                    pw.SizedBox(height: 20),
+                                    pw.Text('$projTitle2',
                                         style: pw.TextStyle(
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
-                                    //Date
-                                    pw.Text('Date- $projDate2'),
+
                                     //Achievement or Responsibility
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
-                                    pw.Bullet(
-                                        text:
-                                            'Notable Achievement/Responsibility'),
+                                    pw.Bullet(text: '$projectDesc2'),
                                   ])))
                     ])
               ])),
