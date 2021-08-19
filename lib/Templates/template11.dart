@@ -19,7 +19,27 @@ class Template11{
   static final kContentTextStyle = pw.TextStyle(
     fontSize: 18,
   );
-  static Future<File> generateTemplate() async {
+  static Future<File> generateTemplate(
+      String name,
+      String address,
+      String phoneNo,
+      String email,
+      String personalStatement,
+      String company1,
+      String jobTitle1,
+      String date1,
+      List<String> notableAchievements1,
+      String company2,
+      String jobTitle2,
+      String date2,
+      List<String> notableAchievements2,
+      String institutionName,
+      String courseName,
+      String educationNotableAchievement,
+      String skill1,
+      String skill2,
+      String skill3,
+      ) async {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -34,7 +54,7 @@ class Template11{
                     children: [
                       pw.Container(
                         child: pw.Text(
-                          'John Smith'.toUpperCase(),
+                          name.toUpperCase(),
                           style: pw.TextStyle(
                             fontSize: 30,
                             fontWeight: pw.FontWeight.bold,
@@ -45,8 +65,8 @@ class Template11{
                       pw.SizedBox(height: 10),
                       pw.Container(
                         child: pw.Text(
-                          '123 Address' + '\n' + '+91-123456789'
-                              + '\n' + 'email@email.com',
+                          address + '\n' + phoneNo
+                              + '\n' + email,
                           style: pw.TextStyle(
                             fontSize: 12,
                           ),
@@ -55,7 +75,7 @@ class Template11{
                       pw.SizedBox(height: 10),
                       pw.Container(
                         child: pw.Text(
-                          '''Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididuntut labore et dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco''',
+                          personalStatement,
                           style: pw.TextStyle(
                             fontSize: 16,
                             fontStyle: pw.FontStyle.italic,
@@ -77,58 +97,59 @@ class Template11{
                     style: kTitleTextStyle,
                   ),
                 ),
+                pw.SizedBox(height: 10),
                 //Company name
                 pw.Container(
                   child: pw.Text(
-                    'Redford & Sons, Boston, MA',
+                    company1,
                     style: kSubTitleTextStyle,
                   ),
                 ),
                 //Position
                 pw.Container(
                   child: pw.Text(
-                      'Administrator Assistant, Sept 2015 - present',
+                      jobTitle1,
                       style: kSubTitleTextStyle.copyWith(fontWeight: pw.FontWeight.normal)
                   ),
                 ),
                 //Achievements and responsibility
                 pw.Bullet(
-                  text: 'Notable Achievement/Responsibility',
+                  text: notableAchievements1[0],
                   style: kContentTextStyle,
                 ),
                 pw.Bullet(
-                  text: 'Notable Achievement/Responsibility',
+                  text: notableAchievements1[1],
                   style: kContentTextStyle,
                 ),
                 pw.Bullet(
-                  text: 'Notable Achievement/Responsibility',
+                  text: notableAchievements1[2],
                   style: kContentTextStyle,
                 ),
                 //Company name
                 pw.Container(
                   child: pw.Text(
-                    'Redford & Sons, Boston, MA',
+                    company2,
                     style: kSubTitleTextStyle,
                   ),
                 ),
                 //Position
                 pw.Container(
                   child: pw.Text(
-                      'Administrator Assistant, Sept 2015 - present',
+                      jobTitle2,
                       style: kSubTitleTextStyle.copyWith(fontWeight: pw.FontWeight.normal)
                   ),
                 ),
                 //Achievements and responsibility
                 pw.Bullet(
-                  text: 'Notable Achievement/Responsibility',
+                  text: notableAchievements2[0],
                   style: kContentTextStyle,
                 ),
                 pw.Bullet(
-                  text: 'Notable Achievement/Responsibility',
+                  text: notableAchievements2[1],
                   style: kContentTextStyle,
                 ),
                 pw.Bullet(
-                  text: 'Notable Achievement/Responsibility',
+                  text: notableAchievements2[2],
                   style: kContentTextStyle,
                 ),
                 pw.SizedBox(height: 10),
@@ -139,17 +160,18 @@ class Template11{
                     style: kTitleTextStyle,
                   ),
                 ),
+                pw.SizedBox(height: 10),
                 //Name of Institution
                 pw.Container(
                   child: pw.Text(
-                    'River Brooks University',
+                    institutionName,
                     style: kSubTitleTextStyle,
                   ),
                 ),
                 //Degree
                 pw.Container(
                   child: pw.Text(
-                    'Bachelor of Arts',
+                    courseName,
                     style: pw.TextStyle(
                       fontStyle: pw.FontStyle.italic,
                       fontSize: 18,
@@ -158,7 +180,7 @@ class Template11{
                 ),
                 //Notable Achievement
                 pw.Bullet(
-                  text: 'Honors cum laude (GPA 3.5/4.0)',
+                  text: educationNotableAchievement,
                 ),
                 pw.SizedBox(height: 10),
                 //Skills
@@ -170,16 +192,16 @@ class Template11{
                 ),
                 pw.SizedBox(height: 10),
                 pw.Bullet(
-                    text: 'Expert in Microsoft Office',
+                    text: skill1,
                     style: kContentTextStyle,
                 ),
                 pw.Bullet(
-                    text: 'Bilingual in English and Spanish',
+                    text: skill2,
                     style: kContentTextStyle,
 
                 ),
                 pw.Bullet(
-                    text: 'HTML, CSS and Javascript',
+                    text: skill3,
                     style: kContentTextStyle,
                 ),
                 //
