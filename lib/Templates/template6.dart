@@ -19,7 +19,7 @@ class Template6 {
     color: PdfColors.lightBlueAccent,
   );
 
-  static Future<File> generateTemplate() async {
+  static Future<File> generateTemplate(name) async {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -33,7 +33,7 @@ class Template6 {
                     //Name
                     pw.Container(
                       child: pw.Text(
-                        'Jason M.Bourassa',
+                        '$name',
                         style: pw.TextStyle(
                           fontWeight: pw.FontWeight.bold,
                           fontSize: 30,
