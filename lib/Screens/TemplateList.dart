@@ -173,7 +173,25 @@ class _TemplateListState extends State<TemplateList> {
             Container(
               child: TextButton(
                 onPressed: () async {
-                  final template5 = await Template5.generateText5();
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  final template5 = await Template5.generateText5(
+                    '${prefs.getString('name')}',
+                    '${prefs.getString('address')}',
+                    '${prefs.getInt('phone')}',
+                    "${prefs.getString('about')}",
+                    '${prefs.getString('course')}',
+                    '${prefs.getString('Instname')}',
+                    "${prefs.getString('course2')}",
+                    '${prefs.getString('Instname2')}',
+                    '${prefs.getString('JobTitle1')}',
+                    '${prefs.getString('CompName1')}',
+                    '${prefs.getString('JobTitle2')}',
+                    '${prefs.getString('CompName2')}',
+                    '${prefs.getString('Skill1')}',
+                    '${prefs.getString('Skill2')}',
+                    '${prefs.getString('Skill3')}',
+                  );
                   Template5.openFile(template5);
                 },
                 child: Text('Template5'),
@@ -207,7 +225,7 @@ class _TemplateListState extends State<TemplateList> {
               child: TextButton(
                 onPressed: () async {
                   SharedPreferences prefs =
-                  await SharedPreferences.getInstance();
+                      await SharedPreferences.getInstance();
                   final pdf = await Template14.generateText();
                   Template14.openFile(pdf);
                 },
