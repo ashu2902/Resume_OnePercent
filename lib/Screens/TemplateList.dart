@@ -309,7 +309,7 @@ class _TemplateListState extends State<TemplateList> {
                     );
                     Template12.openFile(pdf12);
                   },
-                  child: Text('Template6')),
+                  title: 'Template12',),
 
               //Template7
               TemplateButton(
@@ -319,7 +319,7 @@ class _TemplateListState extends State<TemplateList> {
                   final pdf = await Template7.generateText();
                   Template7.openFile(pdf);
                 },
-                child: Text('Template7'),
+                title: 'template7',
               ),
               TemplateButton(
                 onPressed: () async {
@@ -328,7 +328,7 @@ class _TemplateListState extends State<TemplateList> {
                   final pdf = await Template14.generateText();
                   Template14.openFile(pdf);
                 },
-                child: Text('Template7'),
+                title: 'template14',
               ),
               //Template11
               TemplateButton(
@@ -366,7 +366,7 @@ class _TemplateListState extends State<TemplateList> {
                   );
                   Template11.openFile(pdf11);
                 },
-                child: Text('Template11'),
+                title: 'template11',
               ),
               //Template12
               TemplateButton(
@@ -414,7 +414,7 @@ class _TemplateListState extends State<TemplateList> {
                   );
                   Template12.openFile(pdf12);
                 },
-                child: Text('Template14'),
+                title: 'template12',
               ),
 
             TemplateButton(
@@ -425,6 +425,7 @@ class _TemplateListState extends State<TemplateList> {
                       '${prefs.getString('name')}',
                       '${prefs.getString('address')}',
                       '${prefs.getInt('phone')}',
+                      '${prefs.getString('linkedin')}',
                       '${prefs.getString('email')}',
                       "${prefs.getString('about')}",
                       "${prefs.getString('JobTitle1')}",
@@ -435,6 +436,10 @@ class _TemplateListState extends State<TemplateList> {
                       "${prefs.getString('CompName2')}",
                       "${prefs.getString('CompStartDate2')}",
                       "${prefs.getString('CompEndDate2')}",
+                    "${prefs.getString('JobTitle3')}",
+                    "${prefs.getString('CompName3')}",
+                    "${prefs.getString('CompStartDate3')}",
+                    "${prefs.getString('CompEndDate3')}",
                       '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
                       '${prefs.getString('Instname')}',
                       '${prefs.getString('course')}',
@@ -444,24 +449,27 @@ class _TemplateListState extends State<TemplateList> {
                       '${prefs.getString('course2')}',
                       '${prefs.getString('Eddate2')}',
                       '${prefs.getString('Summary2')}',
+                    '${prefs.getString('Summary3')}',
                       '${prefs.getString('ProjectTitle1')}',
                       '${prefs.getString('ProjectDesc1')}',
                       '${prefs.getString('ProjectTitle2')}',
-                      '${prefs.getString('ProjectDesc2')}'
+                    '${prefs.getString('cirtificate1')}',
+                      '${prefs.getString('ProjectDesc2')}',
+                    '${prefs.getString('cirtificate2')}',
+                    '${prefs.getString('lang1')}',
+                    '${prefs.getString('lang2')}',
+                    '${prefs.getString('lang3')}',
                   );
                   Template15.openFile(pdf);
                 },
-                child: Text('Template15'),
+              title: 'Template15',
               ),
           ],
         )),
-                  title: 'Template12',
+
                 ),
-              ],
+
             ),
-          ),
-        ),
-      ),
     );
   }
 }
