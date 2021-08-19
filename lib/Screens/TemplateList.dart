@@ -9,6 +9,7 @@ import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template5.dart';
 import 'package:resume/Templates/template6.dart';
 import 'package:resume/Templates/template7.dart';
+import 'package:resume/Templates/template13.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemplateList extends StatefulWidget {
@@ -63,7 +64,6 @@ class _TemplateListState extends State<TemplateList> {
                 },
                 child: Text('Template1'),
               ),
-
               //template2
               TemplateButton(
                   onPressed: () async {
@@ -98,7 +98,6 @@ class _TemplateListState extends State<TemplateList> {
                     PdfApi2.openFile(template2);
                   },
                   child: Text('Template2')),
-
               //Template 3
               TemplateButton(
                   onPressed: () async {
@@ -187,7 +186,6 @@ class _TemplateListState extends State<TemplateList> {
                     Template5.openFile(template5);
                   },
                   child: Text('Template5')),
-
               //Template6
               TemplateButton(
                   onPressed: () async {
@@ -302,6 +300,46 @@ class _TemplateListState extends State<TemplateList> {
                   Template12.openFile(pdf12);
                 },
                 child: Text('Template12'),
+              ),
+              //Template13
+              TemplateButton(
+                onPressed: () async {
+                  SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+                  final pdf13 = await Template13.generateTemplate(
+                    'James Miller',
+                    'Portland, MA',
+                    '123-456-789',
+                    'email@email.com',
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore',
+                    'IT Technician',
+                    'International Mobilities',
+                    'Oct 2015 - Apr 2006',
+                    [
+                      'Operate and maintain information systems',
+                      'Facilitating system utilization',
+                    ],
+                    'Birmingham',
+                    'IT Project Manager',
+                    'Telecommunicado Ltd',
+                    'May 2017 - Current',
+                    [
+                      'Lead of a technical staff',
+                      'Planning, procurement and execution of projects',
+                    ],
+                    'Birmingham',
+                    'Bournville School Secondary School',
+                    'Sept 1999 - May 2021',
+                    '10 GCSE\'s including Math(A), Business Studies(A), ICT(C)',
+                    'Bournville',
+                    'Washwood Health Technology College',
+                    'Jun.2015 - Jun 2017',
+                    'ICT(B), Maths(C), Biology(B)',
+                    'Washwood'
+                  );
+                  Template12.openFile(pdf13);
+                },
+                child: Text('Template13'),
               ),
             ],
           ),
