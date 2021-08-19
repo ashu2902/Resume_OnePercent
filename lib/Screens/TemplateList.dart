@@ -201,8 +201,30 @@ class _TemplateListState extends State<TemplateList> {
                     onPressed: () async {
                       SharedPreferences prefs =
                           await SharedPreferences.getInstance();
-                      final template6 =
-                          await Template6.generateTemplate("Ashutosh");
+                      final template6 = await Template6.generateTemplate(
+                        '${prefs.getString('name')}',
+                        "${prefs.getString('about')}",
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('CompName1')}',
+                        '${prefs.getString('CompStartDate1')}',
+                        '${prefs.getString('Summary1')}',
+                        '${prefs.getString('JobTitle2')}',
+                        '${prefs.getString('CompName2')}',
+                        '${prefs.getString('CompStartDate2')}',
+                        '${prefs.getString('Summary2')}',
+                        "${prefs.getString('course')}",
+                        '${prefs.getString('Instname')}',
+                        '${prefs.getString('Eddate1')}',
+                        "${prefs.getString('EdSummary1')}",
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
+                        '${prefs.getString('email')}',
+                        '${prefs.getString('Skill1')}',
+                        '${prefs.getString('Skill2')}',
+                        '${prefs.getString('Skill3')}',
+                        '${prefs.getString('Lang1')}',
+                        '${prefs.getString('Lang2')}',
+                      );
                       Template6.openFile(template6);
                     },
                     title: 'Template6'),
