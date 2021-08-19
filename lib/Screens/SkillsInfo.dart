@@ -11,6 +11,7 @@ class SkillsInfo extends StatefulWidget {
 Future<bool> saveData(skill1, skill2, skill3) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   prefs.setString("Skill1", skill1);
+
   prefs.setString("Skill2", skill2);
   prefs.setString("Skill3", skill3);
   // ignore: deprecated_member_use
