@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resume/Templates/Tamplate3.dart';
 import 'package:resume/Templates/template1.dart';
+import 'package:resume/Templates/template11.dart';
 import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template5.dart';
@@ -193,6 +194,18 @@ class _TemplateListState extends State<TemplateList> {
                   Template7.openFile(pdf7);
                 },
                 child: Text('Template7'),
+              ),
+            ),
+            //Template11
+            Container(
+              child: TextButton(
+                onPressed: () async{
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  final pdf11 = await Template11.generateTemplate();
+                  Template11.openFile(pdf11);
+                },
+                child: Text('Template11'),
               ),
             ),
           ],
