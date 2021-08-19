@@ -7,6 +7,7 @@ import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template5.dart';
 import 'package:resume/Templates/template6.dart';
 import 'package:resume/Templates/template7.dart';
+import 'package:resume/Templates/template8.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemplateList extends StatefulWidget {
@@ -196,6 +197,19 @@ class _TemplateListState extends State<TemplateList> {
                 child: Text('Template7'),
               ),
             ),
+
+            //template8
+            Container(
+              child: TextButton(
+                onPressed: () async {
+                  final pdf8 = await Template8.generateText8();
+                  Template8.openFile(pdf8);
+                },
+                child: Text('Template8'),
+              ),
+            ),
+
+            //template14
             Container(
               child: TextButton(
                 onPressed: () async {
