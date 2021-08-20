@@ -11,6 +11,7 @@ import 'package:resume/Templates/template5.dart';
 import 'package:resume/Templates/template6.dart';
 import 'package:resume/Templates/template7.dart';
 import 'package:resume/Templates/template8.dart';
+import 'package:resume/Templates/template9.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemplateList extends StatefulWidget {
@@ -285,7 +286,44 @@ class _TemplateListState extends State<TemplateList> {
                 }, title: 'Template8'
                 ),
                 //Template9
-
+               TemplateButton(onPressed: () async
+               {
+                 SharedPreferences prefs =
+                 await SharedPreferences.getInstance();
+                 final pdf = await Template9.generateText9(
+                     '${prefs.getString('name')}',
+                     '${prefs.getString('address')}',
+                     '${prefs.getString('contact_no')}',
+                     '${prefs.getString('mail_id')}',
+                     '${prefs.getString('professionalsummary')}',
+                     '${prefs.getString('skills')}',
+                     '${prefs.getString('professionaltitle1')}',
+                     '${prefs.getString('cduration1')}',
+                     '${prefs.getString('companyname1')}',
+                     '${prefs.getString('clocation1')}',
+                     '${prefs.getString('cdescription1')}',
+                     '${prefs.getString('professionaltitle2')}',
+                     '${prefs.getString('cduration2')}',
+                     '${prefs.getString('companyname2')}',
+                     '${prefs.getString('clocation2')}',
+                     '${prefs.getString('cdescription2')}',
+                     '${prefs.getString('professionaltitle3')}',
+                     '${prefs.getString('cduration3')}',
+                     '${prefs.getString('companyname3')}',
+                     '${prefs.getString('clocation3')}',
+                     '${prefs.getString('cdescription3')}',
+                     '${prefs.getString('schoolname1')}',
+                     '${prefs.getString('degree1')}',
+                     '${prefs.getString('sduration1')}',
+                     '${prefs.getString('sdescription1')}',
+                     '${prefs.getString('slocation1')}',
+                     '${prefs.getString('schoolname2')}',
+                     '${prefs.getString('degree2')}',
+                     '${prefs.getString('sduration2')}',
+                     '${prefs.getString('sdescription2')}',
+                     '${prefs.getString('slocation2')}');
+                 Template9.openFile(pdf);
+               }, title: 'Templates9'),
 
                 TemplateButton(
                     onPressed: () async {
