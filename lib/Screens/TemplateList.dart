@@ -235,42 +235,45 @@ class _TemplateListState extends State<TemplateList> {
                       SharedPreferences prefs =
                           await SharedPreferences.getInstance();
                       final pdf = await Template7.generateText(
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('email')}',
+                        '${prefs.getInt('phone')}',
+                        '${prefs.getString('address')}',
+                        [
+                          '${prefs.getString('Skill1')}',
+                          '${prefs.getString('Skill2')}',
+                          '${prefs.getString('Skill3')}',
+                        ],
+                        "${prefs.getString('course')}",
+                        '${prefs.getString('Instname')}',
+                        "${prefs.getString('EdLocation1')}",
+                        ['', '', '', ''], //hobbies
+                        "${prefs.getString('about')}",
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('CompName1')}',
+                        '${prefs.getString('CompStartDate1')}',
+                        '${prefs.getString('Summary1')}',
+                        '${prefs.getString('JobTitle2')}',
+                        '${prefs.getString('CompName2')}',
+                        '${prefs.getString('CompStartDate2')}',
+                        '${prefs.getString('Summary2')}',
+                        '${prefs.getString('ProjectTitle1')}',
                         '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        [],
-                        '',
-                        '',
-                        '',
-                        [],
-                        '',
-                        '',
-                        '',
-                        '',
-                        [],
-                        '',
-                        '',
-                        '',
-                        [],
-                        '',
-                        '',
-                        '',
+                        '${prefs.getString('ProjectDesc1')}',
                       );
                       Template7.openFile(pdf);
                     },
                     title: 'Template7',
                   ),
-
+                  //11
                   TemplateButton(
                     onPressed: () async {
                       SharedPreferences prefs =
                           await SharedPreferences.getInstance();
                       final pdf11 = await Template11.generateTemplate(
-                        'John Smith',
-                        '123 Address',
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('address')}',
                         '+91 123456789',
                         'email@email.com',
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididuntut labore et dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco',
@@ -349,7 +352,7 @@ class _TemplateListState extends State<TemplateList> {
                     },
                     title: 'Template12',
                   ),
-
+                  //14
                   TemplateButton(
                     onPressed: () async {
                       SharedPreferences prefs =
@@ -390,7 +393,7 @@ class _TemplateListState extends State<TemplateList> {
                     },
                     title: 'template14',
                   ),
-
+                  //15
                   TemplateButton(
                     onPressed: () async {
                       SharedPreferences prefs =
