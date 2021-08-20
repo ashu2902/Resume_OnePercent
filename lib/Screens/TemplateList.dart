@@ -5,6 +5,7 @@ import 'package:resume/Templates/template11.dart';
 import 'package:resume/Templates/template12.dart';
 import 'package:resume/Templates/template14.dart';
 import 'package:resume/Templates/template15.dart';
+import 'package:resume/Templates/template16.dart';
 import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template5.dart';
@@ -430,6 +431,39 @@ class _TemplateListState extends State<TemplateList> {
                       Template15.openFile(pdf);
                     },
                     title: 'Template15',
+                  ),
+                  //16
+                  TemplateButton(
+                    onPressed: () async {
+                      SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                      final pdf = await Template16.generateText(
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
+                        '${prefs.getString('email')}',
+                        '${prefs.getInt('about')}',
+                        '${prefs.getString('Instname')}',
+                        '${prefs.getString('course')}',
+                        '${prefs.getString('Eddate1')}',
+                        '${prefs.getString('Summary1')}',
+                        '${prefs.getString('Instname2')}',
+                        '${prefs.getString('course2')}',
+                        '${prefs.getString('Eddate2')}',
+                        '${prefs.getString('Summary2')}',
+                        "${prefs.getString('JobTitle1')}",
+                        "${prefs.getString('CompName1')}",
+                        "${prefs.getString('CompStartDate1')}",
+                        "${prefs.getString('CompEndDate1')}",
+                        "${prefs.getString('JobTitle2')}",
+                        "${prefs.getString('CompName2')}",
+                        "${prefs.getString('CompStartDate2')}",
+                        "${prefs.getString('CompEndDate2')}",
+                        '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
+                      );
+                      Template16.openFile(pdf);
+                    },
+                    title: 'Template16',
                   ),
                 ],
               )),
