@@ -37,7 +37,6 @@ class Template16 {
               mainAxisAlignment: pw.MainAxisAlignment.start,
               crossAxisAlignment: pw.CrossAxisAlignment.start,
               children: [
-            //Name
             pw.Container(
                 alignment: pw.Alignment.centerLeft,
                 child: pw.Text(name,
@@ -46,8 +45,6 @@ class Template16 {
                         fontWeight: pw.FontWeight.bold,
                         color: PdfColors.indigo900))),
             pw.SizedBox(height: 10),
-            //Address, Phone , Email
-
                   pw.Container(
                       child: pw.Row(children: [
                         pw.Container(
@@ -98,9 +95,7 @@ class Template16 {
             pw.Text('$jobTitle2, $organization2',
                 style: pw.TextStyle(
                     fontSize: 15,)),
-            //Date
             pw.Text('Date- $startdate2 to $enddate2'),
-            //Achievement or Responsibility
             pw.Container(
                 height: 30,
                 child:
