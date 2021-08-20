@@ -1,6 +1,4 @@
 import 'dart:io';
-
-import 'package:flutter/material.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -8,6 +6,7 @@ import 'package:pdf/widgets.dart' as pw;
 
 class Template15 {
   static Future<File> generateText(
+<<<<<<< HEAD
     String name,
     address,
     phone,
@@ -45,10 +44,41 @@ class Template15 {
     lang2,
     lang3,
   ) async {
+=======
+      String name,
+      address,
+      phone,
+      email,
+      jobTitle1,
+      organization1,
+      startdate1,
+      enddate1,
+      jobTitle2,
+      organization2,
+      startdate2,
+      enddate2,
+      skills,
+      instName1,
+      course1,
+      edDate1,
+      experienceAbout1,
+      instName2,
+      course2,
+      edDate2,
+      experienceAbout2,
+      projTitle1,
+      projectDesc1,
+      projTitle2,
+      projectDesc2,
+      lang1,
+      lang2,
+      ) async {
+>>>>>>> c8aee87205e1c061feaecccf4b64bba93381d162
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
           build: (context) => pw.Column(children: [
+<<<<<<< HEAD
                 //Name
                 pw.Container(
                     alignment: pw.Alignment.centerLeft,
@@ -57,6 +87,17 @@ class Template15 {
                 //Address, Phone , Email
                 pw.Container(
                     child: pw.Column(children: [
+=======
+            //Name
+            pw.Container(
+                alignment: pw.Alignment.centerLeft,
+                child: pw.Text(name, style: pw.TextStyle(fontSize: 30,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900))),
+            pw.SizedBox(height: 10),
+            //Address, Phone , Email
+            pw.Container(
+              child: pw.Column(
+                children: [
+>>>>>>> c8aee87205e1c061feaecccf4b64bba93381d162
                   pw.Container(
                       child: pw.Row(children: [
                     pw.Container(
@@ -67,6 +108,7 @@ class Template15 {
                   ])),
                   pw.Container(
                       child: pw.Row(children: [
+<<<<<<< HEAD
                     pw.SizedBox(width: 20),
                     pw.Container(child: pw.Text(address)),
                   ]))
@@ -88,6 +130,38 @@ class Template15 {
                                       pw.CrossAxisAlignment.start,
                                   children: [
                                     pw.Text('Experience',
+=======
+                        pw.SizedBox(width: 20),
+                        pw.Container(child: pw.Text(address)),
+                      ])
+                  )
+                ]
+              )
+                ),
+            pw.SizedBox(height: 30),
+
+            //Experience and Education
+            pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: pw.CrossAxisAlignment.start,
+                children: [
+                  //Experience,Skills
+                  pw.Expanded(
+                      child: pw.Container(
+                          alignment: pw.Alignment.centerLeft,
+                          child: pw.Column(
+                              mainAxisAlignment: pw.MainAxisAlignment.start,
+                              crossAxisAlignment:
+                              pw.CrossAxisAlignment.start,
+                              children: [
+                                 pw.Text('Experience',
+                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900)),
+                                pw.Container(
+                                    width: 200, child: pw.Divider(color: PdfColors.indigo900)),
+                                pw.Container(
+                                    child: pw.Text(
+                                        '$jobTitle1, $organization1',
+>>>>>>> c8aee87205e1c061feaecccf4b64bba93381d162
                                         style: pw.TextStyle(
                                             fontSize: 18,
                                             fontWeight: pw.FontWeight.bold)),
@@ -110,6 +184,7 @@ class Template15 {
                                             pw.Bullet(text: experienceAbout1)),
                                     pw.SizedBox(height: 30),
 
+<<<<<<< HEAD
                                     pw.Text('$jobTitle2, $organization2',
                                         style: pw.TextStyle(
                                             fontSize: 16,
@@ -168,6 +243,47 @@ class Template15 {
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
                                     pw.Text(course1), pw.SizedBox(height: 10),
+=======
+                                pw.Text('$jobTitle2, $organization2',
+                                    style: pw.TextStyle(
+                                        fontSize: 16,
+                                        color: PdfColors.blue300)),
+                                //Date
+                                pw.Text('Date- $startdate2 to $enddate2'),
+                                //Achievement or Responsibility
+                                pw.Container(
+                                    height: 51,
+                                    child:
+                                    pw.Bullet(text: experienceAbout2)),
+                                pw.SizedBox(height: 30),
+                                //Achievement or Responsibility
+
+                                //SKILLS
+                                pw.Text('Skill',
+                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900)),
+                                pw.Container(
+                                    width: 200, child: pw.Divider(color: PdfColors.indigo900)),
+                                pw.Text(skills),
+                              ]))),
+                  //Education, Projects,
+                  pw.Expanded(
+                      child: pw.Container(
+                          alignment: pw.Alignment.centerLeft,
+                          child: pw.Column(
+                              mainAxisAlignment: pw.MainAxisAlignment.start,
+                              crossAxisAlignment:
+                              pw.CrossAxisAlignment.start,
+                              children: [
+                                pw.Text('Education',
+                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900)),
+                                pw.Container(
+                                    width: 200, child: pw.Divider(color: PdfColors.indigo900)),
+                                pw.Text(instName1,
+                                    style: pw.TextStyle(
+                                        fontSize: 16,
+                                        color: PdfColors.blue300)),
+                                pw.Text(course1), pw.SizedBox(height: 10),
+>>>>>>> c8aee87205e1c061feaecccf4b64bba93381d162
 
                                     pw.Text('Date- $edDate1'),
                                     pw.SizedBox(height: 15),
@@ -179,6 +295,7 @@ class Template15 {
                                     pw.Text('Date- $edDate2'),
                                     pw.SizedBox(height: 30),
 
+<<<<<<< HEAD
                                     //Projects&Volunteer
                                     pw.Text('Projects',
                                         style: pw.TextStyle(
@@ -187,12 +304,21 @@ class Template15 {
                                     pw.Container(
                                         width: 200, child: pw.Divider()),
                                     pw.SizedBox(height: 20),
+=======
+                                //Projects&Volunteer
+                                pw.Text('Projects',
+                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900)),
+                                pw.Container(
+                                    width: 200, child: pw.Divider()),
+                                pw.SizedBox(height: 20),
+>>>>>>> c8aee87205e1c061feaecccf4b64bba93381d162
 
                                     pw.Text('$projTitle1',
                                         style: pw.TextStyle(
                                             fontSize: 16,
                                             color: PdfColors.blue300)),
 
+<<<<<<< HEAD
                                     //Achievement or Responsibility
                                     pw.Bullet(text: '$projectDesc1'),
                                     pw.SizedBox(height: 20),
@@ -222,6 +348,33 @@ class Template15 {
                                   ])))
                     ])
               ])),
+=======
+                                //Achievement or Responsibility
+                                pw.Bullet(text: '$projectDesc1'),
+                                pw.SizedBox(height: 20),
+                                pw.Text('$projTitle2',
+                                    style: pw.TextStyle(
+                                        fontSize: 16,
+                                        color: PdfColors.blue300)),
+                                pw.Bullet(text: '$projectDesc2'),
+                                pw.Container(
+                                    child: pw.Text(
+                                      'Languages',
+                                        style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900),
+                                    )),
+                                pw.Container(
+                                    width: 200, child: pw.Divider(color: PdfColors.indigo900)),
+                                pw.SizedBox(height: 10),
+                                pw.Container(
+                                  child: pw.Text(
+                                    '$lang1' + '\n' + '$lang2',
+                                      style: pw.TextStyle(fontSize: 16),
+                                  ),
+                                ),
+                              ])))
+                ])
+          ])),
+>>>>>>> c8aee87205e1c061feaecccf4b64bba93381d162
     );
 
     return saveDocument(name: 'my_resume.pdf', pdf: pdf);
