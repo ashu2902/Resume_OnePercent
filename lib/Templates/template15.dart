@@ -94,17 +94,6 @@ class Template15 {
                                         child: pw.Text(
                                             '$jobTitle1, $organization1',
                                             style: pw.TextStyle(
-                                                fontSize: 18,
-                                                fontWeight:
-                                                    pw.FontWeight.bold))),
-                                    pw.Container(
-                                        width: 200,
-                                        child: pw.Divider(
-                                            color: PdfColors.indigo900)),
-                                    pw.Container(
-                                        child: pw.Text(
-                                            '$jobTitle1, $organization1',
-                                            style: pw.TextStyle(
                                                 fontSize: 16,
                                                 color: PdfColors.blue300))),
                                     //Date
