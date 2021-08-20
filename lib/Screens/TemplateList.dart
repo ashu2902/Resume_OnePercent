@@ -383,7 +383,6 @@ class _TemplateListState extends State<TemplateList> {
                     '${prefs.getString('name')}',
                     '${prefs.getString('address')}',
                     '${prefs.getInt('phone')}',
-                    '${prefs.getString('linkedin')}',
                     '${prefs.getString('email')}',
                     "${prefs.getString('about')}",
                     "${prefs.getString('JobTitle1')}",
