@@ -1,19 +1,15 @@
 import 'dart:io';
-
-import 'package:flutter/material.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
-
+//modified
 class Template15 {
   static Future<File> generateText(
       String name,
       address,
       phone,
-      linkedin,
       email,
-      about,
       jobTitle1,
       organization1,
       startdate1,
@@ -22,10 +18,6 @@ class Template15 {
       organization2,
       startdate2,
       enddate2,
-      jobTitle3,
-      organization3,
-      startdate3,
-      enddate3,
       skills,
       instName1,
       course1,
@@ -35,16 +27,12 @@ class Template15 {
       course2,
       edDate2,
       experienceAbout2,
-      experienceAbout3,
       projTitle1,
       projectDesc1,
       projTitle2,
       projectDesc2,
-      cirtificate1,
-      cirtificate2,
       lang1,
       lang2,
-      lang3,
       ) async {
     final pdf = pw.Document();
     pdf.addPage(
@@ -53,7 +41,7 @@ class Template15 {
             //Name
             pw.Container(
                 alignment: pw.Alignment.centerLeft,
-                child: pw.Text(name, style: pw.TextStyle(fontSize: 30))),
+                child: pw.Text(name, style: pw.TextStyle(fontSize: 30,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900))),
             pw.SizedBox(height: 10),
             //Address, Phone , Email
             pw.Container(
@@ -70,7 +58,6 @@ class Template15 {
                   ),
                   pw.Container(
                       child: pw.Row(children: [
-                        pw.Container(child: pw.Text(linkedin)),
                         pw.SizedBox(width: 20),
                         pw.Container(child: pw.Text(address)),
                       ])
@@ -94,8 +81,8 @@ class Template15 {
                               crossAxisAlignment:
                               pw.CrossAxisAlignment.start,
                               children: [
-                                pw.Text('Experience',
-                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold)),
+                                 pw.Text('Experience',
+                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900)),
                                 pw.Container(
                                     width: 200, child: pw.Divider(color: PdfColors.indigo900)),
                                 pw.Container(
@@ -125,22 +112,11 @@ class Template15 {
                                     child:
                                     pw.Bullet(text: experienceAbout2)),
                                 pw.SizedBox(height: 30),
-                                pw.Text('$jobTitle3, $organization3',
-                                    style: pw.TextStyle(
-                                        fontSize: 16,
-                                        color: PdfColors.blue300)),
-                                //Date
-                                pw.Text('Date- $startdate3 to $enddate3'),
                                 //Achievement or Responsibility
-                                pw.Container(
-                                    height: 51,
-                                    child:
-                                    pw.Bullet(text: experienceAbout3)),
-                                pw.SizedBox(height: 30),
 
                                 //SKILLS
-                                pw.Text('Industry Experience',
-                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold)),
+                                pw.Text('Skill',
+                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900)),
                                 pw.Container(
                                     width: 200, child: pw.Divider(color: PdfColors.indigo900)),
                                 pw.Text(skills),
@@ -155,7 +131,7 @@ class Template15 {
                               pw.CrossAxisAlignment.start,
                               children: [
                                 pw.Text('Education',
-                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold)),
+                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900)),
                                 pw.Container(
                                     width: 200, child: pw.Divider(color: PdfColors.indigo900)),
                                 pw.Text(instName1,
@@ -176,7 +152,7 @@ class Template15 {
 
                                 //Projects&Volunteer
                                 pw.Text('Projects',
-                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold)),
+                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900)),
                                 pw.Container(
                                     width: 200, child: pw.Divider()),
                                 pw.SizedBox(height: 20),
@@ -194,20 +170,20 @@ class Template15 {
                                         fontSize: 16,
                                         color: PdfColors.blue300)),
                                 pw.Bullet(text: '$projectDesc2'),
-                                pw.Text('Cirtificates',
-                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold)),
                                 pw.Container(
-                                    width: 200, child: pw.Divider()),
-                                pw.SizedBox(height: 20),
-                                pw.Bullet(text: '$cirtificate1'),
-                                pw.Bullet(text: '$cirtificate2'),
-                                pw.Text('Languages',
-                                    style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold)),
+                                    child: pw.Text(
+                                      'Languages',
+                                        style: pw.TextStyle(fontSize: 18,fontWeight: pw.FontWeight.bold,color: PdfColors.indigo900),
+                                    )),
                                 pw.Container(
-                                    width: 200, child: pw.Divider()),
-                                pw.Bullet(text: '$lang1'),
-                                pw.Bullet(text: '$lang2'),
-                                pw.Bullet(text: '$lang3'),
+                                    width: 200, child: pw.Divider(color: PdfColors.indigo900)),
+                                pw.SizedBox(height: 10),
+                                pw.Container(
+                                  child: pw.Text(
+                                    '$lang1' + '\n' + '$lang2',
+                                      style: pw.TextStyle(fontSize: 16),
+                                  ),
+                                ),
                               ])))
                 ])
           ])),
