@@ -245,14 +245,14 @@ class _TemplateListState extends State<TemplateList> {
                       SharedPreferences prefs =
                           await SharedPreferences.getInstance();
                       final pdf11 = await Template11.generateTemplate(
-                        'John Smith',
-                        '123 Address',
-                        '+91 123456789',
-                        'email@email.com',
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididuntut labore et dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco',
-                        'Redford & Sons, Boston, MA',
-                        'Administrator Assistant',
-                        'Sept 2015 - present',
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
+                        '${prefs.getString('email')}',
+                        "${prefs.getString('about')}",
+                        '${prefs.getString('CompName1')}',
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('CompStartDate1')}',
                         [
                           'Notable Achievement/Responsibility',
                           'Notable Achievement/Responsibility',
