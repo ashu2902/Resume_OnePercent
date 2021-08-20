@@ -5,6 +5,29 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 class Template7 {
   static Future<File> generateText(
+      String name,
+      String jobTitle,
+      String email,
+      String phoneNo,
+      String address,
+      String linkedIn,
+      List<String> skills,
+      String degree,
+      String institution,
+      String location,
+      List<String> hobbies,
+      String summary,
+      String jobTitle1,
+      String company1,
+      String date1,
+      List<String> notableAchievements1,
+      String jobPosition2,
+      String company2,
+      String date2,
+      List<String> notableAchievements2,
+      String projectTitle,
+      String projectDate,
+      String projectNotableAchievement,
       ) async {
     final pdf = pw.Document();
     pdf.addPage(
@@ -22,7 +45,7 @@ class Template7 {
                     alignment: pw.Alignment.topLeft,
                     child: pw.Column(
                       children: [
-                        pw.Text("    Andrew Kevin",
+                        pw.Text(name,
                             style: pw.TextStyle(
                                 fontSize: 30,
                                 fontWeight: pw.FontWeight.bold,
@@ -87,8 +110,7 @@ class Template7 {
                           pw.SizedBox(height: 5),
                           pw.Container(
                               child: pw.Text(
-                                'Communication' + '\n' + 'Problem Solving' + '\n' + 'Adaptebility' + '\n' + 'Production knowledge',
-
+                                skills[0] + '\n' + skills[1] + '\n' + skills[2] + '\n' + skills[3],
                               )
                           ),
                           //Project Management
@@ -106,7 +128,7 @@ class Template7 {
                           pw.SizedBox(height: 5),
                           pw.Container(
                             child: pw.Text(
-                              'MBA(HR)' + '\n' + 'Univercity of California' + '\n' + 'Berkeley,CA',
+                              degree + '\n' + institution + '\n' + location,
 
                             ),
                           ),
@@ -125,8 +147,7 @@ class Template7 {
                           pw.SizedBox(height: 10),
                           pw.Container(
                             child: pw.Text(
-                              'Travelling' + '\n' + 'Reading Books'+ '\n' +'Cooking'+ '\n' +'Driving',
-
+                              hobbies[0] + '\n' + hobbies[1] + '\n' + hobbies[2] + '\n' + hobbies[3],
                             ),
                           ),
                         ]
@@ -156,12 +177,7 @@ class Template7 {
                          pw.Container(
                           width: 300,
                           child: pw.Text(
-                            'Lorem ipsum dolor sit amet, '+
-                                'consectetur adipiscing elit, '+
-                                'sed do eiusmod tempor incididunt '+
-                                'ut labore et dolore magna aliqua. '+
-                                'Ut enim ad minim veniam, quis nostrud',
-
+                            summary,
                             maxLines: 5,
                           ),
                         ),
@@ -182,11 +198,11 @@ class Template7 {
                           child:  pw.Container(
                             width: 300,
                             child: pw.Text(
-                              'Sample Title - 1' +
+                              jobTitle1 +
                                   '\n' +
-                                  'Sample Organization - 1' +
+                                  company1 +
                                   '\n' +
-                                  'Date - 01-02-20XX',
+                                  date1,
 
                             ),
                           ),
@@ -194,21 +210,21 @@ class Template7 {
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements1[0],
 
                           ),
                         ),
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements1[1],
 
                           ),
                         ),
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements1[2],
 
                           ),
                         ),
@@ -262,15 +278,14 @@ class Template7 {
                         pw.SizedBox(height: 10),
                         pw.Container(
                           child: pw.Text(
-                            'Associate of Computer Science - Santa Maria University'
-                                + '\n' + 'Sep 2012 - Sep2016',
+                            projectTitle
+                                + '\n' + projectDate,
 
                           ),
                         ),
                         pw.Container(
                             child: pw.Text(
-                              'Graduated with highest honor',
-
+                              projectNotableAchievement,
                             )
                         ),
                       ],

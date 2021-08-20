@@ -7,6 +7,36 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 class Template14 {
   static Future<File> generateText(
+      String firstName,
+      String lastName,
+      String currentJobTitle,
+      String addressCity,
+      String addressCountry,
+      String phoneNo,
+      String website,
+      String email,
+      List<String> expertise,
+      String awardName,
+      String awardCategory,
+      String awardOrganization,
+      String awardDate,
+      String facebook,
+      String linkedIn,
+      String personalStatement,
+      List<String> jobTitles,
+      List<String> jobCompanies,
+      List<String> jobDates,
+      List<String> notableAchievements1, //for company 1
+      List<String> notableAchievements2, //for company 2
+      List<String> notableAchievements3, //for company 3
+      String degree,
+      String eduDate1,
+      String institution,
+      String educationNotableAchievement1,
+      String course,
+      String eduDate2,
+      String institution2,
+      String educationNotableAchievement2,
       ) async {
     final pdf = pw.Document();
     pdf.addPage(
@@ -29,7 +59,7 @@ class Template14 {
                              pw.Container(
                                child: pw.Column(
                                  children: [
-                                   pw.Text('PAUL'+'\n' +'JOHNSON',
+                                   pw.Text(firstName.toUpperCase() +'\n' + lastName.toUpperCase(),
                                        style: pw.TextStyle(
                                            fontSize: 30,
                                            fontWeight: pw.FontWeight.bold,
@@ -39,7 +69,7 @@ class Template14 {
                                    pw.SizedBox(
                                      height: 10
                                    ),
-                                   pw.Text("CREATIVE DIRECTOR",
+                                   pw.Text(currentJobTitle.toUpperCase(),
                                      style: pw.TextStyle(
                                          fontSize: 15,
                                          color: PdfColors.black),)
@@ -59,7 +89,7 @@ class Template14 {
                              pw.SizedBox(height: 10),
                              pw.Container(
                                child: pw.Text(
-                                 '555 Street City/Town'+'\n'+'State/Country555',
+                                 addressCity +'\n'+ addressCountry,
                                  style: pw.TextStyle(fontWeight: pw.FontWeight.bold)
                                ),
                              ),
@@ -67,11 +97,11 @@ class Template14 {
                              pw.Container(
 
                                  child: pw.Text(
-                                  '00 399 399 9949' +'\n'+'www.domainname.com'
-                                 )),
+                                  phoneNo +'\n'+ website,
+                                 ),),
                              pw.Container(
                                child: pw.Text(
-                                 'example@example.com',
+                                 email,
                                ),
                              ),
                              pw.SizedBox(height: 30),
@@ -87,19 +117,19 @@ class Template14 {
                              pw.SizedBox(height: 10),
                              pw.Container(
                                  child: pw.Text(
-                                   'Resources Management' +
+                                   expertise[0] +
                                        '\n' +
-                                       'Public Relation' +
+                                       expertise[1] +
                                        '\n' +
-                                       'Team Leadership' +
+                                       expertise[2] +
                                        '\n' +
-                                       'Socialmedia Marketing'
+                                       expertise[3] +
                                            '\n' +
-                                       'It Application'
+                                 expertise[4] +
                                            '\n' +
-                                       'Online marketing'
+                                 expertise[5] +
                                            '\n' +
-                                       'Bussiness System',
+                                 expertise[6],
 
                                  )),
                              //Project Management
@@ -116,13 +146,13 @@ class Template14 {
                              pw.SizedBox(height: 10),
                              pw.Container(
                                child: pw.Text(
-                                   'Creative Award',
+                                   awardName,
                                    style: pw.TextStyle(fontWeight: pw.FontWeight.bold)
                                ),
                              ),
                              pw.Container(
                                child: pw.Text(
-                                 'Categorey' + '\n' + 'Company/Organization' + '\n' + '2021',
+                                 awardCategory + '\n' + awardOrganization + '\n' + awardDate,
 
                                ),
                              ),
@@ -140,7 +170,7 @@ class Template14 {
                              pw.SizedBox(height: 10),
                              pw.Container(
                                child: pw.Text(
-                                 'Linkedin' + '\n' + 'Facebook'
+                                 linkedIn + '\n' + facebook
                                    ,style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
                                ),
                              ),
@@ -172,11 +202,7 @@ class Template14 {
                         pw.Container(
                           width: 300,
                           child: pw.Text(
-                            '" Lorem ipsum dolor sit amet, '+
-                                'consectetur adipiscing elit, '+
-                                'sed do eiusmod tempor incididunt '+
-                                'ut labore et dolore magna aliqua. '+
-                                'Ut enim ad minim veniam, quis nostrud',
+                            personalStatement,
                           ),
                         ),
                         pw.SizedBox(height: 30),
@@ -196,11 +222,11 @@ class Template14 {
                           child:  pw.Container(
                             width: 300,
                             child: pw.Text(
-                              'Sample Title - 1' +
+                              jobTitles[0] +
                                   '\n' +
-                                  'Sample Organization - 1' +
+                                  jobCompanies[0] +
                                   '\n' +
-                                  'Date - 01-02-20XX',
+                                  jobDates[0],
                               style: pw.TextStyle(
                                 fontWeight: pw.FontWeight.bold,)
                             ),
@@ -209,21 +235,21 @@ class Template14 {
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements1[0],
 
                           ),
                         ),
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements1[1],
 
                           ),
                         ),
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements1[2],
 
                           ),
                         ),
@@ -232,11 +258,11 @@ class Template14 {
                           child:  pw.Container(
                             width: 300,
                             child: pw.Text(
-                              'Sample Title - 2' +
+                              jobTitles[1] +
                                   '\n' +
-                                  'Sample Organization - 2' +
+                                  jobCompanies[1] +
                                   '\n' +
-                                  'Date - 01-02-20XX',
+                                  jobDates[1],
                                 style: pw.TextStyle(
                                   fontWeight: pw.FontWeight.bold,)
                             ),
@@ -245,21 +271,21 @@ class Template14 {
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements2[0],
 
                           ),
                         ),
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements2[1],
 
                           ),
                         ),
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements2[2],
 
                           ),
                         ),
@@ -270,11 +296,11 @@ class Template14 {
                           child:  pw.Container(
                             width: 300,
                             child: pw.Text(
-                                'Sample Title - 3' +
+                                jobTitles[2] +
                                     '\n' +
-                                    'Sample Organization - 3' +
+                                    jobCompanies[2] +
                                     '\n' +
-                                    'Date - 01-02-20XX',
+                                    jobDates[2],
                                 style: pw.TextStyle(
                                   fontWeight: pw.FontWeight.bold,)
                             ),
@@ -283,21 +309,21 @@ class Template14 {
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements3[0],
 
                           ),
                         ),
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements3[1],
 
                           ),
                         ),
                         pw.Container(
                           child: pw.Bullet(
                             text:
-                            'Notable Achievement/Responsibility',
+                            notableAchievements3[2],
 
                           ),
                         ),
@@ -316,38 +342,38 @@ class Template14 {
                         pw.SizedBox(height: 10),
                         pw.Container(
                           child: pw.Text(
-                            'Bachelor Graphic Design'
-                                + '\n' + 'Sep 2012 - Sep2016',
+                            degree
+                                + '\n' + eduDate1,
                             style: pw.TextStyle(fontWeight: pw.FontWeight.bold)
                           ),
                         ),
                         pw.Container(
                             child: pw.Text(
-                              'University of Place',
+                              institution,
                             )
                         ),
                         pw.Container(
                             child: pw.Text(
-                              'Dummy is evers since the when unknown printer',
+                              educationNotableAchievement1,
 
                             )
                         ),
                         pw.SizedBox(height: 10),
                         pw.Container(
                           child: pw.Text(
-                              'Course Studis'
-                                  + '\n' + 'Sep 2010',
+                              course
+                                  + '\n' + eduDate2,
                               style: pw.TextStyle(fontWeight: pw.FontWeight.bold)
                           ),
                         ),
                         pw.Container(
                             child: pw.Text(
-                              'Inatitution of Goverment',
+                              institution2,
                             )
                         ),
                         pw.Container(
                             child: pw.Text(
-                              'gallery type and print',
+                              educationNotableAchievement2,
 
                             )
                         ),

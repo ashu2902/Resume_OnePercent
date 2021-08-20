@@ -232,7 +232,39 @@ class _TemplateListState extends State<TemplateList> {
                 onPressed: () async {
                   SharedPreferences prefs =
                       await SharedPreferences.getInstance();
-                  final pdf = await Template7.generateText();
+                  final pdf = await Template7.generateText(
+                      '    Andrew Kevin',
+                      '  Customer Service',
+                      'info@example.com',
+                      '1-202-505-0135',
+                      'New York, US',
+                      'linkedin.com',
+                      ['Communication', 'Problem Solving', 'Adaptebility', 'Production Knowledge'],
+                      'MBA(HR)',
+                      'University of California',
+                      'Berkeley,CA',
+                      ['Travelling', 'Reading Books', 'Cooking', 'Driving'],
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
+                      'Sample Title - 1',
+                      'Sample Organization - 1',
+                      'Date - 01-02-20XX',
+                      [
+                        'Notable Achievement/Responsibility',
+                        'Notable Achievement/Responsibility',
+                        'Notable Achievement/Responsibility'
+                      ],
+                      'Sample Title - 2',
+                      'Sample Organization - 2',
+                      'Date - 01-02-20XX',
+                      [
+                        'Notable Achievement/Responsibility',
+                        'Notable Achievement/Responsibility',
+                        'Notable Achievement/Responsibility'
+                      ],
+                      'Associate of Computer Science - Santa Maria University',
+                      'Sep 2012 - Sep2016',
+                      'Graduated with highest honor'
+                  );
                   Template7.openFile(pdf);
                 },
                 title: 'Template7',
@@ -369,7 +401,70 @@ class _TemplateListState extends State<TemplateList> {
                 onPressed: () async {
                   SharedPreferences prefs =
                       await SharedPreferences.getInstance();
-                  final pdf = await Template14.generateText();
+                  final pdf = await Template14.generateText(
+                      'paul',
+                      'johnson',
+                      'creative director',
+                      '555 Street City/Town',
+                      'State/Country555',
+                      '00 399 399 9949',
+                      'www.domainname.com',
+                      'email@email.com',
+                      [
+                        'Resources Management',
+                        'Public Relation',
+                        'Team Leadership',
+                        'Social Media Marketing',
+                        'IT Application',
+                        'Online Marketing',
+                        'Business System',
+                      ],
+                      'Creative Award',
+                      'Category',
+                      'Company/Organization',
+                      '2021',
+                      'LinkedIn',
+                      'Facebook',
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+                      [
+                        'Sample Title - 1',
+                        'Sample Title - 2',
+                        'Sample Title - 3'
+                      ],
+                      [
+                        'Sample Organization - 1',
+                        'Sample Organization - 2',
+                        'Sample Organization - 3',
+                      ],
+                      [
+                        'Date - 01-02-20XX',
+                        'Date - 01-02-20XX',
+                        'Date - 01-02-20XX',
+                      ],
+                      [
+                        'Notable Achievement/Responsibility',
+                        'Notable Achievement/Responsibility',
+                        'Notable Achievement/Responsibility',
+                      ],
+                      [
+                        'Notable Achievement/Responsibility',
+                        'Notable Achievement/Responsibility',
+                        'Notable Achievement/Responsibility',
+                      ],
+                      [
+                        'Notable Achievement/Responsibility',
+                        'Notable Achievement/Responsibility',
+                        'Notable Achievement/Responsibility',
+                      ],
+                      'Bachelor Graphic Design',
+                      'Sep 2012 - Sep2016',
+                      'University of Place',
+                      'Dummy is evers since the when unknown printer',
+                      'Course Studies',
+                      'Sep 2010',
+                      'Institution of Goverment',
+                      'gallery type and print',
+                  );
                   Template14.openFile(pdf);
                 },
                 title: 'template14',
