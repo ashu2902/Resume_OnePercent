@@ -15,7 +15,6 @@ class Template7 {
     String degree,
     String institution,
     String location,
-    var hobbies,
     String summary,
     String jobTitle1,
     String company1,
@@ -26,7 +25,6 @@ class Template7 {
     String date2,
     notableAchievements2,
     String projectTitle,
-    String projectDate,
     String projectNotableAchievement,
   ) async {
     final pdf = pw.Document();
@@ -204,7 +202,7 @@ class Template7 {
                                   pw.SizedBox(height: 10),
                                   pw.Container(
                                     child: pw.Text(
-                                      projectTitle + '\n' + projectDate,
+                                      projectTitle,
                                     ),
                                   ),
                                   pw.Container(

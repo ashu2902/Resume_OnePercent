@@ -4,6 +4,7 @@ import 'package:resume/Templates/template1.dart';
 import 'package:resume/Templates/template11.dart';
 import 'package:resume/Templates/template12.dart';
 import 'package:resume/Templates/template14.dart';
+import 'package:resume/Templates/template15.dart';
 import 'package:resume/Templates/template16.dart';
 import 'package:resume/Templates/template17.dart';
 import 'package:resume/Templates/template18.dart';
@@ -437,42 +438,46 @@ class _TemplateListState extends State<TemplateList> {
                     onPressed: () async {
                       SharedPreferences prefs =
                           await SharedPreferences.getInstance();
-                      final pdf = await Template14.generateText(
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        [],
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        [],
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                      );
-                      Template14.openFile(pdf);
                     },
                     title: 'template14',
                   ),
+                  //15
+                  TemplateButton(
+                      onPressed: () async {
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        final pdf = await Template15.generateText(
+                          '${prefs.getString('name')}',
+                          '${prefs.getString('address')}',
+                          '${prefs.getInt('phone')}',
+                          '${prefs.getString('email')}',
+                          "${prefs.getString('JobTitle1')}",
+                          "${prefs.getString('CompName1')}",
+                          "${prefs.getString('CompStartDate1')}",
+                          "${prefs.getString('CompEndDate1')}",
+                          "${prefs.getString('JobTitle2')}",
+                          "${prefs.getString('CompName2')}",
+                          "${prefs.getString('CompStartDate2')}",
+                          "${prefs.getString('CompEndDate2')}",
+                          '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
+                          '${prefs.getString('Instname')}',
+                          '${prefs.getString('course')}',
+                          '${prefs.getString('Eddate1')}',
+                          '${prefs.getString('Summary1')}',
+                          '${prefs.getString('Instname2')}',
+                          '${prefs.getString('course2')}',
+                          '${prefs.getString('Eddate2')}',
+                          '${prefs.getString('Summary2')}',
+                          '${prefs.getString('ProjectTitle1')}',
+                          '${prefs.getString('ProjectDesc1')}',
+                          '${prefs.getString('ProjectTitle2')}',
+                          '${prefs.getString('ProjectDesc2')}',
+                          '${prefs.getString('Lang1')}',
+                          '${prefs.getString('Lang2')}',
+                        );
+                        Template15.openFile(pdf);
+                      },
+                      title: 'Template:15'),
 
                   //16
                   TemplateButton(
