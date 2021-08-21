@@ -48,7 +48,7 @@ class Template5 {
                                   style: pw.TextStyle(
                                       fontWeight: pw.FontWeight.bold))),
                           pw.Container(
-                              width: 50, child: pw.Text('Address:- $address,')),
+                              width: 120, child: pw.Text('Address:- $address,')),
                           pw.Row(children: [
                             pw.Container(
                                 child: pw.Text('Mobile No:- ',

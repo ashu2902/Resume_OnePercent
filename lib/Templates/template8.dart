@@ -8,27 +8,24 @@ import 'package:pdf/widgets.dart' as pw;
 class Template8 {
   static Future<File> generateText8(
       name,
-      surename,
-      title,
       address,
       contactNumber,
       gmail,
-      addSkills,
+      addSkills1,
+      addSkills2,
+      addSkills3,
       companyName1,
       jobTitle1,
-      jduration1,
+      jstartdate1,
+      jenddate1,
       clocation1,
       jdescription1,
       companyName2,
       jobTitle2,
-      jduration2,
+      jsdate2,
+      jsend2,
       clocation2,
       jdescription2,
-      companyName3,
-      jobTitle3,
-      jduration3,
-      clocation3,
-      jdescription3,
       schoolName1,
       sdegree1,
       sduration1,
@@ -39,7 +36,10 @@ class Template8 {
       sduration2,
       slocation2,
       sdescription2,
-      awardsDescription
+      projecttitle1,
+      projectDescription1,
+      projecttitle2,
+      projectDescription2,
       ) async {
     final pdf8 = pw.Document();
     pdf8.addPage(pw.Page(
@@ -61,21 +61,16 @@ class Template8 {
                                   child: pw.Column(
                                       crossAxisAlignment: pw.CrossAxisAlignment.start,
                                       children: [
-                                        pw.Text('$name'+'\n' +'$surename',
+                                        pw.Text('$name',
                                             style: pw.TextStyle(
                                                 fontSize: 30,
                                                 fontWeight: pw.FontWeight.bold,
                                                 color: PdfColors.black
                                             )),
                                         pw.SizedBox(height: 5),
-                                        pw.Text("$title",
-                                          style: pw.TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: pw.FontWeight.bold,
-                                              color: PdfColors.deepOrange),)
-                                      ])
+                                        ])
                               ),
-                              pw.SizedBox(height: 30),
+                              pw.SizedBox(height: 85),
                               pw.Container(width: 15, child: pw.Divider(thickness: 2)),
                               pw.Container(
                                 child: pw.Text('Skills',style: pw.TextStyle(
@@ -93,7 +88,7 @@ class Template8 {
                                     color: PdfColors.black) ),
                               ),
                               //Education
-                              pw.SizedBox(height: 170),
+                              pw.SizedBox(height: 115),
                               pw.Container(width: 15, child: pw.Divider(thickness: 2)),
                               pw.Container(
                                 child: pw.Text('Education',style: pw.TextStyle(
@@ -105,7 +100,7 @@ class Template8 {
                               pw.SizedBox(height: 115),
                               pw.Container(width: 15, child: pw.Divider(thickness: 2)),
                               pw.Container(
-                                child: pw.Text('Awards',style: pw.TextStyle(
+                                child: pw.Text('Projects',style: pw.TextStyle(
                                     fontSize: 15,
                                     fontWeight: pw.FontWeight.bold,
                                     color: PdfColors.black) ),
@@ -129,7 +124,7 @@ class Template8 {
                       pw.Container(width: double.infinity, child: pw.Divider(thickness: 3)),
                       pw.Container(
                         child: pw.Text(
-                            '$name+$surename',style: pw.TextStyle(fontSize: 15,
+                            '$name',style: pw.TextStyle(fontSize: 15,
                             fontWeight: pw.FontWeight.bold,
                             color: PdfColors.black)
                         ),
@@ -149,9 +144,14 @@ class Template8 {
                       pw.SizedBox(height: 34),
                       pw.Container(width: double.infinity, child: pw.Divider(thickness: 2)),
                       pw.Container(
-                        child:  pw.Container(
-                          width: 300,
-                          child: pw.Text('$addSkills'),
+                        child:  pw.Row(children: [
+                          pw.Text('$addSkills1,'),
+                          pw.SizedBox(width: 5),
+                          pw.Text('$addSkills2,'),
+                          pw.SizedBox(width: 5),
+                          pw.Text('$addSkills3'),
+                        ],
+
                         ),
                       ),
                       pw.SizedBox(height: 32),
@@ -166,7 +166,7 @@ class Template8 {
                         ),
                       ),
 
-                      pw.Text('$jduration1,$clocation1',style: pw.TextStyle(color: PdfColors.grey)),
+                      pw.Text('$jstartdate1-$jenddate1,$clocation1',style: pw.TextStyle(color: PdfColors.grey)),
                       pw.SizedBox(height: 5),
                       pw.Container(
                         child:  pw.Container(
@@ -183,25 +183,12 @@ class Template8 {
                               style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                         ),
                       ),
-                      pw.Text('$jduration2,$clocation2',style: pw.TextStyle(color: PdfColors.grey)),
+                      pw.Text('$jsdate2-$jsend2,$clocation2',style: pw.TextStyle(color: PdfColors.grey)),
                       pw.SizedBox(height: 5),
                       pw.Container(
                         child:  pw.Container(
                           width: 300,
                           child: pw.Text('$jdescription2'),
-                        ),
-                      ),
-                      pw.SizedBox(height: 12),
-                      // Company3
-                      pw.Text('$companyName3 / $jobTitle3',
-                              style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
-
-                      pw.Text('$jduration3,$clocation3',style: pw.TextStyle(color: PdfColors.grey)),
-                      pw.SizedBox(height: 5),
-                      pw.Container(
-                        child:  pw.Container(
-                          width: 300,
-                          child: pw.Text('$jdescription3'),
                         ),
                       ),
                       pw.SizedBox(height: 20),
@@ -227,10 +214,14 @@ class Template8 {
                         child: pw.Text('$sdescription2'),
                       ),
                       pw.SizedBox(height: 20),
-                      //Awards info
+                      //project info
                       pw.Container(width: double.infinity, child: pw.Divider(thickness: 2)),
                       pw.SizedBox(height: 5),
-                      pw.Text('$awardsDescription'),
+                      pw.Text('$projecttitle1',style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
+                      pw.Text('$projectDescription1'),
+                      pw.SizedBox(height: 5),
+                      pw.Text('$projecttitle2',style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
+                      pw.Text('$projectDescription2'),
                     ],
                   ),))
           ]
