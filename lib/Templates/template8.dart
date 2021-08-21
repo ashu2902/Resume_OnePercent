@@ -9,8 +9,8 @@ class Template8 {
   static Future<File> generateText8(
       name,
       title,
-      address,
       contactNumber,
+      address,
       gmail,
       addSkills,
       companyName1,

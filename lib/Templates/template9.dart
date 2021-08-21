@@ -9,168 +9,139 @@ class Template9 {
   static Future<File> generateText9(
     name,
     address,
-    contact_no,
-    mail_id,
-    professionalsummary,
-    skills,
-    professionaltitle1,
-    cduration1,
-    companyname1,
-    clocation1,
-    cdescription1,
-    professionaltitle2,
-    cduration2,
-    companyname2,
-    clocation2,
-    cdescription2,
-    professionaltitle3,
-    cduration3,
-    companyname3,
-    clocation3,
-    cdescription3,
-    schoolname1,
-    degree1,
-    sduration1,
-    sdescription1,
-    slocation1,
-    schoolname2,
-    degree2,
-    sduration2,
-    sdescription2,
-    slocation2,
+    phone,
+    email,
+    About,
+    Skill1,
+    Skill2,
+    Skill3,
+    JobTitle1,
+    CompStartDate1,
+    CompEndDate1,
+    CompName1,
+    CompLocation1,
+    Summary1,
+    JobTitle2,
+    CompStartDate2,
+    CompEndDate2,
+    CompName2,
+    CompLocation2,
+    Summary2,
+    Instname,
+    course,
+    Eddate1,
+    EdSummary1,
+    EdLocation1,
+    Instname2,
+    course2,
+    Eddate2,
+    EdSummary2,
+    EdLocation2,
   ) async {
     final pdf9 = pw.Document();
-    pdf9.addPage(
-      pw.Page(
-        build: (context) => pw.Row(children: [
-          pw.Flexible(
-              flex: 2,
-              child: pw.Expanded(
-                child: pw.Column(
-                    mainAxisAlignment: pw.MainAxisAlignment.start,
-                    crossAxisAlignment: pw.CrossAxisAlignment.start,
-                    children: [
-                      pw.Text('$name',
-                          style: pw.TextStyle(
-                              fontWeight: pw.FontWeight.bold, fontSize: 30)),
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceEvenly,
-                          children: [
-                            pw.Text('$address'),
-                            pw.Text('$contact_no'),
-                            pw.Text('$mail_id'),
-                          ]),
-                      // PROFESSIONAL SUMMARY
-                      pw.SizedBox(height: 5),
-                      pw.Text('PROFESSIONAL SUMMARY',
-                          style: pw.TextStyle(
-                              fontWeight: pw.FontWeight.bold, fontSize: 20)),
-                      pw.Text('$professionalsummary'),
-                      pw.SizedBox(height: 7),
-                      // SKILLS
-                      pw.Text('SKILLS',
-                          style: pw.TextStyle(
-                              fontWeight: pw.FontWeight.bold, fontSize: 20)),
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceEvenly,
-                          children: [
-                            pw.Bullet(text: '$skills'),
-                            pw.Bullet(text: '$skills'),
-                          ]),
-                      pw.SizedBox(height: 7),
-                      //EXPERIENCE
-                      pw.Text('EXPERIENCE',
-                          style: pw.TextStyle(
-                              fontWeight: pw.FontWeight.bold, fontSize: 20)),
-                      //company1
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Text('$professionaltitle1',
-                                style: pw.TextStyle()),
-                            pw.Text('$cduration1', style: pw.TextStyle()),
-                          ]),
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Text('$companyname1', style: pw.TextStyle()),
-                            pw.Text('$clocation1', style: pw.TextStyle()),
-                          ]),
-                      pw.Text('$cdescription1'),
-                      pw.SizedBox(height: 5),
-                      //company2
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Text('$professionaltitle2',
-                                style: pw.TextStyle()),
-                            pw.Text('$cduration2', style: pw.TextStyle()),
-                          ]),
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Text('$companyname2', style: pw.TextStyle()),
-                            pw.Text('$clocation2', style: pw.TextStyle()),
-                          ]),
-                      pw.Text('$cdescription2'),
-                      pw.SizedBox(height: 5),
-                      //company3
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Text('$professionaltitle3',
-                                style: pw.TextStyle()),
-                            pw.Text('$cduration3', style: pw.TextStyle()),
-                          ]),
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Text('$companyname3', style: pw.TextStyle()),
-                            pw.Text('$clocation3', style: pw.TextStyle()),
-                          ]),
-                      pw.Text('$cdescription3'),
-                      pw.SizedBox(height: 7),
-                      //Education
-                      pw.Text('EDUCATION',
-                          style: pw.TextStyle(
-                              fontWeight: pw.FontWeight.bold, fontSize: 20)),
-                      //School1
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Text('$schoolname1/$degree1',
-                                style: pw.TextStyle()),
-                            pw.Text('$sduration1', style: pw.TextStyle()),
-                          ]),
-                      pw.SizedBox(height: 5),
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Text('$sdescription1', style: pw.TextStyle()),
-                            pw.Text('$slocation1', style: pw.TextStyle()),
-                          ]),
-                      pw.SizedBox(height: 5),
-
-                      //School2
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Text('$schoolname2/$degree2',
-                                style: pw.TextStyle()),
-                            pw.Text('$sduration2', style: pw.TextStyle()),
-                          ]),
-                      pw.SizedBox(height: 5),
-                      pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Text('$sdescription1', style: pw.TextStyle()),
-                            pw.Text('$slocation1', style: pw.TextStyle()),
-                          ]),
-                    ]),
-              ))
-        ]),
-      ),
-    );
+    pdf9.addPage(pw.Page(
+      build: (context) => pw.Column(
+          mainAxisAlignment: pw.MainAxisAlignment.start,
+          crossAxisAlignment: pw.CrossAxisAlignment.start,
+          children: [
+            pw.Text('name', style: pw.TextStyle(fontSize: 40)),
+            pw.SizedBox(height: 8),
+            pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.start,
+                crossAxisAlignment: pw.CrossAxisAlignment.start,
+                children: [
+                  pw.Text('address'),
+                  pw.SizedBox(width: 10),
+                  pw.Text('phone'),
+                  pw.SizedBox(width: 10),
+                  pw.Text('email'),
+                ]),
+            pw.SizedBox(height: 10),
+            // professional summary
+            pw.Text('PROFESSIONAL SUMMARY', style: pw.TextStyle(fontSize: 25)),
+            pw.SizedBox(height: 5),
+            pw.Container(
+              width: 100,
+              child: pw.Text('About'),
+            ),
+            pw.SizedBox(height: 10),
+            //skills
+            pw.Text('SKILLS', style: pw.TextStyle(fontSize: 25)),
+            pw.Bullet(text: 'Skill1'),
+            pw.Bullet(text: 'Skill2'),
+            pw.Bullet(text: 'Skill3'),
+            pw.SizedBox(height: 10),
+            //Experience
+            pw.Text('EXPERIENCE', style: pw.TextStyle(fontSize: 25)),
+            pw.SizedBox(height: 5),
+            // JOB 1
+            pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.Text('  JobTitle1', style: pw.TextStyle()),
+                  pw.Text('CompStartDate1-CompEndDate1', style: pw.TextStyle()),
+                ]),
+            pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.Text('  CompName1', style: pw.TextStyle()),
+                  pw.Text('CompLocation1', style: pw.TextStyle()),
+                ]),
+            pw.Container(
+              width: 100,
+              child: pw.Text('  Summary1'),
+            ),
+            pw.SizedBox(height: 5),
+            // JOB 2
+            pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.Text('  JobTitle2', style: pw.TextStyle()),
+                  pw.Text('CompStartDate2-CompEndDate2', style: pw.TextStyle()),
+                ]),
+            pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.Text('  CompName2', style: pw.TextStyle()),
+                  pw.Text('CompLocation2', style: pw.TextStyle()),
+                ]),
+            pw.Container(
+              width: 100,
+              child: pw.Text('  Summary2'),
+            ),
+            pw.SizedBox(height: 10),
+            //EDUCATION
+            pw.Text('EDUCATION', style: pw.TextStyle(fontSize: 25)),
+            pw.SizedBox(height: 5),
+            // School 1
+            pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.Text('  Instname/course', style: pw.TextStyle()),
+                  pw.Text('Eddate1', style: pw.TextStyle()),
+                ]),
+            pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.Text('  EdSummary1', style: pw.TextStyle()),
+                  pw.Text('EdLocation1', style: pw.TextStyle()),
+                ]),
+            pw.SizedBox(height: 5),
+            // School 2
+            pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.Text('  Instname2/course2', style: pw.TextStyle()),
+                  pw.Text('Eddate2', style: pw.TextStyle()),
+                ]),
+            pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.Text('  EdSummary2', style: pw.TextStyle()),
+                  pw.Text('EdLocation2', style: pw.TextStyle()),
+                ]),
+          ]),
+    ));
     return saveDocument9(name: 'resume9', pdf: pdf9);
   }
 

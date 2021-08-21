@@ -71,7 +71,6 @@ class _TextInputsState extends State<TextInputs> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getSharedPrefs();
   }
