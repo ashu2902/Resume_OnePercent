@@ -7,6 +7,7 @@ import 'package:resume/Templates/template14.dart';
 import 'package:resume/Templates/template15.dart';
 import 'package:resume/Templates/template16.dart';
 import 'package:resume/Templates/template17.dart';
+import 'package:resume/Templates/template18.dart';
 import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template5.dart';
@@ -578,6 +579,40 @@ class _TemplateListState extends State<TemplateList> {
                       Template17.openFile(pdf);
                     },
                     title: 'Template17',
+                  ),
+                  TemplateButton(
+                    onPressed: () async {
+                      SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                      final pdf = await Template18.generateText(
+                        '${prefs.getString('Your Name')}',
+                        '${prefs.getString('Address, Zip')}',
+                        '${prefs.getString('123456789')}',
+                        '${prefs.getInt('email@email.com')}',
+                        '${prefs.getInt('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')}',
+                        "${prefs.getString('Course One')}",
+                        "${prefs.getString('20xx')}",
+                        "${prefs.getString('Institution')}",
+                        "${prefs.getString('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')}",
+                        '${prefs.getString('Course Two')}',
+                        "${prefs.getString('20xx')}",
+                        "${prefs.getString('Institution')}",
+                        "${prefs.getString('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')}",
+                        "${prefs.getString('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')}",
+                        '${prefs.getString('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')}',
+                        '${prefs.getString('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')}',
+                        '${prefs.getString('Job Title 1')}',
+                        '${prefs.getString('Company 1')}',
+                        '${prefs.getString('20xx')}',
+                        '${prefs.getString('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')}',
+                        '${prefs.getString('Job Title 2')}',
+                        '${prefs.getString('Company 2')}',
+                        '${prefs.getString('20xx')}',
+                        '${prefs.getString('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')}',
+                      );
+                      Template18.openFile(pdf);
+                    },
+                    title: 'Template18',
                   ),
                 ],
               )),
