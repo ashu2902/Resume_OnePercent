@@ -12,6 +12,7 @@ import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template5.dart';
 import 'package:resume/Templates/template6.dart';
+import 'package:resume/Templates/template7.dart';
 import 'package:resume/Templates/template8.dart';
 import 'package:resume/Templates/template9.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -40,7 +41,7 @@ class _TemplateListState extends State<TemplateList> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  //template 1
+                  ///1
                   TemplateButton(
                       onPressed: () async {
                         SharedPreferences prefs =
@@ -76,7 +77,7 @@ class _TemplateListState extends State<TemplateList> {
                       },
                       title: 'Template1'),
 
-                  //template2
+                  //2
                   TemplateButton(
                       onPressed: () async {
                         SharedPreferences prefs =
@@ -111,7 +112,7 @@ class _TemplateListState extends State<TemplateList> {
                       },
                       title: 'Template2'),
 
-                  //Template 3
+                  ///3
                   TemplateButton(
                     onPressed: () async {
                       SharedPreferences prefs =
@@ -175,7 +176,7 @@ class _TemplateListState extends State<TemplateList> {
                         Template4.openFile(template4);
                       },
                       title: 'Template4'),
-                  //Template5
+                  //5
                   TemplateButton(
                     onPressed: () async {
                       SharedPreferences prefs =
@@ -234,6 +235,36 @@ class _TemplateListState extends State<TemplateList> {
                     },
                     title: 'Template6',
                   ),
+                  //7
+                  TemplateButton(
+                      onPressed: () async {
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        final pdf = await Template7.generateText(
+                          '${prefs.getString('name')}',
+                          '${prefs.getString('JobTitle1')}',
+                          "${prefs.getString('email')}",
+                          "${prefs.getInt('phone')}",
+                          '${prefs.getString('address')}',
+                          '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
+                          '${prefs.getString('course')}',
+                          '${prefs.getString('Instname')}',
+                          '${prefs.getString("EdLocation1")}',
+                          '${prefs.getString('Summary1')}',
+                          "${prefs.getString('JobTitle1')}",
+                          "${prefs.getString('CompName1')}",
+                          "${prefs.getString('CompStartDate1')}",
+                          '${prefs.getString("Summary1")}',
+                          "${prefs.getString('JobTitle2')}",
+                          '${prefs.getString('Instname2')}',
+                          "${prefs.getString('CompStartDate2')}",
+                          '${prefs.getString("Summary2")}',
+                          '${prefs.getString('ProjectTitle1')}',
+                          '${prefs.getString('ProjectDesc1')}',
+                        );
+                        Template7.openFile(pdf);
+                      },
+                      title: 'Template7'),
                   //8
                   TemplateButton(
                       onPressed: () async {
@@ -353,7 +384,7 @@ class _TemplateListState extends State<TemplateList> {
                     },
                     title: 'Template11',
                   ),
-                  //Template12
+                  //12
                   TemplateButton(
                     onPressed: () async {
                       SharedPreferences prefs =
@@ -550,7 +581,7 @@ class _TemplateListState extends State<TemplateList> {
                   TemplateButton(
                     onPressed: () async {
                       SharedPreferences prefs =
-                      await SharedPreferences.getInstance();
+                          await SharedPreferences.getInstance();
                       final pdf = await Template19.generateText(
                         '${prefs.getString('name')}', //name
                         '${prefs.getString('email')}', //address
