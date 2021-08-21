@@ -104,13 +104,27 @@ class Template18 {
             pw.SizedBox(height: 10),
             TextContainer(skill2, kContentTextStyle),
             pw.SizedBox(height: 10),
-            TextContainer(skill2, kContentTextStyle),
+            TextContainer(skill3, kContentTextStyle),
             pw.SizedBox(height: 30),
             TextContainer('Experience', kTitleTextStyle),
             pw.SizedBox(height: 10),
-            UserDetails(jobTitle1 + ' | ' + organization1 + ' | ' + jobStartDate1 + ' - ' + jobEndDate1,
+            UserDetails(
+                jobTitle1 +
+                    ' | ' +
+                    organization1 +
+                    ' | ' +
+                    jobStartDate1 +
+                    ' - ' +
+                    jobEndDate1,
                 jobSummary1),
-            UserDetails(jobTitle1 + ' | ' + organization1 + ' | ' + jobStartDate2 + ' - ' + jobEndDate2,
+            UserDetails(
+                jobTitle1 +
+                    ' | ' +
+                    organization1 +
+                    ' | ' +
+                    jobStartDate2 +
+                    ' - ' +
+                    jobEndDate2,
                 jobSummary2),
           ],
         ),

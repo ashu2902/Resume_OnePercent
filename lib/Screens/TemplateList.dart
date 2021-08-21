@@ -148,7 +148,7 @@ class _TemplateListState extends State<TemplateList> {
                     },
                     title: 'Template 3',
                   ),
-
+                  //4
                   TemplateButton(
                       onPressed: () async {
                         SharedPreferences prefs =
@@ -553,9 +553,9 @@ class _TemplateListState extends State<TemplateList> {
                       final pdf = await Template18.generateText(
                         '${prefs.getString('name')}',
                         '${prefs.getString('address')}',
-                        '${prefs.getString('phone')}',
-                        '${prefs.getInt('email')}',
-                        '${prefs.getInt('about')}',
+                        '${prefs.getInt('phone')}',
+                        '${prefs.getString('email')}',
+                        '${prefs.getString('about')}',
                         "${prefs.getString('course')}",
                         "${prefs.getString('Eddate1')}",
                         "${prefs.getString('Instname')}",
@@ -590,7 +590,7 @@ class _TemplateListState extends State<TemplateList> {
                       final pdf = await Template19.generateText(
                         '${prefs.getString('name')}', //name
                         '${prefs.getString('email')}', //address
-                        '${prefs.getString('phone')}', //phone
+                        '${prefs.getInt('phone')}', //phone
                         '${prefs.getString('address')}',
                         '${prefs.getString('Skill1')}',
                         "${prefs.getString('Skill2')}",
