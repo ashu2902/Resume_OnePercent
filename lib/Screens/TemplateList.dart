@@ -10,6 +10,7 @@ import 'package:resume/Templates/template17.dart';
 import 'package:resume/Templates/template18.dart';
 import 'package:resume/Templates/template19.dart';
 import 'package:resume/Templates/template2.dart';
+import 'package:resume/Templates/template20.dart';
 import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template5.dart';
 import 'package:resume/Templates/template6.dart';
@@ -588,9 +589,9 @@ class _TemplateListState extends State<TemplateList> {
                       SharedPreferences prefs =
                           await SharedPreferences.getInstance();
                       final pdf = await Template19.generateText(
-                        '${prefs.getString('name')}', //name
-                        '${prefs.getString('email')}', //address
-                        '${prefs.getInt('phone')}', //phone
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('email')}',
+                        '${prefs.getInt('phone')}',
                         '${prefs.getString('address')}',
                         '${prefs.getString('Skill1')}',
                         "${prefs.getString('Skill2')}",
@@ -618,6 +619,46 @@ class _TemplateListState extends State<TemplateList> {
                       Template19.openFile(pdf);
                     },
                     title: 'Template19',
+                  ),
+                  //20
+                  TemplateButton(
+                    onPressed: () async {
+                      SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                      final pdf = await Template20.generateText(
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getInt('about')}',
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('CompName1')}',
+                        "${prefs.getString('CompLocation1')}",
+                        "${prefs.getString('CompStartDate1')}",
+                        "${prefs.getString('CompEndDate1')}",
+                        "${prefs.getString('Summary1')}",
+                        '${prefs.getString('JobTitle2')}',
+                        '${prefs.getString('CompName2')}',
+                        "${prefs.getString('CompLocation2')}",
+                        "${prefs.getString('CompStartDate2')}",
+                        "${prefs.getString('CompEndDate2')}",
+                        "${prefs.getString('Summary2')}",
+                        '${prefs.getString('email')}',
+                        '${prefs.getString('phone')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getString('Skill1')}',
+                        '${prefs.getString('Skill2')}',
+                        '${prefs.getString('Skill3')}',
+                        '${prefs.getString('course')}',
+                        '${prefs.getString('Instname')}',
+                        '${prefs.getString('EdLocation1')}',
+                        '${prefs.getString('Eddate1')}',
+                        '${prefs.getString('course2')}',
+                        '${prefs.getString('Instname2')}',
+                        '${prefs.getString('EdLocation2')}',
+                        '${prefs.getString('Eddate2')}',
+                      );
+                      Template20.openFile(pdf);
+                    },
+                    title: 'Template20',
                   ),
                 ],
               )),
