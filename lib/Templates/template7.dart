@@ -11,11 +11,12 @@ class Template7 {
     String email,
     String phoneNo,
     String address,
-    List<String> skills,
+    var skills,
+      var skills2,
+      var skills3,
     String degree,
     String institution,
     String location,
-    List<String> hobbies,
     String summary,
     String jobTitle1,
     String company1,
@@ -26,7 +27,6 @@ class Template7 {
     String date2,
     notableAchievements2,
     String projectTitle,
-    String projectDate,
     String projectNotableAchievement,
   ) async {
     final pdf = pw.Document();
@@ -86,13 +86,7 @@ class Template7 {
                                             color: PdfColors.blue900))),
                                 pw.Container(width: 70, child: pw.Divider()),
                                 pw.SizedBox(height: 5),
-                                pw.Container(
-                                    child: pw.Text(skills[0] +
-                                        '\n' +
-                                        skills[1] +
-                                        '\n' +
-                                        skills[2] +
-                                        '\n')),
+                                pw.Container(child: pw.Text(skills)),
                                 //Project Management
                                 pw.SizedBox(height: 30),
                                 pw.Container(
@@ -114,25 +108,6 @@ class Template7 {
                                 ),
                                 //Languages
                                 pw.SizedBox(height: 30),
-                                pw.Container(
-                                    child: pw.Text('Hobbies',
-                                        style: pw.TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: pw.FontWeight.bold,
-                                            color: PdfColors.blue900))),
-                                pw.Container(width: 70, child: pw.Divider()),
-                                pw.SizedBox(height: 10),
-                                pw.Container(
-                                  child: pw.Text(
-                                    hobbies[0] +
-                                        '\n' +
-                                        hobbies[1] +
-                                        '\n' +
-                                        hobbies[2] +
-                                        '\n' +
-                                        hobbies[3],
-                                  ),
-                                ),
                               ]),
                         ),
                         pw.SizedBox(width: 20),
@@ -229,7 +204,7 @@ class Template7 {
                                   pw.SizedBox(height: 10),
                                   pw.Container(
                                     child: pw.Text(
-                                      projectTitle + '\n' + projectDate,
+                                      projectTitle,
                                     ),
                                   ),
                                   pw.Container(

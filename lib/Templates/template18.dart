@@ -48,11 +48,13 @@ class Template18 {
     skill3,
     jobTitle1,
     organization1,
-    jobDate1,
+    jobStartDate1,
+    jobEndDate1,
     jobSummary1,
     jobTitle2,
     organization2,
-    jobDate2,
+    jobStartDate2,
+    jobEndDate2,
     jobSummary2,
   ) async {
     final pdf = pw.Document();
@@ -102,20 +104,34 @@ class Template18 {
             pw.SizedBox(height: 10),
             TextContainer(skill2, kContentTextStyle),
             pw.SizedBox(height: 10),
-            TextContainer(skill2, kContentTextStyle),
+            TextContainer(skill3, kContentTextStyle),
             pw.SizedBox(height: 30),
             TextContainer('Experience', kTitleTextStyle),
             pw.SizedBox(height: 10),
-            UserDetails(jobTitle1 + ' | ' + organization1 + ' | ' + jobDate1,
+            UserDetails(
+                jobTitle1 +
+                    ' | ' +
+                    organization1 +
+                    ' | ' +
+                    jobStartDate1 +
+                    ' - ' +
+                    jobEndDate1,
                 jobSummary1),
-            UserDetails(jobTitle1 + ' | ' + organization1 + ' | ' + jobDate1,
+            UserDetails(
+                jobTitle1 +
+                    ' | ' +
+                    organization1 +
+                    ' | ' +
+                    jobStartDate2 +
+                    ' - ' +
+                    jobEndDate2,
                 jobSummary2),
           ],
         ),
       ),
     );
 
-    return saveDocument(name: 'my_resume.pdf', pdf: pdf);
+    return saveDocument(name: 'template18.pdf', pdf: pdf);
   }
 
   static Future<File> saveDocument(
