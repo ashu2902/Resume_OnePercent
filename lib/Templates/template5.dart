@@ -21,6 +21,10 @@ class Template5 {
     skill1,
     skill2,
     skill3,
+    projectTitle1,
+    projectDesc1,
+      projectTitle2,
+      projectDesc2,
   ) async {
     final pdf5 = pw.Document();
     pdf5.addPage(
@@ -109,6 +113,20 @@ class Template5 {
                     pw.Bullet(text: '$skill2'),
                     pw.Bullet(text: '$skill3'),
 
+                    pw.SizedBox(height: 15),
+                    // Projects
+                    pw.Container(
+                        color: PdfColors.grey400,
+                        height: 15,
+                        alignment: pw.Alignment.centerLeft,
+                        child: pw.Text('PROJECTS',
+                            style:
+                            pw.TextStyle(fontWeight: pw.FontWeight.bold))),
+                    pw.SizedBox(height: 5),
+                    pw.Container(child: pw.Text('$projectTitle1 - $projectDesc1')),
+                    pw.SizedBox(height: 5),
+                    pw.Container(child: pw.Text('$projectTitle2 - $projectDesc2')),
+                    // Declartion
                     pw.SizedBox(height: 15),
                     pw.Container(
                         color: PdfColors.grey400,

@@ -36,6 +36,10 @@ class Template9 {
     eddate2,
     edSummary2,
     edLocation2,
+      projecttitle1,
+      projectDescription1,
+      projecttitle2,
+      projectDescription2,
   ) async {
     final pdf9 = pw.Document();
     pdf9.addPage(pw.Page(
@@ -43,17 +47,17 @@ class Template9 {
           mainAxisAlignment: pw.MainAxisAlignment.start,
           crossAxisAlignment: pw.CrossAxisAlignment.start,
           children: [
-            pw.Text('name', style: pw.TextStyle(fontSize: 40)),
+            pw.Text('$name', style: pw.TextStyle(fontSize: 40)),
             pw.SizedBox(height: 8),
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.start,
                 crossAxisAlignment: pw.CrossAxisAlignment.start,
                 children: [
-                  pw.Text('address'),
+                  pw.Text('$address'),
                   pw.SizedBox(width: 10),
-                  pw.Text('phone'),
+                  pw.Text('$phone'),
                   pw.SizedBox(width: 10),
-                  pw.Text('email'),
+                  pw.Text('$email'),
                 ]),
             pw.SizedBox(height: 10),
             // professional summary
@@ -66,9 +70,9 @@ class Template9 {
             pw.SizedBox(height: 10),
             //skills
             pw.Text('SKILLS', style: pw.TextStyle(fontSize: 25)),
-            pw.Bullet(text: 'Skill1'),
-            pw.Bullet(text: 'Skill2'),
-            pw.Bullet(text: 'Skill3'),
+            pw.Bullet(text: '$skill1'),
+            pw.Bullet(text: '$skill2'),
+            pw.Bullet(text: '$skill3'),
             pw.SizedBox(height: 10),
             //Experience
             pw.Text('EXPERIENCE', style: pw.TextStyle(fontSize: 25)),
@@ -77,7 +81,7 @@ class Template9 {
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text('  $jobTitle1', style: pw.TextStyle()),
+                  pw.Text('  ($jobTitle1)', style: pw.TextStyle()),
                   pw.Text('$compStartDate1-$compEndDate1',
                       style: pw.TextStyle()),
                 ]),
@@ -87,16 +91,13 @@ class Template9 {
                   pw.Text('  $compName1', style: pw.TextStyle()),
                   pw.Text('$compLocation1', style: pw.TextStyle()),
                 ]),
-            pw.Container(
-              width: 100,
-              child: pw.Text('  $summary1'),
-            ),
-            pw.SizedBox(height: 5),
+            pw.Text('  $summary1'),
+            pw.SizedBox(height: 10),
             // JOB 2
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text('  $jobTitle2', style: pw.TextStyle()),
+                  pw.Text('  ($jobTitle2)', style: pw.TextStyle()),
                   pw.Text('$compStartDate2-$compEndDate2',
                       style: pw.TextStyle()),
                 ]),
@@ -132,7 +133,7 @@ class Template9 {
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text(' $instname2/ $course2', style: pw.TextStyle()),
+                  pw.Text('  $instname2/ $course2', style: pw.TextStyle()),
                   pw.Text('$eddate2', style: pw.TextStyle()),
                 ]),
             pw.Row(
@@ -141,6 +142,14 @@ class Template9 {
                   pw.Text('  $edSummary2', style: pw.TextStyle()),
                   pw.Text('$edLocation2', style: pw.TextStyle()),
                 ]),
+            // Projects
+            pw.SizedBox(height: 10),
+            // professional summary
+            pw.Text('PROJECTS', style: pw.TextStyle(fontSize: 25)),
+            pw.SizedBox(height: 5),
+            pw.Text('$projecttitle1 - $projectDescription1'),
+            pw.SizedBox(height: 5),
+            pw.Text('$projecttitle2 - $projectDescription2'),
           ]),
     ));
     return saveDocument9(name: 'resume9', pdf: pdf9);
