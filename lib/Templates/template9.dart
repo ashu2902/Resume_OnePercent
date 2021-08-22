@@ -61,7 +61,7 @@ class Template9 {
             pw.SizedBox(height: 5),
             pw.Container(
               width: 100,
-              child: pw.Text('About'),
+              child: pw.Text(about),
             ),
             pw.SizedBox(height: 10),
             //skills
@@ -77,36 +77,38 @@ class Template9 {
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text('  JobTitle1', style: pw.TextStyle()),
-                  pw.Text('CompStartDate1-CompEndDate1', style: pw.TextStyle()),
+                  pw.Text('  $jobTitle1', style: pw.TextStyle()),
+                  pw.Text('$compStartDate1-$compEndDate1',
+                      style: pw.TextStyle()),
                 ]),
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text('  CompName1', style: pw.TextStyle()),
-                  pw.Text('CompLocation1', style: pw.TextStyle()),
+                  pw.Text('  $compName1', style: pw.TextStyle()),
+                  pw.Text('$compLocation1', style: pw.TextStyle()),
                 ]),
             pw.Container(
               width: 100,
-              child: pw.Text('  Summary1'),
+              child: pw.Text('  $summary1'),
             ),
             pw.SizedBox(height: 5),
             // JOB 2
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text('  JobTitle2', style: pw.TextStyle()),
-                  pw.Text('CompStartDate2-CompEndDate2', style: pw.TextStyle()),
+                  pw.Text('  $jobTitle2', style: pw.TextStyle()),
+                  pw.Text('$compStartDate2-$compEndDate2',
+                      style: pw.TextStyle()),
                 ]),
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text('  CompName2', style: pw.TextStyle()),
-                  pw.Text('CompLocation2', style: pw.TextStyle()),
+                  pw.Text('  $compName2', style: pw.TextStyle()),
+                  pw.Text('$compLocation2', style: pw.TextStyle()),
                 ]),
             pw.Container(
               width: 100,
-              child: pw.Text('  Summary2'),
+              child: pw.Text('  $summary2'),
             ),
             pw.SizedBox(height: 10),
             //EDUCATION
@@ -116,28 +118,28 @@ class Template9 {
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text('  Instname/course', style: pw.TextStyle()),
-                  pw.Text('Eddate1', style: pw.TextStyle()),
+                  pw.Text('  $instName/ $course', style: pw.TextStyle()),
+                  pw.Text('$eddate1', style: pw.TextStyle()),
                 ]),
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text('  EdSummary1', style: pw.TextStyle()),
-                  pw.Text('EdLocation1', style: pw.TextStyle()),
+                  pw.Text('  $edSummary1', style: pw.TextStyle()),
+                  pw.Text('$edLocation1', style: pw.TextStyle()),
                 ]),
             pw.SizedBox(height: 5),
             // School 2
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text('  Instname2/course2', style: pw.TextStyle()),
-                  pw.Text('Eddate2', style: pw.TextStyle()),
+                  pw.Text(' $instname2/ $course2', style: pw.TextStyle()),
+                  pw.Text('$eddate2', style: pw.TextStyle()),
                 ]),
             pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                 children: [
-                  pw.Text('  EdSummary2', style: pw.TextStyle()),
-                  pw.Text('EdLocation2', style: pw.TextStyle()),
+                  pw.Text('  $edSummary2', style: pw.TextStyle()),
+                  pw.Text('$edLocation2', style: pw.TextStyle()),
                 ]),
           ]),
     ));
