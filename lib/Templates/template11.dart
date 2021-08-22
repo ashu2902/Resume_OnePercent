@@ -1,12 +1,9 @@
-
 import 'dart:io';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
-class Template11{
-
+class Template11 {
   static final kTitleTextStyle = pw.TextStyle(
     fontWeight: pw.FontWeight.bold,
     fontSize: 22,
@@ -20,31 +17,30 @@ class Template11{
     fontSize: 18,
   );
   static Future<File> generateTemplate(
-      String name,
-      String address,
-      String phoneNo,
-      String email,
-      String personalStatement,
-      String company1,
-      String jobTitle1,
-      String date1,
-      List<String> notableAchievements1,
-      String company2,
-      String jobTitle2,
-      String date2,
-      List<String> notableAchievements2,
-      String institutionName,
-      String courseName,
-      String educationNotableAchievement,
-      String skill1,
-      String skill2,
-      String skill3,
-      ) async {
+    String name,
+    String address,
+    String phoneNo,
+    String email,
+    String personalStatement,
+    String company1,
+    String jobTitle1,
+    String date1,
+    List<String> notableAchievements1,
+    String company2,
+    String jobTitle2,
+    String date2,
+    List<String> notableAchievements2,
+    String institutionName,
+    String courseName,
+    String educationNotableAchievement,
+    String skill1,
+    String skill2,
+    String skill3,
+  ) async {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
-        build: (context) =>
-        pw.Expanded(
+        build: (context) => pw.Expanded(
           child: pw.Column(
               crossAxisAlignment: pw.CrossAxisAlignment.start,
               children: [
@@ -65,8 +61,7 @@ class Template11{
                       pw.SizedBox(height: 10),
                       pw.Container(
                         child: pw.Text(
-                          address + '\n' + phoneNo
-                              + '\n' + email,
+                          address + '\n' + phoneNo + '\n' + email,
                           style: pw.TextStyle(
                             fontSize: 12,
                           ),
@@ -84,11 +79,9 @@ class Template11{
                       ),
                       pw.SizedBox(height: 10),
                       pw.Divider(
-                          thickness: 2,
+                        thickness: 2,
                       ),
-
-                    ]
-                ),
+                    ]),
                 pw.SizedBox(height: 10),
                 //Professional Experience
                 pw.Container(
@@ -107,10 +100,9 @@ class Template11{
                 ),
                 //Position
                 pw.Container(
-                  child: pw.Text(
-                      jobTitle1,
-                      style: kSubTitleTextStyle.copyWith(fontWeight: pw.FontWeight.normal)
-                  ),
+                  child: pw.Text(jobTitle1,
+                      style: kSubTitleTextStyle.copyWith(
+                          fontWeight: pw.FontWeight.normal)),
                 ),
                 //Achievements and responsibility
                 pw.Bullet(
@@ -134,10 +126,9 @@ class Template11{
                 ),
                 //Position
                 pw.Container(
-                  child: pw.Text(
-                      jobTitle2,
-                      style: kSubTitleTextStyle.copyWith(fontWeight: pw.FontWeight.normal)
-                  ),
+                  child: pw.Text(jobTitle2,
+                      style: kSubTitleTextStyle.copyWith(
+                          fontWeight: pw.FontWeight.normal)),
                 ),
                 //Achievements and responsibility
                 pw.Bullet(
@@ -192,28 +183,24 @@ class Template11{
                 ),
                 pw.SizedBox(height: 10),
                 pw.Bullet(
-                    text: skill1,
-                    style: kContentTextStyle,
+                  text: skill1,
+                  style: kContentTextStyle,
                 ),
                 pw.Bullet(
-                    text: skill2,
-                    style: kContentTextStyle,
-
+                  text: skill2,
+                  style: kContentTextStyle,
                 ),
                 pw.Bullet(
-                    text: skill3,
-                    style: kContentTextStyle,
+                  text: skill3,
+                  style: kContentTextStyle,
                 ),
                 //
-              ]
-          ),
+              ]),
         ),
-
       ),
     );
 
     return saveDocument(name: 'Template11.pdf', pdf: pdf);
-
   }
 
   static Future<File> saveDocument(

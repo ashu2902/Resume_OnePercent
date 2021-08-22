@@ -278,7 +278,7 @@ class _TemplateListState extends State<TemplateList> {
                     final pdf8 = await Template8.generateText8(
                         '${prefs.getString('name')}',
                         '${prefs.getString('address')}',
-                        '${prefs.getString('contactNumber')}',      // error int
+                        '${prefs.getInt('phone')}',      // error int
                         '${prefs.getString('email')}',
                         '${prefs.getString('Skill1')}',
                         '${prefs.getString('Skill2')}',
@@ -290,7 +290,7 @@ class _TemplateListState extends State<TemplateList> {
                         '${prefs.getString('CompLocation1')}',
                         '${prefs.getString('Summary1')}',
                         '${prefs.getString('CompName2')}',
-                        '${prefs.getString('jobTitle2')}',
+                        '${prefs.getString('JobTitle2')}',
                         '${prefs.getString('CompStartDate2')}',
                         '${prefs.getString('CompEndDate2')}',
                         '${prefs.getString('CompLocation2')}',
@@ -308,7 +308,7 @@ class _TemplateListState extends State<TemplateList> {
                         '${prefs.getString('ProjectTitle1')}',
                         '${prefs.getString('ProjectDesc1')}',
                         '${prefs.getString('ProjectTitle2')}',
-                        '${prefs.getString('ProjectDesc')}'
+                        '${prefs.getString('ProjectDesc2')}'
                     );
                     Template8.openFile(pdf8);
                   }, title: 'Template8'),
@@ -319,7 +319,7 @@ class _TemplateListState extends State<TemplateList> {
                    final pdf9 = await Template9.generateText9(
                        '${prefs.getString('name')}',
                        '${prefs.getString('address')}',
-                       '${prefs.getString('Contactphone')}',
+                       '${prefs.getInt('phone')}',
                        '${prefs.getString('email')}',
                        '${prefs.getString('about')}',
                        '${prefs.getString('Skill1')}',
@@ -532,7 +532,7 @@ class _TemplateListState extends State<TemplateList> {
                         '${prefs.getString('address')}',
                         '${prefs.getInt('phone')}',
                         '${prefs.getString('email')}',
-                        '${prefs.getInt('about')}',
+                        '${prefs.getString('about')}',
                         '${prefs.getString('Instname')}',
                         '${prefs.getString('course')}',
                         '${prefs.getString('Eddate1')}',
@@ -564,7 +564,7 @@ class _TemplateListState extends State<TemplateList> {
                         '${prefs.getString('address')}',
                         '${prefs.getString('email')}',
                         '${prefs.getInt('phone')}',
-                        '${prefs.getInt('about')}',
+                        '${prefs.getString('about')}',
                         "${prefs.getString('JobTitle1')}",
                         "${prefs.getString('CompName1')}",
                         "${prefs.getString('CompStartDate1')}",

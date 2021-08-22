@@ -15,7 +15,7 @@ class Template10 {
   );
   static final kSubTitleTextStyle = pw.TextStyle(
       fontWeight: pw.FontWeight.bold,
-      fontSize: 30,
+      fontSize: 10,
       letterSpacing: 1,
   );
   static Future<File> generateText10() async {
@@ -27,7 +27,17 @@ class Template10 {
         children: [
           pw.Column(
               children: [
-                pw.Text('Name',style: kTitleTextStyle)
+                pw.Text('Name',style: kTitleTextStyle),
+                pw.Row(
+                  mainAxisAlignment: pw.MainAxisAlignment.start,
+                  crossAxisAlignment: pw.CrossAxisAlignment.start,
+                  children: [
+                    pw.Text('address,',style: pw.TextStyle(color: PdfColors.grey900)),
+                    pw.Text(' phone,',style: pw.TextStyle(color: PdfColors.grey900)),
+                    pw.Text(' mail',style: pw.TextStyle(color: PdfColors.grey900)),
+                  ]
+                )
+
                    ]
           ),
         ]

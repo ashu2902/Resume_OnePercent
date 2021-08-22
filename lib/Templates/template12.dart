@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:flutter/cupertino.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
@@ -15,15 +14,15 @@ class Template12 {
     color: PdfColors.blue,
   );
 
-  static pw.Row createRowBioData(String title, String data){
+  static pw.Row createRowBioData(String title, String data) {
     return pw.Row(
       children: [
         pw.Container(
           child: pw.Text(
             title,
             style: kContentTextStyle.copyWith(
-                fontWeight: pw.FontWeight.bold,
-                fontSize: 12,
+              fontWeight: pw.FontWeight.bold,
+              fontSize: 12,
             ),
           ),
         ),
@@ -47,60 +46,59 @@ class Template12 {
     List<String> notableAchievements,
   ) {
     return pw.Expanded(
-      child: pw.Row(
-        mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: pw.CrossAxisAlignment.start,
-        children: [
-          //Date
-          pw.Flexible(
-            flex: 1,
-            child: pw.Container(
-              child: pw.Text(
-                date,
-                style: kContentTextStyle,
+        child: pw.Row(
+      mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: pw.CrossAxisAlignment.start,
+      children: [
+        //Date
+        pw.Flexible(
+          flex: 1,
+          child: pw.Container(
+            child: pw.Text(
+              date,
+              style: kContentTextStyle,
+            ),
+          ),
+        ),
+        pw.Flexible(
+          flex: 3,
+          child: pw.Column(
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
+            children: [
+              //job title
+              pw.Container(
+                child: pw.Text(
+                  jobTitle,
+                  style: kContentTextStyle.copyWith(
+                      fontSize: 20, fontWeight: pw.FontWeight.bold),
+                ),
               ),
-            ),
+              //company
+              pw.Container(
+                child: pw.Text(
+                  companyName,
+                  style: kContentTextStyle.copyWith(
+                      fontStyle: pw.FontStyle.italic),
+                ),
+              ),
+              //achievements/recognition
+              pw.Bullet(
+                text: notableAchievements[0],
+                style: kContentTextStyle.copyWith(fontSize: 16),
+              ),
+              pw.Bullet(
+                text: notableAchievements[1],
+                style: kContentTextStyle.copyWith(fontSize: 16),
+              ),
+              pw.Bullet(
+                text: notableAchievements[2],
+                style: kContentTextStyle.copyWith(fontSize: 16),
+              ),
+            ],
           ),
-          pw.Flexible(
-            flex: 3,
-            child:  pw.Column(
-              crossAxisAlignment: pw.CrossAxisAlignment.start,
-              children: [
-                //job title
-                pw.Container(
-                  child: pw.Text(
-                    jobTitle,
-                    style: kContentTextStyle.copyWith(
-                        fontSize: 20, fontWeight: pw.FontWeight.bold),
-                  ),
-                ),
-                //company
-                pw.Container(
-                  child: pw.Text(
-                    companyName,
-                    style:
-                    kContentTextStyle.copyWith(fontStyle: pw.FontStyle.italic),
-                  ),
-                ),
-                //achievements/recognition
-                pw.Bullet(
-                  text: notableAchievements[0],
-                  style: kContentTextStyle.copyWith(fontSize: 16),
-                ),
-                pw.Bullet(
-                  text: notableAchievements[1],
-                  style: kContentTextStyle.copyWith(fontSize: 16),
-                ),
-                pw.Bullet(
-                  text: notableAchievements[2],
-                  style: kContentTextStyle.copyWith(fontSize: 16),
-                ),
-              ],
-            ),
-          ),
-        ],
-      )
-    );
+        ),
+      ],
+    ));
   }
 
   static pw.Expanded createEducationContent(
@@ -155,30 +153,30 @@ class Template12 {
   }
 
   static Future<File> generateTemplate(
-      String name,
-      String currentJobTitle,
-      String address,
-      String phoneNo,
-      String email,
-      String personalStatement,
-      String date1,
-      String company1,
-      String jobTitle1,
-      List<String> notableAchievements1,
-      String date2,
-      String company2,
-      String jobTitle2,
-      List<String> notableAchievements2,
-      String eduDate1,
-      String courseName1,
-      String institution1,
-      List<String> educationNotableAchievement1,
-      String eduDate2,
-      String courseName2,
-      String institution2,
-      List<String> educationNotableAchievement2,
-      String skillSummary,
-      ) async {
+    String name,
+    String currentJobTitle,
+    String address,
+    String phoneNo,
+    String email,
+    String personalStatement,
+    String date1,
+    String company1,
+    String jobTitle1,
+    List<String> notableAchievements1,
+    String date2,
+    String company2,
+    String jobTitle2,
+    List<String> notableAchievements2,
+    String eduDate1,
+    String courseName1,
+    String institution1,
+    List<String> educationNotableAchievement1,
+    String eduDate2,
+    String courseName2,
+    String institution2,
+    List<String> educationNotableAchievement2,
+    String skillSummary,
+  ) async {
     final pdf = pw.Document();
     pdf.addPage(pw.Page(
       build: (context) => pw.Column(
@@ -233,44 +231,37 @@ class Template12 {
           //Experience
           pw.Container(
             child: pw.Text(
-            'Experience',
-            style: kTitleTextStyle,
-          ),),
+              'Experience',
+              style: kTitleTextStyle,
+            ),
+          ),
           pw.SizedBox(height: 10),
           //Experience details - 1
-          createExperienceContent(
-              date1, company1, jobTitle1, [
+          createExperienceContent(date1, company1, jobTitle1, [
             notableAchievements1[0],
             notableAchievements1[1],
             notableAchievements1[2],
           ]),
           //Experience details - 2
-          createExperienceContent(
-              date2, company2, jobTitle2, [
+          createExperienceContent(date2, company2, jobTitle2, [
             notableAchievements2[0],
             notableAchievements2[1],
             notableAchievements2[2],
           ]),
           pw.SizedBox(height: 10),
           pw.Container(
-              child: pw.Text(
-            'Education',
-            style: kTitleTextStyle,
-          ),),
+            child: pw.Text(
+              'Education',
+              style: kTitleTextStyle,
+            ),
+          ),
           pw.SizedBox(height: 10),
           //Education details - 1
-          createEducationContent(
-              eduDate1,
-              courseName1,
-              institution1,
+          createEducationContent(eduDate1, courseName1, institution1,
               educationNotableAchievement1),
           //Education details - 2
-          createEducationContent(
-            eduDate2,
-            courseName2,
-            institution2,
-            educationNotableAchievement2
-            ),
+          createEducationContent(eduDate2, courseName2, institution2,
+              educationNotableAchievement2),
           pw.Row(
             mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
             crossAxisAlignment: pw.CrossAxisAlignment.start,
@@ -289,11 +280,11 @@ class Template12 {
               pw.Flexible(
                 flex: 3,
                 child: pw.Container(
-                    child: pw.Text(
-                      skillSummary,
-                      style: kContentTextStyle,
-                      maxLines: 3,
-                    ),
+                  child: pw.Text(
+                    skillSummary,
+                    style: kContentTextStyle,
+                    maxLines: 3,
+                  ),
                 ),
               ),
             ],
