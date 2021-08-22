@@ -17,25 +17,25 @@ class Template11 {
     fontSize: 18,
   );
   static Future<File> generateTemplate(
-    String name,
-    String address,
-    String phoneNo,
-    String email,
-    String personalStatement,
-    String company1,
-    String jobTitle1,
-    String date1,
-    List<String> notableAchievements1,
-    String company2,
-    String jobTitle2,
-    String date2,
-    List<String> notableAchievements2,
-    String institutionName,
-    String courseName,
-    String educationNotableAchievement,
-    String skill1,
-    String skill2,
-    String skill3,
+    var name,
+    var address,
+    var phoneNo,
+    var email,
+    var personalStatement,
+    var company1,
+    var jobTitle1,
+    var date1,
+    var notableAchievements1,
+    var company2,
+    var jobTitle2,
+    var date2,
+    var notableAchievements2,
+    var institutionName,
+    var courseName,
+    var educationNotableAchievement,
+    var skill1,
+    var skill2,
+    var skill3,
   ) async {
     final pdf = pw.Document();
     pdf.addPage(
@@ -106,17 +106,10 @@ class Template11 {
                 ),
                 //Achievements and responsibility
                 pw.Bullet(
-                  text: notableAchievements1[0],
+                  text: notableAchievements1,
                   style: kContentTextStyle,
                 ),
-                pw.Bullet(
-                  text: notableAchievements1[1],
-                  style: kContentTextStyle,
-                ),
-                pw.Bullet(
-                  text: notableAchievements1[2],
-                  style: kContentTextStyle,
-                ),
+
                 //Company name
                 pw.Container(
                   child: pw.Text(
@@ -132,15 +125,7 @@ class Template11 {
                 ),
                 //Achievements and responsibility
                 pw.Bullet(
-                  text: notableAchievements2[0],
-                  style: kContentTextStyle,
-                ),
-                pw.Bullet(
-                  text: notableAchievements2[1],
-                  style: kContentTextStyle,
-                ),
-                pw.Bullet(
-                  text: notableAchievements2[2],
+                  text: notableAchievements2,
                   style: kContentTextStyle,
                 ),
                 pw.SizedBox(height: 10),

@@ -356,31 +356,23 @@ class _TemplateListState extends State<TemplateList> {
                       final pdf11 = await Template11.generateTemplate(
                         '${prefs.getString('name')}',
                         '${prefs.getString('address')}',
-                        '+91 123456789',
-                        'email@email.com',
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididuntut labore et dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco',
-                        'Redford & Sons, Boston, MA',
-                        'Administrator Assistant',
-                        'Sept 2015 - present',
-                        [
-                          'Notable Achievement/Responsibility',
-                          'Notable Achievement/Responsibility',
-                          'Notable Achievement/Responsibility'
-                        ],
-                        'Blueford & Fathers, Coston, DA',
-                        'Administrator of the coffee machine',
-                        'Dec 1996 - 2014',
-                        [
-                          'Notable Achievement/Responsibility',
-                          'Notable Achievement/Responsibility',
-                          'Notable Achievement/Responsibility'
-                        ],
-                        'River Brooks University',
-                        'Bachelor of Arts',
-                        'Honors cum laude (GPA 3.5/4.0)',
-                        'Expert in Microsoft Office',
-                        'Bilingual in English and Spanish',
-                        'HTML, CSS and Javascript',
+                        "${prefs.getInt('phone').toString()}",
+                        '${prefs.getString('email')}',
+                        "${prefs.getString('about')}",
+                        '${prefs.getString('CompName1')}',
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('CompStartDate1')} -${prefs.getString('CompEndDate1')} ',
+                        '${prefs.getString('Summary1')}',
+                        '${prefs.getString('CompName2')}',
+                        '${prefs.getString('JobTitle2')}',
+                        '${prefs.getString('CompStartDate2')} -${prefs.getString('CompEndDate2')} ',
+                        '${prefs.getString('Summary2')}',
+                        "${prefs.getString('Instname')}",
+                        "${prefs.getString('course')}",
+                        "${prefs.getString('EdSummary1')}",
+                        '${prefs.getString('Skill1')}',
+                        '${prefs.getString('Skill2')}',
+                        '${prefs.getString('Skill3')}',
                       );
                       Template11.openFile(pdf11);
                     },
@@ -624,7 +616,7 @@ class _TemplateListState extends State<TemplateList> {
                   TemplateButton(
                     onPressed: () async {
                       SharedPreferences prefs =
-                      await SharedPreferences.getInstance();
+                          await SharedPreferences.getInstance();
                       final pdf = await Template20.generateText(
                         '${prefs.getString('name')}',
                         '${prefs.getString('JobTitle1')}',
