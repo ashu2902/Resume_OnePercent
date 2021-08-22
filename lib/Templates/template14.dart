@@ -7,7 +7,6 @@ import 'package:pdf/widgets.dart' as pw;
 class Template14 {
   static Future<File> generateText(
     String firstName,
-    String lastName,
     String currentJobTitle,
     String addressCity,
     String addressCountry,
@@ -55,10 +54,7 @@ class Template14 {
                           children: [
                             pw.Container(
                                 child: pw.Column(children: [
-                              pw.Text(
-                                  firstName.toUpperCase() +
-                                      '\n' +
-                                      lastName.toUpperCase(),
+                              pw.Text(firstName.toUpperCase(),
                                   style: pw.TextStyle(
                                       fontSize: 30,
                                       fontWeight: pw.FontWeight.bold,

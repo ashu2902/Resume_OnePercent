@@ -386,43 +386,30 @@ class _TemplateListState extends State<TemplateList> {
                       SharedPreferences prefs =
                           await SharedPreferences.getInstance();
                       final pdf12 = await Template12.generateTemplate(
-                        'John Smith',
-                        'IT Project Manager',
-                        'Portland, MA',
-                        '123-456-789',
-                        'email@email.com',
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore',
-                        '2006-12',
-                        'Some Company',
-                        'Senior Project Manager',
-                        [
-                          'Notable Achievement/Responsibility',
-                          'Notable Achievement/Responsibility',
-                          'Notable Achievement/Responsibility'
-                        ],
-                        '2003-11',
-                        'Some Company',
-                        'Junior Project Manager',
-                        [
-                          'Notable Achievement/Responsibility',
-                          'Notable Achievement/Responsibility',
-                          'Notable Achievement/Responsibility'
-                        ],
-                        '1999-02',
-                        'Master of Computer Science',
-                        'University of Maryland',
-                        [
-                          'Graduated with a pineapple',
-                          'Member of the Homeless Society'
-                        ],
-                        '1996-07',
-                        'Bachelor of Computer Science',
-                        'University of Maryland',
-                        [
-                          'Member of the Student Association of Blind People',
-                          'Managed student project of 50+ rodents',
-                        ],
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('address')}',
+                        "${prefs.getInt('phone').toString()}",
+                        '${prefs.getString('email')}',
+                        "${prefs.getString('about')}",
+                        '${prefs.getString('CompStartDate1')} -${prefs.getString('CompEndDate1')} ',
+                        '${prefs.getString('CompName1')}',
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('Summary1')}',
+                        '${prefs.getString('CompStartDate2')} -${prefs.getString('CompEndDate2')} ',
+                        '${prefs.getString('CompName2')}',
+                        '${prefs.getString('JobTitle2')}',
+                        '${prefs.getString('Summary2')}',
+                        '${prefs.getString('Eddate1')}',
+                        '${prefs.getString('course')}',
+                        '${prefs.getString('Instname')}',
+                        "${prefs.getString('EdSummary1')}",
+                        '${prefs.getString('Eddate1')}',
+                        '${prefs.getString('course')}',
+                        '${prefs.getString('Instname')}',
+                        "${prefs.getString('EdSummary1')}",
+                        '${prefs.getString('Skill1')}',
+                        '${prefs.getString('Skill2')}',
+                        '${prefs.getString('Skill3')}',
                       );
                       Template12.openFile(pdf12);
                     },

@@ -27,14 +27,6 @@ class Template12 {
           ),
         ),
         pw.SizedBox(width: 10),
-        pw.Container(
-          child: pw.Text(
-            data,
-            style: kContentTextStyle.copyWith(
-              fontSize: 12,
-            ),
-          ),
-        ),
       ],
     );
   }
@@ -43,7 +35,7 @@ class Template12 {
     String date,
     String companyName,
     String jobTitle,
-    List<String> notableAchievements,
+    String notableAchievements,
   ) {
     return pw.Expanded(
         child: pw.Row(
@@ -83,15 +75,7 @@ class Template12 {
               ),
               //achievements/recognition
               pw.Bullet(
-                text: notableAchievements[0],
-                style: kContentTextStyle.copyWith(fontSize: 16),
-              ),
-              pw.Bullet(
-                text: notableAchievements[1],
-                style: kContentTextStyle.copyWith(fontSize: 16),
-              ),
-              pw.Bullet(
-                text: notableAchievements[2],
+                text: '$notableAchievements',
                 style: kContentTextStyle.copyWith(fontSize: 16),
               ),
             ],
@@ -105,7 +89,8 @@ class Template12 {
     String date,
     String courseName,
     String nameOfInstitution,
-    List<String> notableAchievements,
+    String notableAchievements,
+    String notableAchievements2,
   ) {
     return pw.Expanded(
       child: pw.Row(
@@ -137,11 +122,11 @@ class Template12 {
                 ),
                 //achievements/recognition
                 pw.Bullet(
-                  text: notableAchievements[0],
+                  text: notableAchievements,
                   style: kContentTextStyle.copyWith(fontSize: 16),
                 ),
                 pw.Bullet(
-                  text: notableAchievements[1],
+                  text: notableAchievements2,
                   style: kContentTextStyle.copyWith(fontSize: 16),
                 ),
               ],
@@ -154,7 +139,6 @@ class Template12 {
 
   static Future<File> generateTemplate(
     String name,
-    String currentJobTitle,
     String address,
     String phoneNo,
     String email,
@@ -162,20 +146,22 @@ class Template12 {
     String date1,
     String company1,
     String jobTitle1,
-    List<String> notableAchievements1,
+    var notableAchievements1,
     String date2,
     String company2,
     String jobTitle2,
-    List<String> notableAchievements2,
+    var notableAchievements2,
     String eduDate1,
     String courseName1,
     String institution1,
-    List<String> educationNotableAchievement1,
+    var educationNotableAchievement1,
     String eduDate2,
     String courseName2,
     String institution2,
-    List<String> educationNotableAchievement2,
-    String skillSummary,
+    var educationNotableAchievement2,
+    String skill1,
+    String skill2,
+    String skill3,
   ) async {
     final pdf = pw.Document();
     pdf.addPage(pw.Page(
@@ -198,15 +184,7 @@ class Template12 {
               ),
               pw.SizedBox(height: 10),
               //Job title
-              pw.Container(
-                child: pw.Text(
-                  currentJobTitle,
-                  style: pw.TextStyle(
-                    color: PdfColors.lightBlueAccent,
-                    fontSize: 25,
-                  ),
-                ),
-              ),
+
               pw.SizedBox(height: 10),
               //Address
               createRowBioData('Address', address),
@@ -237,17 +215,19 @@ class Template12 {
           ),
           pw.SizedBox(height: 10),
           //Experience details - 1
-          createExperienceContent(date1, company1, jobTitle1, [
-            notableAchievements1[0],
-            notableAchievements1[1],
-            notableAchievements1[2],
-          ]),
+          createExperienceContent(
+            date1,
+            company1,
+            jobTitle1,
+            notableAchievements1,
+          ),
           //Experience details - 2
-          createExperienceContent(date2, company2, jobTitle2, [
-            notableAchievements2[0],
-            notableAchievements2[1],
-            notableAchievements2[2],
-          ]),
+          createExperienceContent(
+            date2,
+            company2,
+            jobTitle2,
+            notableAchievements2,
+          ),
           pw.SizedBox(height: 10),
           pw.Container(
             child: pw.Text(
@@ -257,11 +237,15 @@ class Template12 {
           ),
           pw.SizedBox(height: 10),
           //Education details - 1
-          createEducationContent(eduDate1, courseName1, institution1,
-              educationNotableAchievement1),
+          createEducationContent(
+            eduDate1,
+            courseName1,
+            institution1,
+            educationNotableAchievement1,
+            educationNotableAchievement2,
+          ),
           //Education details - 2
-          createEducationContent(eduDate2, courseName2, institution2,
-              educationNotableAchievement2),
+
           pw.Row(
             mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
             crossAxisAlignment: pw.CrossAxisAlignment.start,
@@ -281,7 +265,7 @@ class Template12 {
                 flex: 3,
                 child: pw.Container(
                   child: pw.Text(
-                    skillSummary,
+                    skill1 + skill2 + skill3,
                     style: kContentTextStyle,
                     maxLines: 3,
                   ),
