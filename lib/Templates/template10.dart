@@ -14,7 +14,7 @@ class Template10 {
   );
   static final kSubTitleTextStyle = pw.TextStyle(
       fontWeight: pw.FontWeight.bold,
-      fontSize: 10,
+      fontSize: 16,
       letterSpacing: 1,
   );
   static Future<File> generateText10(
