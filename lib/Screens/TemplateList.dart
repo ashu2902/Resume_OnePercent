@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/Screens/PdfScreen.dart';
 import 'package:resume/Templates/Tamplate3.dart';
 import 'package:resume/Templates/template1.dart';
 import 'package:resume/Templates/template10.dart';
@@ -7,6 +8,7 @@ import 'package:resume/Templates/template12.dart';
 import 'package:resume/Templates/template14.dart';
 import 'package:resume/Templates/template15.dart';
 import 'package:resume/Templates/template16.dart';
+
 import 'package:resume/Templates/template17.dart';
 import 'package:resume/Templates/template18.dart';
 import 'package:resume/Templates/template19.dart';
@@ -44,7 +46,7 @@ class _TemplateListState extends State<TemplateList> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  ///1g
+                  ///1
                   TemplateButton(
                       onPressed: () async {
                         SharedPreferences prefs =
@@ -76,7 +78,15 @@ class _TemplateListState extends State<TemplateList> {
                             '${prefs.getString('ProjectDesc1')}',
                             '${prefs.getString('ProjectTitle2')}',
                             '${prefs.getString('ProjectDesc2')}');
-                        Template1.openFile(pdfFile);
+                        // Template1.openFile(pdfFile);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PdfScreen(
+                                      file: pdfFile.path,
+                                      title:
+                                          'Resume: ${prefs.getString('name')} ',
+                                    )));
                       },
                       title: 'Template1'),
 
@@ -666,7 +676,7 @@ class _TemplateListState extends State<TemplateList> {
                       final pdf = await Template20.generateText(
                         '${prefs.getString('name')}',
                         '${prefs.getString('JobTitle1')}',
-                        '${prefs.getInt('about')}',
+                        '${prefs.getString('about')}',
                         '${prefs.getString('JobTitle1')}',
                         '${prefs.getString('CompName1')}',
                         "${prefs.getString('CompLocation1')}",
@@ -680,7 +690,7 @@ class _TemplateListState extends State<TemplateList> {
                         "${prefs.getString('CompEndDate2')}",
                         "${prefs.getString('Summary2')}",
                         '${prefs.getString('email')}',
-                        '${prefs.getString('phone')}',
+                        '${prefs.getInt('phone').toString()}',
                         '${prefs.getString('address')}',
                         '${prefs.getString('Skill1')}',
                         '${prefs.getString('Skill2')}',
