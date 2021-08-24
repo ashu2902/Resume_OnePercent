@@ -60,9 +60,14 @@ class Template1 {
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
                       pw.Container(
-                          alignment: pw.Alignment.topLeft,
-                          child: pw.Text('About',
-                              style: pw.TextStyle(fontSize: 18))),
+
+                        alignment: pw.Alignment.topLeft,
+                        child: pw.Text(
+                          'About',
+                          style: pw.TextStyle(fontSize: 18),
+                          maxLines: 2,
+                        ),
+                      ),
                       pw.Container(width: 30, child: pw.Divider())
                     ]),
 
