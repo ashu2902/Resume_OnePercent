@@ -44,7 +44,7 @@ class Template20 {
         TextContainer(
           summary,
           kContentTextStyle.copyWith(
-            fontSize: 22,
+            fontSize: 18,
           ),
         ),
       ],

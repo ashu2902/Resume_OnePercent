@@ -6,7 +6,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 class Template1 {
-  static Future<File> generateText(
+  static Future<pw.Document> generateText(
       String name,
       address,
       phone,
@@ -183,7 +183,8 @@ class Template1 {
               ])),
     );
 
-    return saveDocument(name: 'my_resume.pdf', pdf: pdf);
+    //return saveDocument(name: 'my_resume.pdf', pdf: pdf);
+    return pdf;
   }
 
   static Future<File> saveDocument(
