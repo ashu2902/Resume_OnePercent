@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pdf_render/pdf_render_widgets.dart';
 
 class PdfScreen extends StatelessWidget {
-  PdfScreen({required this.file, required this.title});
-  final file;
+  PdfScreen({required this.path, required this.title});
+  final path;
   final title;
   @override
   Widget build(BuildContext context) {
@@ -13,6 +13,6 @@ class PdfScreen extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton.extended(
             onPressed: null, label: Icon(Icons.download_rounded)),
-        body: Container(child: PdfViewer.openFile(file)));
+        body: Container(child: PdfViewer.openFile(path)));
   }
 }
