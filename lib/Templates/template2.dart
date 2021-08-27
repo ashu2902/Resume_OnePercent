@@ -5,6 +5,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 // template 2
+// 2
 class PdfApi2 {
   static Future<File> generateText2(
       name,
@@ -153,7 +154,7 @@ class PdfApi2 {
         ]),
       ),
     );
-    return saveDocument2(name: 'new_resume', pdf: pdf2);
+    return saveDocument2(name: 'new_resume.pdf', pdf: pdf2);
   }
 
   static Future<File> saveDocument2(
