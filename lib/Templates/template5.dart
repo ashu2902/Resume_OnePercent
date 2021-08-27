@@ -150,7 +150,7 @@ class Template5 {
                         ])
                   ])),
     );
-    return saveDocument5(name: 'resume5', pdf: pdf5);
+    return saveDocument5(name: 'resume5.pdf', pdf: pdf5);
   }
 
   static Future<File> saveDocument5(

@@ -153,7 +153,7 @@ class PdfApi2 {
         ]),
       ),
     );
-    return saveDocument2(name: 'new_resume', pdf: pdf2);
+    return saveDocument2(name: 'new_resume.pdf', pdf: pdf2);
   }
 
   static Future<File> saveDocument2(
