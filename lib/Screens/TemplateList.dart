@@ -47,6 +47,43 @@ class _TemplateListState extends State<TemplateList> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   ///1
+                  ///
+                  TemplateButton(
+                      onPressed: () async {
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Temp1(
+                                    name: '${prefs.getString('name')}',
+                                    address: '${prefs.getString('address')}',
+                                    phone: '${prefs.getInt('phone')}',
+                                    email: '${prefs.getString('email')}',
+                                    about: 'about',
+                                    jobTitle1: 'jobTitle1',
+                                    organization1: 'organization1',
+                                    startdate1: 'startdate1',
+                                    enddate1: 'enddate1',
+                                    jobTitle2: 'jobTitle2',
+                                    organization2: 'organization2',
+                                    startdate2: 'startdate2',
+                                    enddate2: 'enddate2',
+                                    skills: 'skills',
+                                    instName1: 'instName1',
+                                    course1: 'course1',
+                                    edDate1: 'edDate1',
+                                    experienceAbout1: 'experienceAbout1',
+                                    instName2: 'instName2',
+                                    course2: 'course2',
+                                    edDate2: 'edDate2',
+                                    experienceAbout2: 'experienceAbout2',
+                                    projTitle1: 'projTitle1',
+                                    projectDesc1: 'projectDesc1',
+                                    projTitle2: 'projTitle2',
+                                    projectDesc2: 'projectDesc2')));
+                      },
+                      title: 'test'),
                   TemplateButton(
                       onPressed: () async {
                         SharedPreferences prefs =
@@ -78,18 +115,15 @@ class _TemplateListState extends State<TemplateList> {
                             '${prefs.getString('ProjectDesc1')}',
                             '${prefs.getString('ProjectTitle2')}',
                             '${prefs.getString('ProjectDesc2')}');
-                        final file = await Template1.saveDocument(name: 'my_resume.pdf', pdf: pdfFile);
                         // Template1.openFile(pdfFile);
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder:  (context) => PdfScreen(
-                              pdf: pdfFile,
-                              file: file,
-                              title: 'Resume: ${prefs.getString('name')} ',
-                            ),
-                          ),
-                        );
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PdfScreen(
+                                      path: pdfFile.path,
+                                      title:
+                                          'Resume: ${prefs.getString('name')} ',
+                                    )));
                       },
                       title: 'Template1'),
 
@@ -721,7 +755,6 @@ class _TemplateListState extends State<TemplateList> {
 
 class TemplateButton extends StatelessWidget {
   TemplateButton({required this.onPressed, required this.title});
-
   final onPressed;
   final title;
 
