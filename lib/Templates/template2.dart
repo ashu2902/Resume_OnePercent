@@ -1,12 +1,13 @@
 import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 // template 2
-class PdfApi2 {
-  static Future<File> generateText2(
+class Template2 {
+  static pw.Document generateText2(
       name,
       address,
       phone,
@@ -35,7 +36,7 @@ class PdfApi2 {
       projectDescription1,
       projecttitle2,
       projectDescription2,
-      ) async {
+      )  {
     final pdf2 = pw.Document();
     pdf2.addPage(
       pw.Page(
@@ -153,7 +154,7 @@ class PdfApi2 {
         ]),
       ),
     );
-    return saveDocument2(name: 'new_resume.pdf', pdf: pdf2);
+    return pdf2;
   }
 
   static Future<File> saveDocument2(
@@ -173,3 +174,5 @@ class PdfApi2 {
     await OpenFile.open(url);
   }
 }
+
+

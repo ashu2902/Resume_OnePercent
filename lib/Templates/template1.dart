@@ -7,8 +7,8 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:pdf_render/pdf_render_widgets.dart';
 
-class Temp1 extends StatefulWidget {
-  Temp1(
+class Template1 extends StatefulWidget {
+  Template1(
       {required this.name,
       required this.address,
       required this.phone,
@@ -35,6 +35,7 @@ class Temp1 extends StatefulWidget {
       required this.projectDesc1,
       required this.projTitle2,
       required this.projectDesc2});
+
   final name;
   final address;
   final phone;
@@ -65,11 +66,12 @@ class Temp1 extends StatefulWidget {
   final pdf = pw.Document();
 
   @override
-  _Temp1State createState() => _Temp1State();
+  _Template1State createState() => _Template1State();
 }
 
-class _Temp1State extends State<Temp1> {
+class _Template1State extends State<Template1> {
   var path;
+
   @override
   void initState() {
     super.initState();
@@ -221,10 +223,11 @@ class _Temp1State extends State<Temp1> {
   }
 
   var files;
+
   Future savePdf() async {
     Directory? dir = await getApplicationDocumentsDirectory();
-    String documetPath = dir.path;
-    File file = File("$documetPath/Resume.pdf");
+    String documentPath = dir.path;
+    File file = File("$documentPath/Resume.pdf");
 
     setState(() {
       path = file.path;
@@ -233,28 +236,31 @@ class _Temp1State extends State<Temp1> {
   }
 
   bool isPathAvailable = false;
+
 //comment
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Resume'),
-        ),
-        floatingActionButton: FloatingActionButton.extended(
-            onPressed: () async {
-              print(path);
-              Directory? dirs = await getExternalStorageDirectory();
-              File files = File("${dirs!.path}/Resume.pdf");
-              files.writeAsBytesSync(await widget.pdf.save());
-              print(files.path);
-            },
-            label: Text('Save')),
-        body: Container(
-            child: isPathAvailable
-                ? PdfViewer.openFile(
-                    path,
-                    params: PdfViewerParams(pageNumber: 1),
-                  )
-                : Text('Loading')));
+      appBar: AppBar(
+        title: Text('Resume'),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+          onPressed: () async {
+            Directory? dirs = await getExternalStorageDirectory();
+            File files = File("${dirs!.path}/Resume.pdf");
+            files.writeAsBytesSync(await widget.pdf.save());
+          },
+          label: Text('Save')),
+      body: Container(
+        child: isPathAvailable
+            ? PdfViewer.openFile(
+                path,
+                params: PdfViewerParams(pageNumber: 1),
+              )
+            : Center(
+                child: Text('Loading'),
+              ),
+      ),
+    );
   }
 }

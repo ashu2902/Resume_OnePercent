@@ -16,7 +16,7 @@ class Template10 {
     fontSize: 10,
     letterSpacing: 1,
   );
-  static Future<File> generateText10(
+  static pw.Document generateText10(
     name,
     address,
     phone,
@@ -51,7 +51,7 @@ class Template10 {
     projectDescription1,
     projecttitle2,
     projectDescription2,
-  ) async {
+  )  {
     final pdf10 = pw.Document();
     pdf10.addPage(
       pw.Page(
@@ -208,23 +208,7 @@ class Template10 {
             ]),
       ),
     );
-    return saveDocument10(name: 'resume10', pdf: pdf10);
+    return pdf10;
   }
 
-  static Future<File> saveDocument10(
-      {required String name, required pw.Document pdf}) async {
-    final bytes = await pdf.save();
-
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/$name');
-
-    await file.writeAsBytes(bytes);
-    return file;
-  }
-
-  static Future openFile(File file8) async {
-    final url = file8.path;
-
-    await OpenFile.open(url);
-  }
 }

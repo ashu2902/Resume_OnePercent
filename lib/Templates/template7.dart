@@ -5,7 +5,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 class Template7 {
-  static Future<File> generateText(
+  static pw.Document generateTemplate(
     String name,
     String jobTitle,
     String email,
@@ -28,7 +28,7 @@ class Template7 {
     notableAchievements2,
     String projectTitle,
     String projectNotableAchievement,
-  ) async {
+  ) {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -219,23 +219,6 @@ class Template7 {
                   ])),
     );
 
-    return saveDocument(name: 'my_resume.pdf', pdf: pdf);
-  }
-
-  static Future<File> saveDocument(
-      {required String name, required pw.Document pdf}) async {
-    final bytes = await pdf.save();
-
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/$name');
-
-    await file.writeAsBytes(bytes);
-    return file;
-  }
-
-  static Future openFile(File file) async {
-    final url = file.path;
-
-    await OpenFile.open(url);
+    return pdf;
   }
 }

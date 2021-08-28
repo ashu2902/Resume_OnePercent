@@ -4,8 +4,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
-class Pdf {
-  static Future<File> generateText(
+class Template3 {
+  static pw.Document generateText(
       String name,
       address,
       phone,
@@ -29,7 +29,7 @@ class Pdf {
       edDate1,
       instName2,
       course2,
-      edDate2) async {
+      edDate2)  {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -148,7 +148,7 @@ class Pdf {
               ])),
     );
 
-    return saveDocument(name: 'my_resume.pdf', pdf: pdf);
+    return pdf;
   }
 
   static Future<File> saveDocument(

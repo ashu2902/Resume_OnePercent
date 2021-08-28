@@ -16,8 +16,9 @@ class Template13 {
   static pw.Expanded createEmploymentData(
     String jobTitle,
     String companyName,
-    String date,
-    List<String> responsibilities,
+    String compStartDate,
+    String compEndDate,
+    String summary,
     String city,
   ) {
     return pw.Expanded(
@@ -39,20 +40,14 @@ class Template13 {
                 ),
                 pw.Container(
                   child: pw.Text(
-                    date,
+                    compStartDate + ' - ' + compEndDate,
                     style: kContentTextStyle.copyWith(
                         color: PdfColors.lightBlueAccent),
                   ),
                 ),
                 pw.Container(
                   child: pw.Text(
-                    responsibilities[0],
-                    style: kContentTextStyle,
-                  ),
-                ),
-                pw.Container(
-                  child: pw.Text(
-                    responsibilities[1],
+                    summary,
                     style: kContentTextStyle,
                   ),
                 ),
@@ -131,31 +126,33 @@ class Template13 {
     );
   }
 
-  static Future<File> generateTemplate(
-    String name,
-    String address,
-    String phoneNo,
-    String email,
-    String professionalSummary,
-    String jobTitle1,
-    String company1,
-    String date1,
-    List<String> responsibilities1,
-    String jobCity1,
-    String jobTitle2,
-    String company2,
-    String date2,
-    List<String> responsibilities2,
-    String jobCity2,
-    String institution,
-    String eduDate,
-    String eduNotableAchievement,
-    String eduLocation,
-    String honorInstitution,
-    String honorDate,
-    String honorNotableAchievement,
-    String honorLocation,
-  ) async {
+  static pw.Document generateTemplate(
+    name,
+    address,
+    phoneNo,
+    email,
+    about,
+    jobTitle1,
+    company1,
+    compStartDate1,
+    compEndDate1,
+    jobSummary1,
+    compLocation1,
+    jobTitle2,
+    company2,
+    compStartDate2,
+    compEndDate2,
+    jobSummary2,
+    compLocation2,
+    instName1,
+    edDate1,
+    edSummary1,
+    edLocation1,
+    instName2,
+    edDate2,
+    edSummary2,
+    edLocation2,
+  ) {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -194,7 +191,7 @@ class Template13 {
             pw.SizedBox(height: 10),
             pw.Container(
               child: pw.Text(
-                professionalSummary,
+                about,
                 style: kContentTextStyle,
               ),
             ),
@@ -211,9 +208,9 @@ class Template13 {
             pw.SizedBox(height: 10),
             //Employment Summary
             createEmploymentData(
-                jobTitle1, company1, date1, responsibilities1, jobCity1),
+                jobTitle1, company1, compStartDate1, compEndDate1, jobSummary1, compLocation1),
             createEmploymentData(
-                jobTitle2, company2, date2, responsibilities2, jobCity2),
+                jobTitle2, company2, compStartDate2, compEndDate2, jobSummary2, compLocation2),
             pw.SizedBox(height: 20),
             //Education
             pw.Container(
@@ -226,7 +223,7 @@ class Template13 {
             pw.Divider(thickness: 2),
             pw.SizedBox(height: 10),
             createEducationData(
-                institution, eduDate, eduNotableAchievement, eduLocation),
+                instName1, edDate1, edSummary1, edLocation1),
             pw.SizedBox(height: 20),
             //Honors
             pw.Container(
@@ -238,30 +235,13 @@ class Template13 {
             pw.SizedBox(height: 10),
             pw.Divider(thickness: 2),
             pw.SizedBox(height: 10),
-            createEducationData(honorInstitution, honorDate,
-                honorNotableAchievement, honorLocation),
+            createEducationData(instName2, edDate2,
+                edSummary2, edLocation2),
           ],
         ),
       ),
     );
 
-    return saveDocument(name: 'template13.pdf', pdf: pdf);
-  }
-
-  static Future<File> saveDocument(
-      {required String name, required pw.Document pdf}) async {
-    final bytes = await pdf.save();
-
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/$name');
-
-    await file.writeAsBytes(bytes);
-    return file;
-  }
-
-  static Future openFile(File file) async {
-    final url = file.path;
-
-    await OpenFile.open(url);
+    return pdf;
   }
 }

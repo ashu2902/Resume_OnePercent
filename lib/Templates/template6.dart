@@ -19,7 +19,7 @@ class Template6 {
     color: PdfColors.lightBlueAccent,
   );
 
-  static Future<File> generateTemplate(
+  static pw.Document generateTemplate(
     name,
     about,
     jobTitle1,
@@ -42,7 +42,7 @@ class Template6 {
     skill3,
     lang1,
     lang2,
-  ) async {
+  ) {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -219,7 +219,7 @@ class Template6 {
       ),
     );
 
-    return saveDocument(name: 'template6.pdf', pdf: pdf);
+    return pdf;
   }
 
   static Future<File> saveDocument(
