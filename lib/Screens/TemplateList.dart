@@ -282,7 +282,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'Template6',
+                    image: 'assets/images/template6.png',
                   ),
                   //7
                   TemplateButton(
@@ -321,7 +321,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template7.png',
                   ),
                   //8
                   TemplateButton(
@@ -370,7 +370,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template8.png',
                   ),
                   //9
                   TemplateButton(
@@ -420,7 +420,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template9.png',
                   ),
                   //10
                   TemplateButton(
@@ -470,7 +470,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template10.png',
                   ),
                   //11
                   TemplateButton(
@@ -508,7 +508,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template11.png',
                   ),
                   //12
                   TemplateButton(
@@ -549,7 +549,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template12.png',
                   ),
                   //13
                   TemplateButton(
@@ -591,7 +591,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'assets/images/template3.jpg',
+                    image: 'assets/images/template13.jpg',
                   ),
                   //14
                   TemplateButton(
@@ -681,7 +681,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template16.png',
                   ),
                   //17
                   TemplateButton(
@@ -720,7 +720,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template17.png',
                   ),
                   //18
                   TemplateButton(
@@ -763,7 +763,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template18.png',
                   ),
                   //19
                   TemplateButton(
@@ -806,7 +806,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template19.png',
                   ),
                   //20
                   TemplateButton(
