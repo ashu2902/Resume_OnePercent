@@ -40,7 +40,11 @@ class _Templ1State extends State<Templ1> {
       ),
       body: Container(
         child: GridView.count(
+          childAspectRatio: 0.7,
+          cacheExtent: 50,
+          crossAxisSpacing: 0,
           crossAxisCount: 2,
+          mainAxisSpacing: 0,
           children: [
             Container(
               child: TemplateButton(
@@ -873,7 +877,7 @@ class TemplateButton extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: this.onPressed,
-        child: Container(
+        child: Card(
           child: Image(
             image: AssetImage(
               this.image,
