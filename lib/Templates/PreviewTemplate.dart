@@ -44,8 +44,10 @@ class _PreviewTemplateState extends State<PreviewTemplate> {
       ),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: () async {
+            print('tapped');
+
             Directory? dirs = await getExternalStorageDirectory();
-            File files = File("${dirs!.path}/Resume.pdf");
+            File files = File("${dirs!.path}/${widget.name}.pdf");
             files.writeAsBytesSync(await widget.pdf.save());
             print(dirs.path);
           },
