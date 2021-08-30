@@ -603,7 +603,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'assets/images/template13.jpg',
+                    image: 'assets/images/template13.png',
                   ),
                   //14
                   TemplateButton(
@@ -611,7 +611,7 @@ class _TemplateListState extends State<TemplateList> {
                       SharedPreferences prefs =
                           await SharedPreferences.getInstance();
                     },
-                    image: 'template14',
+                    image: 'assets/images/template13.png',
                   ),
                   //15
                   TemplateButton(
@@ -656,7 +656,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template13.png',
                   ),
                   //16
                   TemplateButton(
@@ -870,7 +870,7 @@ class _TemplateListState extends State<TemplateList> {
                         ),
                       );
                     },
-                    image: 'img',
+                    image: 'assets/images/template13.png',
                   ),
                 ],
               )),

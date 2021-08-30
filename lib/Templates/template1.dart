@@ -223,12 +223,11 @@ class _Template1State extends State<Template1> {
   }
 
   var files;
-  bool isPathAvailable = false;
 
   Future savePdf() async {
     Directory? dir = await getApplicationDocumentsDirectory();
     String documentPath = dir.path;
-    File file = File("$documentPath/ ${widget.name}-Resume");
+    File file = File("$documentPath/Resume.pdf");
 
     setState(() {
       path = file.path;
@@ -236,6 +235,9 @@ class _Template1State extends State<Template1> {
     });
   }
 
+  bool isPathAvailable = false;
+
+//comment
   @override
   Widget build(BuildContext context) {
     return Scaffold(
