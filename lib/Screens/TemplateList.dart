@@ -56,32 +56,34 @@ class _Templ1State extends State<Templ1> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => Template1(
-                          name: '${prefs.getString('name')}',
-                          address: '${prefs.getString('address')}',
-                          phone: '${prefs.getInt('phone')}',
-                          email: '${prefs.getString('email')}',
-                          about: 'about',
-                          jobTitle1: 'jobTitle1',
-                          organization1: 'organization1',
-                          startdate1: 'startdate1',
-                          enddate1: 'enddate1',
-                          jobTitle2: 'jobTitle2',
-                          organization2: 'organization2',
-                          startdate2: 'startdate2',
-                          enddate2: 'enddate2',
-                          skills: 'skills',
-                          instName1: 'instName1',
-                          course1: 'course1',
-                          edDate1: 'edDate1',
-                          experienceAbout1: 'experienceAbout1',
-                          instName2: 'instName2',
-                          course2: 'course2',
-                          edDate2: 'edDate2',
-                          experienceAbout2: 'experienceAbout2',
-                          projTitle1: 'projTitle1',
-                          projectDesc1: 'projectDesc1',
-                          projTitle2: 'projTitle2',
-                          projectDesc2: 'projectDesc2'),
+                        name: '${prefs.getString('name')}',
+                        address: '${prefs.getString('address')}',
+                        phone: '${prefs.getInt('phone')}',
+                        email: '${prefs.getString('email')}',
+                        about: "${prefs.getString('about')}",
+                        jobTitle1: '${prefs.getString('JobTitle1')}',
+                        organization1: '${prefs.getString('CompName1')}',
+                        startdate1: '${prefs.getString('CompStartDate1')}',
+                        enddate1: '${prefs.getString('CompEndDate1')}',
+                        jobTitle2: '${prefs.getString('JobTitle2')}',
+                        organization2: '${prefs.getString('CompName2')}',
+                        startdate2: '${prefs.getString('CompStartDate2')}',
+                        enddate2: '${prefs.getString('CompEndDate2')}',
+                        skills:
+                            '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
+                        instName1: "${prefs.getString('Instname')}",
+                        course1: "${prefs.getString('course')}",
+                        edDate1: '${prefs.getString('Eddate1')}',
+                        experienceAbout1: "${prefs.getString('EdSummary1')}",
+                        instName2: "${prefs.getString('Instnam2')}",
+                        course2: '"${prefs.getString('cours2')}"',
+                        edDate2: '${prefs.getString('Eddate2')}',
+                        experienceAbout2: '"${prefs.getString('EdSummary2')}"',
+                        projTitle1: "${prefs.getString('ProjectTitle1')}",
+                        projectDesc1: "${prefs.getString('ProjectDesc1')}",
+                        projTitle2: "${prefs.getString('ProjectTitle2')}",
+                        projectDesc2: "${prefs.getString('ProjectDesc2')}",
+                      ),
                     ),
                   );
                 },
@@ -112,7 +114,7 @@ class _Templ1State extends State<Templ1> {
                           '${prefs.getString('Summary1')}',
                           "${prefs.getString('CompName2')}",
                           "${prefs.getString('CompLocation1')}",
-                          "${prefs.getString('CompStartDate1')}",
+                          "${prefs.getString('CompStartDate2')}",
                           "${prefs.getString('CompEndDate2')}",
                           '${prefs.getString('Summary2')}',
                           "${prefs.getString('Instname')}",
@@ -138,7 +140,45 @@ class _Templ1State extends State<Templ1> {
                 srno: 2,
               ),
             ),
-
+//
+            TemplateButton(
+                onPressed: () async {
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PreviewTemplate(
+                              Template3.generateText(
+                                '${prefs.getString('name')}',
+                                '${prefs.getString('address')}',
+                                '${prefs.getInt('phone')}',
+                                '${prefs.getString('email')}',
+                                "${prefs.getString('about')}",
+                                '${prefs.getString('CompStartDate1')}',
+                                '${prefs.getString('JobTitle1')}',
+                                '${prefs.getString('CompName1')}',
+                                '${prefs.getString('Summary1')}',
+                                '${prefs.getString('CompStartDate2')}',
+                                '${prefs.getString('JobTitle2')}',
+                                '${prefs.getString('CompName2')}',
+                                '${prefs.getString('Summary2')}',
+                                "${prefs.getString('ProjectTitle1')}",
+                                "${prefs.getString('ProjectDesc1')}",
+                                "${prefs.getString('ProjectTitle2')}",
+                                "${prefs.getString('ProjectDesc2')}",
+                                '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
+                                "${prefs.getString('Instname')}",
+                                "${prefs.getString('course')}",
+                                '${prefs.getString('Eddate1')}',
+                                "${prefs.getString('Instname2')}",
+                                "${prefs.getString('course2')}",
+                                '${prefs.getString('Eddate2')}',
+                              ),
+                              '${prefs.getString('name')}')));
+                },
+                image: 'assets/images/template3.jpg',
+                srno: 03),
             TemplateButton(
               onPressed: () async {
                 SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -618,7 +658,7 @@ class _Templ1State extends State<Templ1> {
                               '${prefs.getString('name')}',
                             )));
               },
-              image: 'assets/images/template13.png',
+              image: 'assets/images/template14.jpg',
               srno: 14,
             ),
             //15
@@ -663,7 +703,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template13.png',
+              image: 'assets/images/template15.jpg',
               srno: 15,
             ),
             //16
@@ -877,7 +917,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template13.png',
+              image: 'assets/images/template20.webp',
               srno: 20,
             ),
           ],
