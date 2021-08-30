@@ -48,43 +48,45 @@ class _Templ1State extends State<Templ1> {
           children: [
             Container(
               child: TemplateButton(
-                  onPressed: () async {
-                    SharedPreferences prefs =
-                        await SharedPreferences.getInstance();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Template1(
-                            name: '${prefs.getString('name')}',
-                            address: '${prefs.getString('address')}',
-                            phone: '${prefs.getInt('phone')}',
-                            email: '${prefs.getString('email')}',
-                            about: 'about',
-                            jobTitle1: 'jobTitle1',
-                            organization1: 'organization1',
-                            startdate1: 'startdate1',
-                            enddate1: 'enddate1',
-                            jobTitle2: 'jobTitle2',
-                            organization2: 'organization2',
-                            startdate2: 'startdate2',
-                            enddate2: 'enddate2',
-                            skills: 'skills',
-                            instName1: 'instName1',
-                            course1: 'course1',
-                            edDate1: 'edDate1',
-                            experienceAbout1: 'experienceAbout1',
-                            instName2: 'instName2',
-                            course2: 'course2',
-                            edDate2: 'edDate2',
-                            experienceAbout2: 'experienceAbout2',
-                            projTitle1: 'projTitle1',
-                            projectDesc1: 'projectDesc1',
-                            projTitle2: 'projTitle2',
-                            projectDesc2: 'projectDesc2'),
-                      ),
-                    );
-                  },
-                  image: 'assets/images/template1.jpg'),
+                onPressed: () async {
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Template1(
+                          name: '${prefs.getString('name')}',
+                          address: '${prefs.getString('address')}',
+                          phone: '${prefs.getInt('phone')}',
+                          email: '${prefs.getString('email')}',
+                          about: 'about',
+                          jobTitle1: 'jobTitle1',
+                          organization1: 'organization1',
+                          startdate1: 'startdate1',
+                          enddate1: 'enddate1',
+                          jobTitle2: 'jobTitle2',
+                          organization2: 'organization2',
+                          startdate2: 'startdate2',
+                          enddate2: 'enddate2',
+                          skills: 'skills',
+                          instName1: 'instName1',
+                          course1: 'course1',
+                          edDate1: 'edDate1',
+                          experienceAbout1: 'experienceAbout1',
+                          instName2: 'instName2',
+                          course2: 'course2',
+                          edDate2: 'edDate2',
+                          experienceAbout2: 'experienceAbout2',
+                          projTitle1: 'projTitle1',
+                          projectDesc1: 'projectDesc1',
+                          projTitle2: 'projTitle2',
+                          projectDesc2: 'projectDesc2'),
+                    ),
+                  );
+                },
+                image: 'assets/images/template1.jpg',
+                srno: 1,
+              ),
             ),
             Container(
               child: //2
@@ -132,8 +134,10 @@ class _Templ1State extends State<Templ1> {
                   );
                 },
                 image: 'assets/images/template2.jpg',
+                srno: 2,
               ),
-            ), //2
+            ),
+
             TemplateButton(
               onPressed: () async {
                 SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -141,79 +145,36 @@ class _Templ1State extends State<Templ1> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => PreviewTemplate(
-                      Template2.generateText2(
+                      Template4.generateTemplate(
                         '${prefs.getString('name')}',
-                        "${prefs.getString('address')}",
-                        "${prefs.getInt('phone')}",
-                        "${prefs.getString('email')}",
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
+                        '${prefs.getString('email')}',
                         "${prefs.getString('about')}",
-                        "${prefs.getString('CompName1')}",
-                        "${prefs.getString('CompLocation1')}",
-                        "${prefs.getString('CompStartDate1')}",
-                        "${prefs.getString('CompEndDate1')}",
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('CompName1')}',
+                        '${prefs.getString('CompStartDate1')}',
                         '${prefs.getString('Summary1')}',
-                        "${prefs.getString('CompName2')}",
-                        "${prefs.getString('CompLocation1')}",
-                        "${prefs.getString('CompStartDate1')}",
-                        "${prefs.getString('CompEndDate2')}",
+                        '${prefs.getString('JobTitle2')}',
+                        '${prefs.getString('CompName2')}',
+                        '${prefs.getString('CompStartDate2')}',
                         '${prefs.getString('Summary2')}',
-                        "${prefs.getString('Instname')}",
-                        "${prefs.getString('EdLocation1')}",
-                        "${prefs.getString('course')}",
-                        "${prefs.getString('EdSummary1')}",
-                        "${prefs.getString('Instname2')}",
-                        "${prefs.getString('EdLocation2')}",
-                        "${prefs.getString('course2')}",
-                        "${prefs.getString('EdSummary2')}",
-                        '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
-                        "${prefs.getString('ProjectTitle1')}",
-                        "${prefs.getString('ProjectDesc1')}",
-                        "${prefs.getString('ProjectTitle2')}",
-                        "${prefs.getString('ProjectDesc2')}",
+                        '${prefs.getString('Skill1')}',
+                        '${prefs.getString('Skill2')}',
+                        '${prefs.getString('Skill3')}',
+                        '${prefs.getString('Instname')}',
+                        '${prefs.getString('course')}',
+                        '${prefs.getString('Eddate1')}',
+                        '${prefs.getString('Eddate2')}',
                       ),
                       '${prefs.getString('name')}',
                     ),
                   ),
                 );
               },
-              image: 'assets/images/template2.jpg',
+              image: 'assets/images/template4.jpg',
+              srno: 4,
             ),
-            TemplateButton(
-                onPressed: () async {
-                  SharedPreferences prefs =
-                      await SharedPreferences.getInstance();
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PreviewTemplate(
-                        Template4.generateTemplate(
-                          '${prefs.getString('name')}',
-                          '${prefs.getString('address')}',
-                          '${prefs.getInt('phone')}',
-                          '${prefs.getString('email')}',
-                          "${prefs.getString('about')}",
-                          '${prefs.getString('JobTitle1')}',
-                          '${prefs.getString('CompName1')}',
-                          '${prefs.getString('CompStartDate1')}',
-                          '${prefs.getString('Summary1')}',
-                          '${prefs.getString('JobTitle2')}',
-                          '${prefs.getString('CompName2')}',
-                          '${prefs.getString('CompStartDate2')}',
-                          '${prefs.getString('Summary2')}',
-                          '${prefs.getString('Skill1')}',
-                          '${prefs.getString('Skill2')}',
-                          '${prefs.getString('Skill3')}',
-                          '${prefs.getString('Instname')}',
-                          '${prefs.getString('course')}',
-                          '${prefs.getString('Eddate1')}',
-                          '${prefs.getString('Eddate2')}',
-                        ),
-                        '${prefs.getString('name')}',
-                      ),
-                    ),
-                  );
-                },
-                image: 'assets/images/template4.jpg'),
             //5
             TemplateButton(
               onPressed: () async {
@@ -249,6 +210,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template5.jpg',
+              srno: 5,
             ),
             //6
             TemplateButton(
@@ -288,6 +250,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template6.png',
+              srno: 6,
             ),
             //7
             TemplateButton(
@@ -327,6 +290,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template7.png',
+              srno: 7,
             ),
             //8
             TemplateButton(
@@ -376,6 +340,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template8.png',
+              srno: 8,
             ),
             //9
             TemplateButton(
@@ -426,6 +391,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template9.png',
+              srno: 9,
             ),
             //10
             TemplateButton(
@@ -476,6 +442,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template10.png',
+              srno: 10,
             ),
             //11
             TemplateButton(
@@ -514,6 +481,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template11.png',
+              srno: 11,
             ),
             //12
             TemplateButton(
@@ -555,6 +523,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template12.png',
+              srno: 12,
             ),
             //13
             TemplateButton(
@@ -597,13 +566,50 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template13.png',
+              srno: 13,
             ),
             //14
             TemplateButton(
               onPressed: () async {
                 SharedPreferences prefs = await SharedPreferences.getInstance();
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PreviewTemplate(
+                              Template14.generateText(
+                                  '${prefs.getString('name')}',
+                                  '${prefs.getString('JobTitle1')}',
+                                  '${prefs.getString('address')}',
+                                  "${prefs.getInt('phone').toString()}",
+                                  'website',
+                                  '${prefs.getString('email')}',
+                                  '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
+                                  'awardName',
+                                  'awardCategory',
+                                  'awardOrganization',
+                                  'awardDate',
+                                  'facebook',
+                                  'linkedIn',
+                                  'personalStatement',
+                                  [],
+                                  ['jobCompanies'],
+                                  ['jobDates'],
+                                  'notableAchievements1',
+                                  'notableAchievements2',
+                                  'notableAchievements3',
+                                  'degree',
+                                  'eduDate1',
+                                  'institution',
+                                  'educationNotableAchievement1',
+                                  'course',
+                                  'eduDate2',
+                                  'institution2',
+                                  'educationNotableAchievement2'),
+                              'name',
+                            )));
               },
               image: 'assets/images/template13.png',
+              srno: 14,
             ),
             //15
             TemplateButton(
@@ -648,6 +654,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template13.png',
+              srno: 15,
             ),
             //16
             TemplateButton(
@@ -686,6 +693,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template16.png',
+              srno: 16,
             ),
             //17
             TemplateButton(
@@ -725,6 +733,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template17.png',
+              srno: 17,
             ),
             //18
             TemplateButton(
@@ -768,6 +777,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template18.png',
+              srno: 18,
             ),
             //19
             TemplateButton(
@@ -811,6 +821,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template19.png',
+              srno: 19,
             ),
             //20
             TemplateButton(
@@ -857,6 +868,7 @@ class _Templ1State extends State<Templ1> {
                 );
               },
               image: 'assets/images/template13.png',
+              srno: 20,
             ),
           ],
         ),
@@ -866,10 +878,12 @@ class _Templ1State extends State<Templ1> {
 }
 
 class TemplateButton extends StatelessWidget {
-  TemplateButton({required this.onPressed, required this.image});
+  TemplateButton(
+      {required this.onPressed, required this.image, required this.srno});
 
   final onPressed;
   final image;
+  final srno;
 
   @override
   Widget build(BuildContext context) {
@@ -878,10 +892,19 @@ class TemplateButton extends StatelessWidget {
       child: GestureDetector(
         onTap: this.onPressed,
         child: Card(
-          child: Image(
-            image: AssetImage(
-              this.image,
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image(
+                image: AssetImage(
+                  this.image,
+                ),
+                fit: BoxFit.contain,
+                height: 250,
+              ),
+              Text(this.srno.toString())
+            ],
           ),
         ),
       ),

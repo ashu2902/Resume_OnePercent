@@ -8,12 +8,11 @@ class Template14 {
   static Future<File> generateText(
     String firstName,
     String currentJobTitle,
-    String addressCity,
-    String addressCountry,
+    String address,
     String phoneNo,
     String website,
     String email,
-    List<String> expertise,
+    var expertise,
     String awardName,
     String awardCategory,
     String awardOrganization,
@@ -21,12 +20,12 @@ class Template14 {
     String facebook,
     String linkedIn,
     String personalStatement,
-    List<String> jobTitles,
-    List<String> jobCompanies,
-    List<String> jobDates,
-    List<String> notableAchievements1, //for company 1
-    List<String> notableAchievements2, //for company 2
-    List<String> notableAchievements3, //for company 3
+    List jobTitles,
+    List jobCompanies,
+    List jobDates,
+    var notableAchievements1, //for company 1
+    var notableAchievements2, //for company 2
+    var notableAchievements3, //for company 3
     String degree,
     String eduDate1,
     String institution,
@@ -77,8 +76,7 @@ class Template14 {
                             pw.Container(width: 50, child: pw.Divider()),
                             pw.SizedBox(height: 10),
                             pw.Container(
-                              child: pw.Text(
-                                  addressCity + '\n' + addressCountry,
+                              child: pw.Text(address,
                                   style: pw.TextStyle(
                                       fontWeight: pw.FontWeight.bold)),
                             ),
@@ -102,22 +100,7 @@ class Template14 {
                                         color: PdfColors.black))),
                             pw.Container(width: 50, child: pw.Divider()),
                             pw.SizedBox(height: 10),
-                            pw.Container(
-                                child: pw.Text(
-                              expertise[0] +
-                                  '\n' +
-                                  expertise[1] +
-                                  '\n' +
-                                  expertise[2] +
-                                  '\n' +
-                                  expertise[3] +
-                                  '\n' +
-                                  expertise[4] +
-                                  '\n' +
-                                  expertise[5] +
-                                  '\n' +
-                                  expertise[6],
-                            )),
+                            pw.Container(child: pw.Text(expertise)),
                             //Project Management
                             pw.SizedBox(height: 30),
                             pw.Container(
@@ -152,13 +135,6 @@ class Template14 {
                                         color: PdfColors.black))),
                             pw.Container(width: 50, child: pw.Divider()),
                             pw.SizedBox(height: 10),
-                            pw.Container(
-                              child: pw.Text(
-                                linkedIn + '\n' + facebook,
-                                style: pw.TextStyle(
-                                    fontWeight: pw.FontWeight.bold),
-                              ),
-                            ),
                           ]),
                     )
                   ]),
