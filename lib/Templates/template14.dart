@@ -10,7 +10,6 @@ class Template14 {
     String currentJobTitle,
     String address,
     String phoneNo,
-    String website,
     String email,
     var expertise,
     String awardName,
@@ -54,7 +53,7 @@ class Template14 {
                                 child: pw.Column(children: [
                               pw.Text(firstName.toUpperCase(),
                                   style: pw.TextStyle(
-                                      fontSize: 30,
+                                      fontSize: 27,
                                       fontWeight: pw.FontWeight.bold,
                                       color: PdfColors.black)),
                               pw.SizedBox(height: 10),
@@ -80,11 +79,7 @@ class Template14 {
                                       fontWeight: pw.FontWeight.bold)),
                             ),
                             pw.SizedBox(height: 10),
-                            pw.Container(
-                              child: pw.Text(
-                                phoneNo + '\n' + website,
-                              ),
-                            ),
+
                             pw.Container(
                               child: pw.Text(
                                 email,
@@ -102,37 +97,12 @@ class Template14 {
                             pw.Container(child: pw.Text(expertise)),
                             //Project Management
                             pw.SizedBox(height: 30),
-                            pw.Container(
-                                child: pw.Text('Award',
-                                    style: pw.TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: pw.FontWeight.bold,
-                                        color: PdfColors.black))),
-                            pw.Container(width: 50, child: pw.Divider()),
+
                             pw.SizedBox(height: 10),
-                            pw.Container(
-                              child: pw.Text(awardName,
-                                  style: pw.TextStyle(
-                                      fontWeight: pw.FontWeight.bold)),
-                            ),
-                            pw.Container(
-                              child: pw.Text(
-                                awardCategory +
-                                    '\n' +
-                                    awardOrganization +
-                                    '\n' +
-                                    awardDate,
-                              ),
-                            ),
+
                             //Languages
                             pw.SizedBox(height: 30),
-                            pw.Container(
-                                child: pw.Text('Follow Me',
-                                    style: pw.TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: pw.FontWeight.bold,
-                                        color: PdfColors.black))),
-                            pw.Container(width: 50, child: pw.Divider()),
+
                             pw.SizedBox(height: 10),
                           ]),
                     )
