@@ -40,6 +40,7 @@ class _Templ1State extends State<Templ1> {
       ),
       body: Container(
         child: GridView.count(
+          physics: BouncingScrollPhysics(),
           childAspectRatio: 0.7,
           cacheExtent: 50,
           crossAxisSpacing: 0,
@@ -896,12 +897,14 @@ class TemplateButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image(
-                image: AssetImage(
-                  this.image,
-                ),
-                fit: BoxFit.contain,
+              Container(
                 height: 250,
+                child: Image(
+                  image: AssetImage(
+                    this.image,
+                  ),
+                  fit: BoxFit.fill,
+                ),
               ),
               Text(this.srno.toString())
             ],
