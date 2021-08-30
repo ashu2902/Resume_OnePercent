@@ -44,7 +44,7 @@ class _TemplateListState extends State<TemplateList> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  ///1template
+                  //template1
                   TemplateButton(
                       onPressed: () async {
                         SharedPreferences prefs =
