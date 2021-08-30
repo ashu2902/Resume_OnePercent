@@ -44,7 +44,7 @@ class Template20 {
         TextContainer(
           summary,
           kContentTextStyle.copyWith(
-            fontSize: 22,
+            fontSize: 18,
           ),
         ),
       ],
@@ -75,7 +75,7 @@ class Template20 {
         ]);
   }
 
-  static Future<File> generateText(
+  static pw.Document generateText20(
     name,
     currentJobTitle,
     about,
@@ -105,7 +105,7 @@ class Template20 {
     institute2,
     edLocation2,
     edDate2,
-  ) async {
+  ) {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -238,23 +238,6 @@ class Template20 {
       ),
     );
 
-    return saveDocument(name: 'template20.pdf', pdf: pdf);
-  }
-
-  static Future<File> saveDocument(
-      {required String name, required pw.Document pdf}) async {
-    final bytes = await pdf.save();
-
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/$name');
-
-    await file.writeAsBytes(bytes);
-    return file;
-  }
-
-  static Future openFile(File file) async {
-    final url = file.path;
-
-    await OpenFile.open(url);
+    return pdf;
   }
 }

@@ -137,7 +137,7 @@ class Template12 {
     );
   }
 
-  static Future<File> generateTemplate(
+  static pw.Document generateTemplate12(
     String name,
     String address,
     String phoneNo,
@@ -162,7 +162,7 @@ class Template12 {
     String skill1,
     String skill2,
     String skill3,
-  ) async {
+  )  {
     final pdf = pw.Document();
     pdf.addPage(pw.Page(
       build: (context) => pw.Column(
@@ -277,7 +277,7 @@ class Template12 {
       ),
     ));
 
-    return saveDocument(name: 'template12.pdf', pdf: pdf);
+    return pdf;
   }
 
   static Future<File> saveDocument(

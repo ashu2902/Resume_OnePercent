@@ -5,7 +5,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 class Template5 {
-  static Future<File> generateText5(
+  static pw.Document generateText5(
     name,
     address,
     phone,
@@ -25,7 +25,7 @@ class Template5 {
     projectDesc1,
       projectTitle2,
       projectDesc2,
-  ) async {
+  )  {
     final pdf5 = pw.Document();
     pdf5.addPage(
       pw.Page(
@@ -150,7 +150,7 @@ class Template5 {
                         ])
                   ])),
     );
-    return saveDocument5(name: 'resume5.pdf', pdf: pdf5);
+    return pdf5;
   }
 
   static Future<File> saveDocument5(

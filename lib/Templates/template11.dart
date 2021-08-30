@@ -16,7 +16,7 @@ class Template11 {
   static final kContentTextStyle = pw.TextStyle(
     fontSize: 18,
   );
-  static Future<File> generateTemplate(
+  static pw.Document generateText11(
     var name,
     var address,
     var phoneNo,
@@ -38,7 +38,7 @@ class Template11 {
     var skill1,
     var skill2,
     var skill3,
-  ) async {
+  ) {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -187,7 +187,7 @@ class Template11 {
       ),
     );
 
-    return saveDocument(name: 'Template11.pdf', pdf: pdf);
+    return pdf;
   }
 
   static Future<File> saveDocument(
