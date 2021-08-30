@@ -5,7 +5,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 class Template14 {
-  static Future<File> generateText(
+  static pw.Document generateText(
     String firstName,
     String currentJobTitle,
     String address,
@@ -25,7 +25,6 @@ class Template14 {
     List jobDates,
     var notableAchievements1, //for company 1
     var notableAchievements2, //for company 2
-    var notableAchievements3, //for company 3
     String degree,
     String eduDate1,
     String institution,
@@ -34,7 +33,7 @@ class Template14 {
     String eduDate2,
     String institution2,
     String educationNotableAchievement2,
-  ) async {
+  ) {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -193,17 +192,7 @@ class Template14 {
                     ),
                     pw.Container(
                       child: pw.Bullet(
-                        text: notableAchievements1[0],
-                      ),
-                    ),
-                    pw.Container(
-                      child: pw.Bullet(
-                        text: notableAchievements1[1],
-                      ),
-                    ),
-                    pw.Container(
-                      child: pw.Bullet(
-                        text: notableAchievements1[2],
+                        text: notableAchievements1,
                       ),
                     ),
                     pw.SizedBox(height: 10),
@@ -223,49 +212,11 @@ class Template14 {
                     ),
                     pw.Container(
                       child: pw.Bullet(
-                        text: notableAchievements2[0],
-                      ),
-                    ),
-                    pw.Container(
-                      child: pw.Bullet(
-                        text: notableAchievements2[1],
-                      ),
-                    ),
-                    pw.Container(
-                      child: pw.Bullet(
-                        text: notableAchievements2[2],
+                        text: notableAchievements2,
                       ),
                     ),
                     pw.SizedBox(height: 10),
-                    pw.Container(
-                      child: pw.Container(
-                        width: 300,
-                        child: pw.Text(
-                            jobTitles[2] +
-                                '\n' +
-                                jobCompanies[2] +
-                                '\n' +
-                                jobDates[2],
-                            style: pw.TextStyle(
-                              fontWeight: pw.FontWeight.bold,
-                            )),
-                      ),
-                    ),
-                    pw.Container(
-                      child: pw.Bullet(
-                        text: notableAchievements3[0],
-                      ),
-                    ),
-                    pw.Container(
-                      child: pw.Bullet(
-                        text: notableAchievements3[1],
-                      ),
-                    ),
-                    pw.Container(
-                      child: pw.Bullet(
-                        text: notableAchievements3[2],
-                      ),
-                    ),
+
                     pw.SizedBox(height: 30),
                     //Education
                     pw.Container(
@@ -312,23 +263,6 @@ class Template14 {
       ),
     );
 
-    return saveDocument(name: 'my_resume.pdf', pdf: pdf);
-  }
-
-  static Future<File> saveDocument(
-      {required String name, required pw.Document pdf}) async {
-    final bytes = await pdf.save();
-
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/$name');
-
-    await file.writeAsBytes(bytes);
-    return file;
-  }
-
-  static Future openFile(File file) async {
-    final url = file.path;
-
-    await OpenFile.open(url);
+    return pdf;
   }
 }

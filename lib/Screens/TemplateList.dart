@@ -592,12 +592,26 @@ class _Templ1State extends State<Templ1> {
                                   'facebook',
                                   'linkedIn',
                                   'personalStatement',
-                                  [],
-                                  ['jobCompanies'],
-                                  ['jobDates'],
+                                  [
+                                    '${prefs.getString('JobTitle1')}',
+                                    '${prefs.getString('JobTitle2')}',
+                                    '',
+                                    ''
+                                  ],
+                                  [
+                                    '${prefs.getString('CompName1')}',
+                                    '',
+                                    '',
+                                    ''
+                                  ],
+                                  [
+                                    '${prefs.getString('CompStartDate1')}',
+                                    '${prefs.getString('CompStartDate2')}',
+                                    '',
+                                    ''
+                                  ],
                                   'notableAchievements1',
                                   'notableAchievements2',
-                                  'notableAchievements3',
                                   'degree',
                                   'eduDate1',
                                   'institution',
