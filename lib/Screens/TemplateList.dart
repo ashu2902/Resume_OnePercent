@@ -85,7 +85,7 @@ class _TemplateListState extends State<TemplateList> {
                           ),
                         );
                       },
-                      image: 'test'),
+                      image: 'assets/images/template1.jpg'),
 
                   //2
                   TemplateButton(
@@ -126,6 +126,7 @@ class _TemplateListState extends State<TemplateList> {
                               "${prefs.getString('ProjectTitle2')}",
                               "${prefs.getString('ProjectDesc2')}",
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -167,6 +168,7 @@ class _TemplateListState extends State<TemplateList> {
                               "${prefs.getString('course2')}",
                               '${prefs.getString('Eddate2')}',
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -204,6 +206,7 @@ class _TemplateListState extends State<TemplateList> {
                                 '${prefs.getString('Eddate1')}',
                                 '${prefs.getString('Eddate2')}',
                               ),
+                              '${prefs.getString('name')}',
                             ),
                           ),
                         );
@@ -239,6 +242,7 @@ class _TemplateListState extends State<TemplateList> {
                               "${prefs.getString('ProjectTitle2')}",
                               "${prefs.getString('ProjectDesc2')}",
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -278,6 +282,7 @@ class _TemplateListState extends State<TemplateList> {
                               '${prefs.getString('Lang1')}',
                               '${prefs.getString('Lang2')}',
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -317,6 +322,7 @@ class _TemplateListState extends State<TemplateList> {
                               '${prefs.getString('ProjectTitle1')}',
                               '${prefs.getString('ProjectDesc1')}',
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -366,6 +372,7 @@ class _TemplateListState extends State<TemplateList> {
                                 '${prefs.getString('ProjectDesc1')}',
                                 '${prefs.getString('ProjectTitle2')}',
                                 '${prefs.getString('ProjectDesc2')}'),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -416,6 +423,7 @@ class _TemplateListState extends State<TemplateList> {
                                 '${prefs.getString('ProjectDesc1')}',
                                 '${prefs.getString('ProjectTitle2')}',
                                 '${prefs.getString('ProjectDesc2')}'),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -466,6 +474,7 @@ class _TemplateListState extends State<TemplateList> {
                                 '${prefs.getString('ProjectDesc1')}',
                                 '${prefs.getString('ProjectTitle2')}',
                                 '${prefs.getString('ProjectDesc2')}'),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -504,6 +513,7 @@ class _TemplateListState extends State<TemplateList> {
                               '${prefs.getString('Skill2')}',
                               '${prefs.getString('Skill3')}',
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -545,6 +555,7 @@ class _TemplateListState extends State<TemplateList> {
                               '${prefs.getString('Skill2')}',
                               '${prefs.getString('Skill3')}',
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -587,6 +598,7 @@ class _TemplateListState extends State<TemplateList> {
                               '${prefs.getString('EdSummary2')}',
                               '${prefs.getString('EdLocation2')}',
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -639,6 +651,7 @@ class _TemplateListState extends State<TemplateList> {
                               '${prefs.getString('Lang1')}',
                               '${prefs.getString('Lang2')}',
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -677,6 +690,7 @@ class _TemplateListState extends State<TemplateList> {
                                 "${prefs.getString('CompEndDate2')}",
                                 '${prefs.getString('Summary2')}',
                                 '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}'),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -716,6 +730,7 @@ class _TemplateListState extends State<TemplateList> {
                               '${prefs.getString('Eddate2')}',
                               '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -759,6 +774,7 @@ class _TemplateListState extends State<TemplateList> {
                               '${prefs.getString('CompEndDate2')}',
                               '${prefs.getString('Summary2')}',
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -802,6 +818,7 @@ class _TemplateListState extends State<TemplateList> {
                               '${prefs.getString('CompEndDate2')}',
                               '${prefs.getString('Summary2')}',
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );
@@ -848,6 +865,7 @@ class _TemplateListState extends State<TemplateList> {
                               '${prefs.getString('EdLocation2')}',
                               '${prefs.getString('Eddate2')}',
                             ),
+                            '${prefs.getString('name')}',
                           ),
                         ),
                       );

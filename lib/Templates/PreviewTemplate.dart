@@ -6,8 +6,9 @@ import 'package:pdf_render/pdf_render_widgets.dart';
 
 class PreviewTemplate extends StatefulWidget {
   final pdf;
+  final name;
 
-  PreviewTemplate(this.pdf);
+  PreviewTemplate(this.pdf, this.name);
 
   @override
   _PreviewTemplateState createState() => _PreviewTemplateState();
@@ -23,11 +24,10 @@ class _PreviewTemplateState extends State<PreviewTemplate> {
     savePdf();
   }
 
-
   Future savePdf() async {
     Directory? dir = await getApplicationDocumentsDirectory();
     String documentPath = dir.path;
-    File file = File("$documentPath/template.pdf");
+    File file = File("$documentPath/${widget.name}.pdf");
     file.writeAsBytesSync(await widget.pdf.save());
     setState(() {
       path = file.path;
@@ -35,7 +35,6 @@ class _PreviewTemplateState extends State<PreviewTemplate> {
       isPathAvailable = true;
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -54,12 +53,12 @@ class _PreviewTemplateState extends State<PreviewTemplate> {
       body: Container(
         child: isPathAvailable
             ? PdfViewer.openFile(
-          path,
-          params: PdfViewerParams(pageNumber: 1),
-        )
+                path,
+                params: PdfViewerParams(pageNumber: 1),
+              )
             : Center(
-          child: Text('Loading'),
-        ),
+                child: Text('Loading'),
+              ),
       ),
     );
   }
