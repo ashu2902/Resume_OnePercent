@@ -10,7 +10,6 @@ import 'package:resume/Templates/template12.dart';
 import 'package:resume/Templates/template14.dart';
 import 'package:resume/Templates/template15.dart';
 import 'package:resume/Templates/template16.dart';
-
 import 'package:resume/Templates/template17.dart';
 import 'package:resume/Templates/template18.dart';
 import 'package:resume/Templates/template19.dart';
@@ -112,7 +111,7 @@ class _Templ1State extends State<Templ1> {
                           '${prefs.getString('Summary1')}',
                           "${prefs.getString('CompName2')}",
                           "${prefs.getString('CompLocation1')}",
-                          "${prefs.getString('CompStartDate1')}",
+                          "${prefs.getString('CompStartDate2')}",
                           "${prefs.getString('CompEndDate2')}",
                           '${prefs.getString('Summary2')}',
                           "${prefs.getString('Instname')}",
@@ -138,7 +137,41 @@ class _Templ1State extends State<Templ1> {
                 srno: 2,
               ),
             ),
-
+            // Template 3
+            TemplateButton(onPressed: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) => PreviewTemplate(
+                    Template3.generateText(
+                '${prefs.getString('name')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getString('phone')}',
+                        '${prefs.getString('email')}',
+                        '${prefs.getString('about')}',
+                        '${prefs.getString('CompStartDate1')}',
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('CompName1')}',
+                        '${prefs.getString('Summary1')}',
+                        '${prefs.getString('CompStartDate2')}',
+                        '${prefs.getString('JobTitle2')}',
+                        '${prefs.getString('CompName2')}',
+                        '${prefs.getString('Summary2')}',
+                        '${prefs.getString('ProjectTitle1')}',
+                        '${prefs.getString('ProjectDesc1')}',
+                        '${prefs.getString('ProjectTitle2')}',
+                        '${prefs.getString('ProjectDesc2')}',
+                        '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
+                        '${prefs.getString('Instname')}',
+                        '${prefs.getString('course')}',
+                        '${prefs.getString('Eddate1')}',
+                        '${prefs.getString('Instname2')}',
+                        '${prefs.getString('course2')}',
+                        '${prefs.getString('Eddate2')}'
+                    ),
+                  '${prefs.getString('name')}'),),);
+            },
+                image: 'assets/images/template3.jpg',
+                srno: 3),
             TemplateButton(
               onPressed: () async {
                 SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -618,7 +651,7 @@ class _Templ1State extends State<Templ1> {
                               '${prefs.getString('name')}',
                             )));
               },
-              image: 'assets/images/template13.png',
+              image: 'assets/images/template14.png',
               srno: 14,
             ),
             //15
@@ -663,7 +696,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template13.png',
+              image: 'assets/images/template15.png',
               srno: 15,
             ),
             //16
@@ -877,7 +910,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template13.png',
+              image: 'assets/images/template20.png',
               srno: 20,
             ),
           ],
@@ -907,7 +940,7 @@ class TemplateButton extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 250,
+                height: 240,
                 child: Image(
                   image: AssetImage(
                     this.image,
