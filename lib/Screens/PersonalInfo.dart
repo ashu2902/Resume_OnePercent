@@ -54,6 +54,27 @@ class _TextInputsState extends State<TextInputs> {
   var about = '';
   TextEditingController aboutController = TextEditingController();
 
+  Future<Null> getSharedPrefs() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      nameController = new TextEditingController(text: prefs.getString("name"));
+      addressController =
+          new TextEditingController(text: prefs.getString("address"));
+      emailController =
+          new TextEditingController(text: prefs.getString("email"));
+      phoneController =
+          new TextEditingController(text: prefs.getInt("phone").toString());
+      aboutController =
+          new TextEditingController(text: prefs.getString("about"));
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getSharedPrefs();
+  }
+
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;

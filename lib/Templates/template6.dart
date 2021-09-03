@@ -19,7 +19,30 @@ class Template6 {
     color: PdfColors.lightBlueAccent,
   );
 
-  static Future<File> generateTemplate() async {
+  static pw.Document generateTemplate(
+    name,
+    about,
+    jobTitle1,
+    organisation1,
+    expStartDate1,
+    expSummary1,
+    jobTitle2,
+    organisation2,
+    expStartDate2,
+    expSummary2,
+    course1,
+    edName1,
+    edDate1,
+    edSummary1,
+    address,
+    phone,
+    email,
+    skill1,
+    skill2,
+    skill3,
+    lang1,
+    lang2,
+  ) {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
@@ -33,7 +56,7 @@ class Template6 {
                     //Name
                     pw.Container(
                       child: pw.Text(
-                        'Jason M.Bourassa',
+                        '$name',
                         style: pw.TextStyle(
                           fontWeight: pw.FontWeight.bold,
                           fontSize: 30,
@@ -60,11 +83,7 @@ class Template6 {
                     pw.Container(
                       width: 300,
                       child: pw.Text(
-                        'Lorem ipsum dolor sit amet, ' +
-                            'consectetur adipiscing elit, ' +
-                            'sed do eiusmod tempor incididunt ' +
-                            'ut labore et dolore magna aliqua. ' +
-                            'Ut enim ad minim veniam, quis nostrud',
+                        '$about',
                         style: kNormalTextStyle,
                         maxLines: 5,
                       ),
@@ -82,30 +101,18 @@ class Template6 {
                       child: pw.Container(
                         width: 300,
                         child: pw.Text(
-                          'Sample Title - 1' +
+                          '$jobTitle1' +
                               '\n' +
-                              'Sample Organization - 1' +
+                              '$organisation1' +
                               '\n' +
-                              'Date - 01-02-20XX',
+                              'Date - $expStartDate1',
                           style: kNormalTextStyle,
                         ),
                       ),
                     ),
                     pw.Container(
                       child: pw.Bullet(
-                        text: 'Notable Achievement/Responsibility',
-                        style: kNormalTextStyle,
-                      ),
-                    ),
-                    pw.Container(
-                      child: pw.Bullet(
-                        text: 'Notable Achievement/Responsibility',
-                        style: kNormalTextStyle,
-                      ),
-                    ),
-                    pw.Container(
-                      child: pw.Bullet(
-                        text: 'Notable Achievement/Responsibility',
+                        text: '$expSummary1',
                         style: kNormalTextStyle,
                       ),
                     ),
@@ -114,54 +121,41 @@ class Template6 {
                       child: pw.Container(
                         width: 300,
                         child: pw.Text(
-                          'Sample Title - 2' +
+                          '$jobTitle2' +
                               '\n' +
-                              'Sample Organization - 2' +
+                              '$organisation2' +
                               '\n' +
-                              'Date - 01-02-20XX',
+                              'Date - $expStartDate2',
                           style: kNormalTextStyle,
                         ),
                       ),
                     ),
                     pw.Container(
                       child: pw.Bullet(
-                        text: 'Notable Achievement/Responsibility',
+                        text: '$expSummary2',
                         style: kNormalTextStyle,
                       ),
                     ),
-                    pw.Container(
-                      child: pw.Bullet(
-                        text: 'Notable Achievement/Responsibility',
-                        style: kNormalTextStyle,
-                      ),
-                    ),
-                    pw.Container(
-                      child: pw.Bullet(
-                        text: 'Notable Achievement/Responsibility',
-                        style: kNormalTextStyle,
-                      ),
-                    ),
+
                     pw.SizedBox(height: 30),
                     //Education
                     pw.Container(
                       child: pw.Text(
-                        'Experience',
+                        'Education',
                         style: kTitleTextStyle,
                       ),
                     ),
                     pw.SizedBox(height: 10),
                     pw.Container(
                       child: pw.Text(
-                        'Associate of Computer Science - Santa Maria University' +
-                            '\n' +
-                            'Sep 2012 - Sep2016',
+                        '$course1 - $edName1' + '\n' + '$edDate1 ',
                         style: kNormalTextStyle.copyWith(
                             fontWeight: pw.FontWeight.bold),
                       ),
                     ),
                     pw.Container(
                         child: pw.Text(
-                      'Graduated with highest honor',
+                      '$edSummary1',
                       style: kNormalTextStyle.copyWith(color: PdfColors.grey),
                     )),
                   ]),
@@ -180,16 +174,12 @@ class Template6 {
                     pw.SizedBox(height: 10),
                     pw.Container(
                         child: pw.Text(
-                      '4670 Garret Street' +
-                          '\n' +
-                          'Philadelphia, US' +
-                          '\n' +
-                          'Tel 123456789',
+                      '$address' + '\n' + 'Tel $phone',
                       style: kNormalTextStyle,
                     )),
                     pw.Container(
                         child: pw.Text(
-                      'example@example.com',
+                      '$email',
                       style: kNormalTextStyle.copyWith(
                           color: PdfColors.lightBlueAccent),
                     )),
@@ -202,29 +192,12 @@ class Template6 {
                     pw.SizedBox(height: 10),
                     pw.Container(
                         child: pw.Text(
-                      'HTML' +
-                          '\n' +
-                          'CSS' +
-                          '\n' +
-                          'JavaScript' +
-                          '\n' +
-                          'Bootstrap',
+                      '$skill1' + '\n' + '$skill2' + '\n' + '$skill3',
                       style: kNormalTextStyle,
                     )),
                     //Project Management
                     pw.SizedBox(height: 30),
-                    pw.Container(
-                        child: pw.Text(
-                      'Project Management',
-                      style: kTitleTextStyle.copyWith(fontSize: 17),
-                    )),
-                    pw.SizedBox(height: 10),
-                    pw.Container(
-                      child: pw.Text(
-                        'Jira' + '\n' + 'Slack' + '\n' + 'Trello',
-                        style: kNormalTextStyle,
-                      ),
-                    ),
+
                     //Languages
                     pw.SizedBox(height: 30),
                     pw.Container(
@@ -235,7 +208,7 @@ class Template6 {
                     pw.SizedBox(height: 10),
                     pw.Container(
                       child: pw.Text(
-                        'English' + '\n' + 'Hindi',
+                        '$lang1' + '\n' + '$lang2',
                         style: kNormalTextStyle,
                       ),
                     ),
@@ -246,7 +219,7 @@ class Template6 {
       ),
     );
 
-    return saveDocument(name: 'template6.pdf', pdf: pdf);
+    return pdf;
   }
 
   static Future<File> saveDocument(

@@ -6,7 +6,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
 class Template4 {
-  static Future<File> generateTemplate(
+  static pw.Document generateTemplate(
       String name,
       address,
       phone,
@@ -15,11 +15,18 @@ class Template4 {
       jobTitle1,
       organization1,
       date1,
-      skills,
+      experienceSummary1,
+      jobTitle2,
+      organization2,
+      date2,
+      experienceSummary2,
+      skill1,
+      skill2,
+      skill3,
       instName1,
       course1,
       edDate1,
-      edDate2) async {
+      edDate2) {
     final pdf = pw.Document();
     pdf.addPage(pw.Page(
       build: (context) =>
@@ -36,20 +43,11 @@ class Template4 {
               pw.Container(
                 alignment: pw.Alignment.topCenter,
                 child: pw.Text(
-                  'Emma Watson'.toUpperCase(),
+                  '$name'.toUpperCase(),
                   style: pw.TextStyle(
                     fontSize: 30,
                     fontWeight: pw.FontWeight.bold,
                     letterSpacing: 2.0,
-                  ),
-                ),
-              ),
-              pw.Container(
-                alignment: pw.Alignment.topCenter,
-                child: pw.Text(
-                  jobTitle1.toString().toUpperCase(),
-                  style: pw.TextStyle(
-                    fontSize: 18,
                   ),
                 ),
               ),
@@ -69,12 +67,12 @@ class Template4 {
               ),
             ),
             pw.SizedBox(height: 10),
-            pw.Text('email@email.com',
+            pw.Text('$email',
                 style: pw.TextStyle(
                   fontSize: 20,
                 )),
             pw.SizedBox(height: 5),
-            pw.Text('123456789',
+            pw.Text('$phone',
                 style: pw.TextStyle(
                   fontSize: 20,
                 )),
@@ -98,7 +96,7 @@ class Template4 {
               width: 300,
               alignment: pw.Alignment.topLeft,
               child: pw.Text(
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                "$about",
                 maxLines: 5,
                 style: pw.TextStyle(
                   fontSize: 20,
@@ -130,11 +128,11 @@ class Template4 {
                         pw.SizedBox(height: 10),
                         pw.Container(
                             child: pw.Text(
-                                'instName1' +
+                                '$instName1' +
                                     '\n\n' +
-                                    'course1' +
+                                    '$course1' +
                                     '\n\n' +
-                                    'edDate1',
+                                    '$edDate1',
                                 style: pw.TextStyle(
                                   fontSize: 20,
                                 ))),
@@ -151,17 +149,17 @@ class Template4 {
                         ),
                         pw.SizedBox(height: 10),
                         pw.Bullet(
-                            text: 'Java',
+                            text: '$skill1',
                             style: pw.TextStyle(
                               fontSize: 20,
                             )),
                         pw.Bullet(
-                            text: 'Python',
+                            text: '$skill2',
                             style: pw.TextStyle(
                               fontSize: 20,
                             )),
                         pw.Bullet(
-                            text: 'Go',
+                            text: '$skill3',
                             style: pw.TextStyle(
                               fontSize: 20,
                             )),
@@ -184,11 +182,11 @@ class Template4 {
                       pw.Container(
                         width: 300,
                         child: pw.Text(
-                          'Sample Title - 1' +
+                          '$jobTitle1' +
                               '\n' +
-                              'Sample Organization - 1' +
+                              '$organization1' +
                               '\n' +
-                              'Date - 01-02-20XX',
+                              'Date -$date1',
                           style: pw.TextStyle(
                               fontSize: 20, color: PdfColors.black),
                         ),
@@ -196,63 +194,27 @@ class Template4 {
                       pw.Container(
                         width: 300,
                         child: pw.Bullet(
-                          text: 'Notable Achievement/Responsibility',
+                          text: '$experienceSummary1',
                           style: pw.TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                      pw.Container(
-                        width: 300,
-                        child: pw.Bullet(
-                          text: 'Notable Achievement/Responsibility',
-                          style: pw.TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                      pw.Container(
-                        width: 300,
-                        child: pw.Bullet(
-                          text: 'Notable Achievement/Responsibility',
-                          style: pw.TextStyle(
-                            fontSize: 20,
+                            fontSize: 16,
                           ),
                         ),
                       ),
                       pw.SizedBox(height: 10),
                       pw.Text(
-                        'Sample Title - 2' +
+                        '$jobTitle2' +
                             '\n' +
-                            'Sample Organization - 2' +
+                            '$organization2' +
                             '\n' +
-                            'Date - 01-02-20XX',
+                            'Date - $date2',
                         style: pw.TextStyle(fontSize: 20),
                       ),
                       pw.Container(
                         width: 300,
                         child: pw.Bullet(
-                          text: 'Notable Achievement/Responsibility',
+                          text: '$experienceSummary2',
                           style: pw.TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                      pw.Container(
-                        width: 300,
-                        child: pw.Bullet(
-                          text: 'Notable Achievement/Responsibility',
-                          style: pw.TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                      pw.Container(
-                        width: 300,
-                        child: pw.Bullet(
-                          text: 'Notable Achievement/Responsibility',
-                          style: pw.TextStyle(
-                            fontSize: 20,
+                            fontSize: 16,
                           ),
                         ),
                       ),
@@ -266,7 +228,7 @@ class Template4 {
       ]),
     ));
 
-    return saveDocument(name: 'my_resume_temp_4.pdf', pdf: pdf);
+    return pdf;
   }
 
   static Future<File> saveDocument(

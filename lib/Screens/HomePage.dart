@@ -28,10 +28,8 @@ class HomePage extends StatelessWidget {
               FieldButton(text: 'Projects', path: ProjectsInfo()),
               ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => TemplateList()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Templ1()));
                   },
                   child: Text('Select Template'))
             ],
