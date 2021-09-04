@@ -17,6 +17,7 @@ import 'package:resume/Templates/template19.dart';
 import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template20.dart';
 import 'package:resume/Templates/template4.dart';
+import 'package:resume/Templates/template41.dart';
 import 'package:resume/Templates/template5.dart';
 import 'package:resume/Templates/template6.dart';
 import 'package:resume/Templates/template7.dart';
@@ -41,7 +42,7 @@ class _Templ1State extends State<Templ1> {
       body: Container(
         child: GridView.count(
           physics: BouncingScrollPhysics(),
-          childAspectRatio: 0.7,
+          childAspectRatio: 0.6,
           cacheExtent: 50,
           crossAxisSpacing: 0,
           crossAxisCount: 2,
@@ -920,6 +921,49 @@ class _Templ1State extends State<Templ1> {
               image: 'assets/images/template20.webp',
               srno: 20,
             ),
+            //41
+            TemplateButton(
+              onPressed: () async {
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PreviewTemplate(
+                      Template41.generateText41(
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('phone')}',
+                        '${prefs.getString('email')}',
+                        '${prefs.getString('address')}',
+                        "${prefs.getString('about')}",
+                        "${prefs.getString('CompName1')}",
+                        "${prefs.getString('JobTitle1')}",
+                        "${prefs.getString('CompStartDate1')}",
+                        '${prefs.getString('CompEndDate1')}',
+                        '${prefs.getString('Summary1')}',
+                        "${prefs.getString('CompName2')}",
+                        "${prefs.getString('JobTitle2')}",
+                        "${prefs.getString('CompStartDate2')}",
+                        "${prefs.getString('CompEndDate2')}",
+                        '${prefs.getString('Summary2')}',
+                        '${prefs.getString('InstName')}',
+                        '${prefs.getString('course')}',
+                        '${prefs.getString('Eddate1')}',
+                        '${prefs.getString('Instname2')}',
+                        '${prefs.getString('course2')}',
+                        '${prefs.getString('Eddate2')}',
+                        '${prefs.getString('Skill1')}',
+                        '${prefs.getString('Skill2')}',
+                        '${prefs.getString('Skill3')}',
+                      ),
+                      '${prefs.getString('name')}',
+                    ),
+                  ),
+                );
+              },
+              image: 'assets/images/template41.jpg',
+              srno: 41,
+            ),
           ],
         ),
       ),
@@ -955,7 +999,10 @@ class TemplateButton extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
               ),
-              Text(this.srno.toString())
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(this.srno.toString()),
+              )
             ],
           ),
         ),
