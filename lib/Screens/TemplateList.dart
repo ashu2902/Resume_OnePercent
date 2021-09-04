@@ -947,7 +947,7 @@ class TemplateButton extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 250,
+                height: 240,
                 child: Image(
                   image: AssetImage(
                     this.image,
