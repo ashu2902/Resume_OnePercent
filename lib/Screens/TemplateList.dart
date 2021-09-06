@@ -4,6 +4,7 @@ import 'package:resume/Templates/PreviewTemplate.dart';
 import 'package:resume/Templates/template13.dart';
 import 'package:resume/Templates/template21.dart';
 import 'package:resume/Templates/template22.dart';
+import 'package:resume/Templates/template23.dart';
 import 'package:resume/Templates/template3.dart';
 import 'package:resume/Templates/template1.dart';
 import 'package:resume/Templates/template10.dart';
@@ -1026,6 +1027,56 @@ class _Templ1State extends State<Templ1> {
             },
                 image: 'assets/images/template22.png',
                 srno: 22),
+            //23
+            TemplateButton(onPressed: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PreviewTemplate(
+                      Template23.generateText23(
+                          // '${prefs.getString('name')}',
+                          // '${prefs.getString('address')}',
+                          // '${prefs.getInt('phone')}',
+                          // '${prefs.getString('email')}',
+                          // '${prefs.getString('about')}',
+                          // '${prefs.getString('Skill1')}',
+                          // '${prefs.getString('Skill2')}',
+                          // '${prefs.getString('Skill3')}',
+                          // '${prefs.getString('JobTitle1')}',
+                          // '${prefs.getString('CompStartDate1')}',
+                          // '${prefs.getString('CompEndDate1')}' ,
+                          // '${prefs.getString('CompName1')}' ,
+                          // '${prefs.getString('CompLocation1')}' ,
+                          // '${prefs.getString('Summary1')}' ,
+                          // '${prefs.getString('JobTitle2')}' ,
+                          // '${prefs.getString('CompStartDate2')}'  ,
+                          // '${prefs.getString('CompEndDate2')}',
+                          // '${prefs.getString('CompName2')}' ,
+                          // '${prefs.getString('CompLocation2')}',
+                          // '${prefs.getString('Summary2')}',
+                          // '${prefs.getString('InstName')}',
+                          // '${prefs.getString('course')}' ,
+                          // '${prefs.getString('Eddate1')}',
+                          // '${prefs.getString('EdSummary1')}',
+                          // '${prefs.getString('EdLocation1')}',
+                          // '${prefs.getString('Instname2')}' ,
+                          // '${prefs.getString('course2')}',
+                          // '${prefs.getString('Eddate2')}',
+                          // '${prefs.getString('EdSummary2')}',
+                          // '${prefs.getString('EdLocation2')}',
+                          // '${prefs.getString('Projecttitle1')}',
+                          // '${prefs.getString('ProjectDescription1')}',
+                          // '${prefs.getString('Projecttitle2')}',
+                          // '${prefs.getString('ProjectDescription2')}',
+                          // '${prefs.getString('Lang1')}',
+                          // '${prefs.getString('Lang2')}'
+                      ),
+                      '${prefs.getString('name')}',),
+                  ));
+            },
+                image: "image",
+                srno: 23),
             TemplateButton(
                 onPressed: () async {
                   SharedPreferences prefs =
