@@ -22,6 +22,8 @@ import 'package:resume/Templates/template2.dart';
 import 'package:resume/Templates/template20.dart';
 import 'package:resume/Templates/template31.dart';
 import 'package:resume/Templates/template32.dart';
+import 'package:resume/Templates/template33.dart';
+import 'package:resume/Templates/template34.dart';
 import 'package:resume/Templates/template4.dart';
 import 'package:resume/Templates/template41.dart';
 import 'package:resume/Templates/template43.dart';
@@ -1216,6 +1218,98 @@ class _Templ1State extends State<Templ1> {
               },
               image: 'assets/images/template32.jpeg',
               srno: 32,
+            ),
+            //33
+            TemplateButton(
+              onPressed: () async {
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PreviewTemplate(
+                      Template33.generateText(
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getString('email')}',
+                        '${prefs.getInt('phone')}',
+                        '${prefs.getString('about')}',
+                        '${prefs.getString('Projecttitle1')}',
+                        '${prefs.getString('ProjectDescription1')}',
+                        '${prefs.getString('Projecttitle2')}',
+                        '${prefs.getString('ProjectDescription2')}',
+                        "${prefs.getString('course')}",
+                        "${prefs.getString('Instname')}",
+                        "${prefs.getString('Eddate1')}",
+                        "${prefs.getString('course2')}",
+                        "${prefs.getString('Instname2')}",
+                        "${prefs.getString('Eddate2')}",
+                        '${prefs.getString('Skill1')},${prefs.getString('Skill2')},${prefs.getString('Skill3')}',
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('CompName1')}',
+                        '${prefs.getString('CompStartDate1')}',
+                        '${prefs.getString('CompEndDate1')}',
+                        '${prefs.getString('Summary1')}',
+                        '${prefs.getString('JobTitle2')}',
+                        '${prefs.getString('CompName2')}',
+                        '${prefs.getString('CompStartDate2')}',
+                        '${prefs.getString('CompEndDate2')}',
+                        '${prefs.getString('Summary2')}',
+                        '${prefs.getString('Lang1')},${prefs.getString('Lang2')}',
+                      ),
+                      '${prefs.getString('name')}',
+                    ),
+                  ),
+                );
+              },
+              image: 'assets/images/template33.jpeg',
+              srno: 33,
+            ),
+            //33
+            TemplateButton(
+              onPressed: () async {
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PreviewTemplate(
+                      Template34.generateText(
+                        '${prefs.getString('name')}',
+                        '${prefs.getString('email')}',
+                        '${prefs.getInt('phone')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getString('Skill1')}',
+                        '${prefs.getString('Skill2')}',
+                        '${prefs.getString('Skill3')}',
+                        '${prefs.getString('Lang1')},${prefs.getString('Lang2')}',
+                        '${prefs.getString('about')}',
+                        "${prefs.getString('course')}",
+                        "${prefs.getString('Instname')}",
+                        "${prefs.getString('Eddate1')}",
+                        "${prefs.getString('course2')}",
+                        "${prefs.getString('Instname2')}",
+                        "${prefs.getString('Eddate2')}",
+                        '${prefs.getString('Projecttitle1')}',
+                        '${prefs.getString('ProjectDescription1')}',
+                        '${prefs.getString('Projecttitle2')}',
+                        '${prefs.getString('ProjectDescription2')}',
+                        '${prefs.getString('JobTitle1')}',
+                        '${prefs.getString('CompName1')}',
+                        '${prefs.getString('CompStartDate1')}',
+                        '${prefs.getString('CompEndDate1')}',
+                        '${prefs.getString('Summary1')}',
+                        '${prefs.getString('JobTitle2')}',
+                        '${prefs.getString('CompName2')}',
+                        '${prefs.getString('CompStartDate2')}',
+                        '${prefs.getString('CompEndDate2')}',
+                        '${prefs.getString('Summary2')}',
+                      ),
+                      '${prefs.getString('name')}',
+                    ),
+                  ),
+                );
+              },
+              image: 'assets/images/template34.jpeg',
+              srno: 34,
             ),
             //41
             TemplateButton(onPressed: () async {
