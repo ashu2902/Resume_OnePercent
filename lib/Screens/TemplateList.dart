@@ -1791,8 +1791,8 @@ class _Templ1State extends State<Templ1> {
                       Template43.generateText43(
                         '${prefs.getString('name')}',
                         '${prefs.getString('JobTitle1')}',
-                        '${prefs.getInt('address')}',
-                        '${prefs.getString('phone')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
                         '${prefs.getString('email')}',
                         '${prefs.getString('about')}',
                         '${prefs.getString('JobTitle1')}',
@@ -1832,8 +1832,8 @@ class _Templ1State extends State<Templ1> {
                       Template44.generateText44(
                         '${prefs.getString('name')}',
                         '${prefs.getString('JobTitle1')}',
-                        '${prefs.getInt('address')}',
-                        '${prefs.getString('phone')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
                         '${prefs.getString('email')}',
                         '${prefs.getString('about')}',
                         '${prefs.getString('JobTitle1')}',
@@ -1872,8 +1872,8 @@ class _Templ1State extends State<Templ1> {
                     builder: (context) => PreviewTemplate(
                       Template45.generateText45(
                         '${prefs.getString('name')}',
-                        '${prefs.getInt('address')}',
-                        '${prefs.getString('phone')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
                         '${prefs.getString('email')}',
                         '${prefs.getString('about')}',
                         '${prefs.getString('JobTitle1')}',
@@ -1916,8 +1916,8 @@ class _Templ1State extends State<Templ1> {
                     builder: (context) => PreviewTemplate(
                       Template46.generateText46(
                         '${prefs.getString('name')}',
-                        '${prefs.getInt('address')}',
-                        '${prefs.getString('phone')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
                         '${prefs.getString('email')}',
                         '${prefs.getString('about')}',
                         '${prefs.getString('JobTitle1')}',
@@ -1962,8 +1962,8 @@ class _Templ1State extends State<Templ1> {
                     builder: (context) => PreviewTemplate(
                       Template47.generateText47(
                         '${prefs.getString('name')}',
-                        '${prefs.getInt('address')}',
-                        '${prefs.getString('phone')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
                         '${prefs.getString('email')}',
                         '${prefs.getString('about')}',
                         '${prefs.getString('JobTitle1')}',
@@ -2004,8 +2004,8 @@ class _Templ1State extends State<Templ1> {
                     builder: (context) => PreviewTemplate(
                       Template48.generateText48(
                         '${prefs.getString('name')}',
-                        '${prefs.getInt('address')}',
-                        '${prefs.getString('phone')}',
+                        '${prefs.getString('address')}',
+                        '${prefs.getInt('phone')}',
                         '${prefs.getString('email')}',
                         '${prefs.getString('about')}',
                         '${prefs.getString('JobTitle1')}',
