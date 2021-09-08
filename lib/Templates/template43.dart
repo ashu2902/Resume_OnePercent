@@ -75,7 +75,7 @@ class Template43 {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
-        margin: pw.EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),
+        margin: pw.EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
         build: (context) => pw.Column(
           crossAxisAlignment: pw.CrossAxisAlignment.stretch,
           children: [

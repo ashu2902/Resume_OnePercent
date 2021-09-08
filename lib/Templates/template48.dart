@@ -63,18 +63,21 @@ class Template48 {
     );
   }
 
-  static pw.Column EducationDetails(
+  static pw.Container EducationDetails(
       String university, String course, String date, String location) {
-    return pw.Column(
-        crossAxisAlignment: pw.CrossAxisAlignment.start,
-        mainAxisAlignment: pw.MainAxisAlignment.start,
-        children: [
-          TextContainer(course,
-              kContentTextStyle.copyWith(fontWeight: pw.FontWeight.bold)),
-          TextContainer(
-              date, kContentTextStyle.copyWith(fontWeight: pw.FontWeight.bold)),
-          TextContainer('$university,\n$location', kContentTextStyle),
-        ]);
+    return pw.Container(
+      width: 200,
+      child: pw.Column(
+          crossAxisAlignment: pw.CrossAxisAlignment.start,
+          mainAxisAlignment: pw.MainAxisAlignment.start,
+          children: [
+            TextContainer(course,
+                kContentTextStyle.copyWith(fontWeight: pw.FontWeight.bold)),
+            TextContainer(
+                date, kContentTextStyle.copyWith(fontWeight: pw.FontWeight.bold)),
+            TextContainer('$university,\n$location', kContentTextStyle),
+          ])
+    );
   }
 
   static pw.Row Skill(String skillText) {

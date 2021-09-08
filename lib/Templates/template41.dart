@@ -14,7 +14,7 @@ class Template41 {
   );
 
   static final kLatoBold = pw.TextStyle(
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: pw.FontWeight.bold,
   );
   static final kLatoNormal = pw.TextStyle(
@@ -50,7 +50,7 @@ class Template41 {
                 mainAxisAlignment: pw.MainAxisAlignment.start,
                 crossAxisAlignment: pw.CrossAxisAlignment.start,
                 children: [
-                  TextContainer(summary, kLatoNormal.copyWith(fontSize: 22)),
+                  TextContainer(summary, kLatoNormal.copyWith(fontSize: 18)),
                 ]
             ),
           ),
@@ -135,26 +135,20 @@ class Template41 {
                     ],
                   ),
                   pw.Column(
-                    crossAxisAlignment: pw.CrossAxisAlignment.start,
+                    crossAxisAlignment: pw.CrossAxisAlignment.end,
                       children: [
                         pw.Row(
                           children: [
-                            pw.Column(
-                              crossAxisAlignment: pw.CrossAxisAlignment.start,
-                              children: [
-                                TextContainer('PHONE', kLatoBold),
-                                TextContainer('EMAIL', kLatoBold),
-                                TextContainer('LOCATION', kLatoBold),
-                              ]
-                            ),
-                            pw.SizedBox(width: 40.0),
-                            pw.Column(
-                                crossAxisAlignment: pw.CrossAxisAlignment.start,
-                                children: [
-                                  TextContainer(phone, kLatoNormal),
-                                  TextContainer(email, kLatoNormal),
-                                  TextContainer(location, kLatoNormal),
-                                ]
+                            pw.Container(
+                              width: 300,
+                              child: pw.Column(
+                                  crossAxisAlignment: pw.CrossAxisAlignment.end,
+                                  children: [
+                                    TextContainer(phone, kLatoNormal),
+                                    TextContainer('abhisheksubba.py@email.com', kLatoNormal),
+                                    TextContainer(location, kLatoNormal),
+                                  ]
+                              ),
                             ),
                           ]
                         ),

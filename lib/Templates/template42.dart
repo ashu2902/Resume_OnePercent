@@ -25,7 +25,13 @@ class Template42 {
             kContentTextStyle.copyWith(fontWeight: pw.FontWeight.bold)),
         TextContainer('$company | $startDate | $endDate', kContentTextStyle),
         pw.SizedBox(height: 10),
-        TextContainer(summary, kContentTextStyle),
+        pw.Container(
+          width: 300,
+          child: pw.Text(
+            summary,
+            style: kContentTextStyle,
+          ),
+        )
       ],
     );
   }
@@ -81,7 +87,7 @@ class Template42 {
             pw.Container(
               color: PdfColors.lightBlue,
               child: pw.Padding(
-                padding: pw.EdgeInsets.symmetric(horizontal: 20.0),
+                padding: pw.EdgeInsets.symmetric(horizontal: 10.0),
                 child: pw.Column(
                     mainAxisAlignment: pw.MainAxisAlignment.center,
                     crossAxisAlignment: pw.CrossAxisAlignment.center,

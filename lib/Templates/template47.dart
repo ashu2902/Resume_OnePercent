@@ -69,21 +69,24 @@ class Template47 {
     );
   }
 
-  static pw.Column EducationDetails(String university, String course, String date, String location) {
-    return  pw.Column(
-        crossAxisAlignment: pw.CrossAxisAlignment.start,
-        mainAxisAlignment: pw.MainAxisAlignment.start,
-        children: [
-          TextContainer(
-              course,
-              kContentTextStyle.copyWith(
-                  fontWeight: pw.FontWeight.bold)),
-          TextContainer(
-              date,
-              kContentTextStyle.copyWith(
-                  fontWeight: pw.FontWeight.bold)),
-          TextContainer('$university, $location', kContentTextStyle),
-        ]);
+  static pw.Container EducationDetails(String university, String course, String date, String location) {
+    return  pw.Container(
+      width: 300,
+      child: pw.Column(
+          crossAxisAlignment: pw.CrossAxisAlignment.start,
+          mainAxisAlignment: pw.MainAxisAlignment.start,
+          children: [
+            TextContainer(
+                course,
+                kContentTextStyle.copyWith(
+                    fontWeight: pw.FontWeight.bold)),
+            TextContainer(
+                date,
+                kContentTextStyle.copyWith(
+                    fontWeight: pw.FontWeight.bold)),
+            TextContainer('$university, $location', kContentTextStyle),
+          ]),
+    );
   }
 
   static pw.Row Skill(String skillText) {
@@ -201,9 +204,10 @@ class Template47 {
               Title('EDUCATION'),
               pw.SizedBox(height: 10),
               pw.Row(
-                  mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: pw.CrossAxisAlignment.start,
                   children: [
                     EducationDetails(university1, course1, edDate1, edLocation1,),
+                    pw.SizedBox(width: 10),
                     EducationDetails(university2, course2, edDate2, edLocation2,)
                   ]
               )

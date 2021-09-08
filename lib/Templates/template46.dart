@@ -38,29 +38,32 @@ class Template46 {
     );
   }
 
-  static pw.Column ExperienceDetails(String jobTitle, String company,
+  static pw.Container ExperienceDetails(String jobTitle, String company,
       String startDate, String endDate, String summary, String location) {
-    return pw.Column(
-      mainAxisAlignment: pw.MainAxisAlignment.start,
-      crossAxisAlignment: pw.CrossAxisAlignment.start,
-        children: [
-      TextContainer(
-        '$startDate - $endDate',
-        kContentTextStyle.copyWith(color: PdfColors.grey600),
-      ),
-      TextContainer(
-        '$jobTitle | $company | $location',
-        kContentTextStyle.copyWith(fontWeight: pw.FontWeight.bold),
-      ),
-      pw.Container(
-        width: 400,
-        child: pw.Text(
-          summary,
-          style: kContentTextStyle,
-          maxLines: 3,
-        )
-      )
-    ]);
+    return pw.Container(
+      width: 400,
+      child: pw.Column(
+          mainAxisAlignment: pw.MainAxisAlignment.start,
+          crossAxisAlignment: pw.CrossAxisAlignment.start,
+          children: [
+            TextContainer(
+              '$startDate - $endDate',
+              kContentTextStyle.copyWith(color: PdfColors.grey600),
+            ),
+            TextContainer(
+              '$jobTitle | $company | $location',
+              kContentTextStyle.copyWith(fontWeight: pw.FontWeight.bold),
+            ),
+            pw.Container(
+                width: 400,
+                child: pw.Text(
+                  summary,
+                  style: kContentTextStyle,
+                  maxLines: 3,
+                )
+            )
+          ]),
+    );
   }
 
   static pw.Column EducationDetails(String university, String course, String date,
@@ -141,7 +144,7 @@ class Template46 {
     final pdf = pw.Document();
     pdf.addPage(
       pw.Page(
-        margin: pw.EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),
+        margin: pw.EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
         build: (context) => pw.Column(
           crossAxisAlignment: pw.CrossAxisAlignment.stretch,
           children: [
@@ -157,22 +160,24 @@ class Template46 {
               ),
             ]),
             kVerticalSpace,
-            pw.Row(children: [
+            pw.Row(
+              mainAxisAlignment: pw.MainAxisAlignment.spaceEvenly,
+                children: [
               TextContainer(
                 address,
                 kContentTextStyle.copyWith(
-                  fontSize: 18,
+                  fontSize: 12,
                 ),
               ),
               kHorizontalSpace,
               TextContainer(
                 phone,
-                kContentTextStyle.copyWith(fontSize: 18),
+                kContentTextStyle.copyWith(fontSize: 12),
               ),
               kHorizontalSpace,
               TextContainer(
                 email,
-                kContentTextStyle.copyWith(fontSize: 18),
+                kContentTextStyle.copyWith(fontSize: 12),
               ),
             ]),
             pw.Divider(
