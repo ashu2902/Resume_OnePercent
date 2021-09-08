@@ -87,6 +87,8 @@ class Template7 {
                                 pw.Container(width: 70, child: pw.Divider()),
                                 pw.SizedBox(height: 5),
                                 pw.Container(child: pw.Text(skills)),
+                                pw.Container(child: pw.Text(skills2)),
+                                pw.Container(child: pw.Text(skills3)),
                                 //Project Management
                                 pw.SizedBox(height: 30),
                                 pw.Container(

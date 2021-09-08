@@ -52,7 +52,7 @@ class Template2 {
           pw.Container(
             alignment: pw.Alignment.centerRight,
             child:
-                pw.Text("$address,$phone", style: pw.TextStyle(fontSize: 17)),
+                pw.Text("$address, $phone", style: pw.TextStyle(fontSize: 17)),
           ),
           pw.Container(
             alignment: pw.Alignment.centerRight,
