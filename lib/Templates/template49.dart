@@ -12,9 +12,14 @@ class Template49 {
     fontStyle: pw.FontStyle.italic,
   );
 
-  static String getInitials(String name){
+  static String getInitials(String name) {
     String initials = '';
     initials += name[0];
+    //this is the space between first name and last name
+    int indexOfSpace = name.indexOf(' ');
+    if (indexOfSpace < 0) {
+      return initials;
+    }
     initials += name[name.indexOf(' ') + 1];
     return initials;
   }
