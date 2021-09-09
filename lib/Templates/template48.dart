@@ -21,12 +21,19 @@ class Template48 {
     height: 1,
     color: PdfColors.blueGrey,
   );
-  static String getInitials(String name){
+
+  static String getInitials(String name) {
     String initials = '';
     initials += name[0];
+    //this is the space between first name and last name
+    int indexOfSpace = name.indexOf(' ');
+    if (indexOfSpace < 0) {
+      return initials;
+    }
     initials += name[name.indexOf(' ') + 1];
     return initials;
   }
+
   static pw.Container TextContainer(String text, var style,
       {pw.TextAlign? alignment = pw.TextAlign.left, int lines = 3}) {
     return pw.Container(
@@ -66,18 +73,17 @@ class Template48 {
   static pw.Container EducationDetails(
       String university, String course, String date, String location) {
     return pw.Container(
-      width: 200,
-      child: pw.Column(
-          crossAxisAlignment: pw.CrossAxisAlignment.start,
-          mainAxisAlignment: pw.MainAxisAlignment.start,
-          children: [
-            TextContainer(course,
-                kContentTextStyle.copyWith(fontWeight: pw.FontWeight.bold)),
-            TextContainer(
-                date, kContentTextStyle.copyWith(fontWeight: pw.FontWeight.bold)),
-            TextContainer('$university,\n$location', kContentTextStyle),
-          ])
-    );
+        width: 200,
+        child: pw.Column(
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
+            mainAxisAlignment: pw.MainAxisAlignment.start,
+            children: [
+              TextContainer(course,
+                  kContentTextStyle.copyWith(fontWeight: pw.FontWeight.bold)),
+              TextContainer(date,
+                  kContentTextStyle.copyWith(fontWeight: pw.FontWeight.bold)),
+              TextContainer('$university,\n$location', kContentTextStyle),
+            ]));
   }
 
   static pw.Row Skill(String skillText) {
@@ -136,33 +142,38 @@ class Template48 {
                 height: 150,
                 child: pw.Padding(
                   padding: kHorizontalPadding,
-                  child: pw.Row(
-                      crossAxisAlignment: pw.CrossAxisAlignment.end,
-                      children: [
-                        TextContainer(
-                          '${getInitials(name)} / ',
-                          pw.TextStyle(
-                            fontSize: 48,
-                            color: PdfColors.blueGrey,
+                  child: pw.Padding(
+                    padding: pw.EdgeInsets.all(10.0),
+                    child: pw.Row(
+                        crossAxisAlignment: pw.CrossAxisAlignment.end,
+                        children: [
+                          TextContainer(
+                            '${getInitials(name)} / ',
+                            pw.TextStyle(
+                              fontSize: 48,
+                              color: PdfColors.blueGrey,
+                            ),
                           ),
-                        ),
-                        TextContainer(
-                          name,
-                          pw.TextStyle(
-                            fontSize: 48,
-                            color: PdfColors.blueGrey,
-                            fontWeight: pw.FontWeight.bold,
+                          pw.Container(
+                            width: 450,
+                            child: pw.Text(
+                              name,
+                              style: pw.TextStyle(
+                                fontSize: 48,
+                                color: PdfColors.blueGrey,
+                                fontWeight: pw.FontWeight.bold,
+                              ),
+                            ),
                           ),
-                        ),
-                        pw.SizedBox(height: 10),
-                      ]),
+                          pw.SizedBox(height: 10),
+                        ]),
+                  ),
                 ),
               ),
               pw.SizedBox(height: 10),
               pw.Padding(
                 padding: kHorizontalPadding,
-                child: TextContainer(
-                    '$email | $phone | $address',
+                child: TextContainer('$email | $phone | $address',
                     kContentTextStyle.copyWith(color: PdfColors.blueGrey)),
               ),
               pw.SizedBox(height: 20),
@@ -187,9 +198,7 @@ class Template48 {
                                 pw.SizedBox(height: 10),
                                 pw.Padding(
                                   padding: pw.EdgeInsets.only(left: 10),
-                                  child: TextContainer(
-                                      about,
-                                      kContentTextStyle,
+                                  child: TextContainer(about, kContentTextStyle,
                                       alignment: pw.TextAlign.justify,
                                       lines: 4),
                                 ),
@@ -233,15 +242,15 @@ class Template48 {
                             pw.SizedBox(height: 15),
                             pw.Padding(
                               padding: pw.EdgeInsets.only(left: 10),
-                              child: EducationDetails(university1,
-                                  course1, edDate1, edLocation1),
+                              child: EducationDetails(
+                                  university1, course1, edDate1, edLocation1),
                             ),
                             pw.SizedBox(height: 10),
                             pw.Padding(
                                 padding:
                                     pw.EdgeInsets.only(left: 10, right: 10),
-                                child: EducationDetails(university2,
-                                    course2, edDate2, edLocation2)),
+                                child: EducationDetails(university2, course2,
+                                    edDate2, edLocation2)),
                           ]),
                     ),
                   ]),
