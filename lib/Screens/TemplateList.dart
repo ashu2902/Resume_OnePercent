@@ -1522,7 +1522,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template32.jpeg',
+              image: 'assets/images/template32.jpg',
               srno: 32,
             ),
             //33
@@ -1567,7 +1567,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template33.jpeg',
+              image: 'assets/images/template33.jpg',
               srno: 33,
             ),
             //34
@@ -1614,7 +1614,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template34.jpeg',
+              image: 'assets/images/template34.jpg',
               srno: 34,
             ),
             //35
@@ -1658,7 +1658,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template35.jpeg',
+              image: 'assets/images/template35.jpg',
               srno: 35,
             ),
             //36
@@ -1702,7 +1702,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template36.jpeg',
+              image: 'assets/images/template36.jpg',
               srno: 36,
             ),
             //37
@@ -1752,7 +1752,7 @@ class _Templ1State extends State<Templ1> {
                       ),
                       '${prefs.getString('name')}',),
                   ));
-            }, image: 'assets/images/template37.jpeg',
+            }, image: 'assets/images/template37.jpg',
                 srno: 37),
             //38
             TemplateButton(onPressed: () async {
@@ -1802,7 +1802,7 @@ class _Templ1State extends State<Templ1> {
                       '${prefs.getString('name')}',),
                   ));
             },
-                image: 'assets/images/template38.jpeg',
+                image: 'assets/images/template38.jpg',
                 srno: 38),
             //39
             TemplateButton(
@@ -1848,7 +1848,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template39.jpeg',
+              image: 'assets/images/template39.jpg',
               srno: 39,
             ),
             //40
@@ -1901,7 +1901,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template40.png',
+              image: 'assets/images/template40.jpg',
               srno: 40,
             ),
             //41

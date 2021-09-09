@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 class Template40 {
@@ -57,18 +58,31 @@ class Template40 {
             mainAxisAlignment: pw.MainAxisAlignment.start,
             crossAxisAlignment: pw.CrossAxisAlignment.start,
             children: [
+             /* pw.Container(
+                decoration: pw.BoxDecoration(
+                    color: PdfColors.blueAccent700,
+                    borderRadius: pw.BorderRadius.all(pw.Radius.circular(10.0))),),*/
               pw.Column(children: [
-                pw.Text('$name',
+                pw.Row(children: [
+                  pw.SizedBox(width: 100),
+                  pw.Container(
+                    decoration: pw.BoxDecoration(
+                        color: PdfColors.blueAccent700,
+                        borderRadius: pw.BorderRadius.all(pw.Radius.circular(50.0))),),
+                  pw.SizedBox(width: 100),
+                  pw.Text('$name',
                     style: pw.TextStyle(
                         color: PdfColors.blueAccent700,
                         fontSize: 30,
-                        fontWeight: pw.FontWeight.bold)),
+                        fontWeight: pw.FontWeight.bold)),]),
+
                 pw.Row(
-                    mainAxisAlignment: pw.MainAxisAlignment.center,
-                    crossAxisAlignment: pw.CrossAxisAlignment.center,
+
                     children: [
-                      pw.Text('$address,',
-                          style: pw.TextStyle(color: PdfColors.grey900)),
+                      pw.Container(
+                        margin: pw.EdgeInsets.only(left: 200.0),
+                        child:pw.Text('$address,',
+                          style: pw.TextStyle(color: PdfColors.grey900)),),
                       pw.Text(' $phone,',
                           style: pw.TextStyle(color: PdfColors.grey900)),
                       pw.Text(' $email',
@@ -83,19 +97,26 @@ class Template40 {
                     crossAxisAlignment: pw.CrossAxisAlignment.start,
                     children: [
                       pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.end,
-                          crossAxisAlignment: pw.CrossAxisAlignment.end,
+                          mainAxisAlignment: pw.MainAxisAlignment.start,
+                          crossAxisAlignment: pw.CrossAxisAlignment.start,
                           children: [
                             pw.Text('Work\nExperience',
                                 style: kTitleTextStyle,
                                 textAlign: pw.TextAlign.right),
+                            pw.SizedBox(width: 55),
+                            pw.Container(
+                              margin: pw.EdgeInsets.only(top: 10),
+                              decoration: pw.BoxDecoration(
+                                  color: PdfColors.blueAccent700,
+                                  borderRadius: pw.BorderRadius.all(pw.Radius.circular(10.0))),),
                           ]),
-                      pw.SizedBox(width: 75),
-
+                      pw.SizedBox(width: 20),
                       pw.Column(
                           mainAxisAlignment: pw.MainAxisAlignment.start,
                           crossAxisAlignment: pw.CrossAxisAlignment.start,
+
                           children: [
+
                             pw.Text('$jobTitle1', style: kSubTitleTextStyle),
                             pw.Text('$compName1-$compLocation1',
                                 style: kSubTitleTextStyle),
@@ -127,8 +148,14 @@ class Template40 {
                             pw.Text('  Education',
                                 style: kTitleTextStyle,
                                 textAlign: pw.TextAlign.right),
+                            pw.SizedBox(width: 55),
+                            pw.Container(
+                              margin: pw.EdgeInsets.only(bottom: 13),
+                              decoration: pw.BoxDecoration(
+                                  color: PdfColors.blueAccent700,
+                                  borderRadius: pw.BorderRadius.all(pw.Radius.circular(10.0))),),
                           ]),
-                      pw.SizedBox(width: 75),
+                      pw.SizedBox(width: 20),
                       pw.Column(
                           mainAxisAlignment: pw.MainAxisAlignment.start,
                           crossAxisAlignment: pw.CrossAxisAlignment.start,
@@ -164,8 +191,14 @@ class Template40 {
                             pw.Text('         Skills',
                                 style: kTitleTextStyle,
                                 textAlign: pw.TextAlign.right),
+                            pw.SizedBox(width: 55),
+                            pw.Container(
+                              margin: pw.EdgeInsets.only(bottom: 15),
+                              decoration: pw.BoxDecoration(
+                                  color: PdfColors.blueAccent700,
+                                  borderRadius: pw.BorderRadius.all(pw.Radius.circular(10.0))),),
                           ]),
-                      pw.SizedBox(width: 75),
+                      pw.SizedBox(width: 20),
                       pw.Column(
                           mainAxisAlignment: pw.MainAxisAlignment.start,
                           crossAxisAlignment: pw.CrossAxisAlignment.start,
@@ -188,8 +221,14 @@ class Template40 {
                             pw.Text('     Projects',
                                 style: kTitleTextStyle,
                                 textAlign: pw.TextAlign.right),
+                            pw.SizedBox(width: 55),
+                            pw.Container(
+                              margin: pw.EdgeInsets.only(bottom: 15),
+                              decoration: pw.BoxDecoration(
+                                  color: PdfColors.blueAccent700,
+                                  borderRadius: pw.BorderRadius.all(pw.Radius.circular(10.0))),),
                           ]),
-                      pw.SizedBox(width: 75),
+                      pw.SizedBox(width: 20),
                       pw.Column(
                           mainAxisAlignment: pw.MainAxisAlignment.start,
                           crossAxisAlignment: pw.CrossAxisAlignment.start,
@@ -216,8 +255,14 @@ class Template40 {
                             pw.Text(' Languages',
                                 style: kTitleTextStyle,
                                 textAlign: pw.TextAlign.right),
+                            pw.SizedBox(width: 55),
+                            pw.Container(
+                              margin: pw.EdgeInsets.only(bottom: 15),
+                              decoration: pw.BoxDecoration(
+                                  color: PdfColors.blueAccent700,
+                                  borderRadius: pw.BorderRadius.all(pw.Radius.circular(10.0))),),
                           ]),
-                      pw.SizedBox(width: 75),
+                      pw.SizedBox(width: 20),
                       pw.Column(
                           mainAxisAlignment: pw.MainAxisAlignment.start,
                           crossAxisAlignment: pw.CrossAxisAlignment.start,

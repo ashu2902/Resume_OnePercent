@@ -96,7 +96,7 @@ class Template32 {
                     padding:
                     pw.EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
                     child: pw.Column(
-                      crossAxisAlignment: pw.CrossAxisAlignment.center,
+                      crossAxisAlignment: pw.CrossAxisAlignment.start,
                       children: [
                         TextContainer(
                           name,
@@ -134,7 +134,7 @@ class Template32 {
             ),
             pw.SizedBox(width: 10),
             pw.Flexible(
-              flex: 2,
+              flex: 1,
               child: pw.Container(
                 child: pw.Expanded(
                   child: pw.Padding(

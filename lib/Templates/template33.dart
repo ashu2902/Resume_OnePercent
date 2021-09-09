@@ -51,8 +51,10 @@ class Template33 {
                                   style: pw.TextStyle(
                                     fontSize: 50,
                                     fontWeight: pw.FontWeight.bold,color: PdfColors.orange600))),
-                          pw.SizedBox(width: 250),
+                          pw.SizedBox(width: 200),
                           pw.Column(
+                            mainAxisAlignment: pw.MainAxisAlignment.end,
+                              crossAxisAlignment: pw.CrossAxisAlignment.end,
                               children: [
                                 pw.Container(child: pw.Text(address,style: pw.TextStyle(fontSize: 15))),
                                 pw.SizedBox(height: 5),

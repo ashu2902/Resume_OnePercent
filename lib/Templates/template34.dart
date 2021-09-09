@@ -135,7 +135,7 @@ class Template34 {
             ),
             pw.SizedBox(width: 30),
             pw.Flexible(
-              flex: 2,
+              flex: 1,
               child: pw.Container(
                 child: pw.Expanded(
                   child: pw.Padding(
