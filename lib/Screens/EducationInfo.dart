@@ -80,7 +80,6 @@ class _TextFieldsState extends State<TextFields> {
   @override
   void initState() {
     super.initState();
-
     getSharedPrefs();
   }
 

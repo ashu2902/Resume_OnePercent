@@ -57,7 +57,7 @@ class _TextInputsState extends State<TextInputs> {
       emailController =
           new TextEditingController(text: prefs.getString("email"));
       phoneController =
-          new TextEditingController(text: prefs.getInt("phone").toString());
+          new TextEditingController(text: prefs.getString("phone"));
       aboutController =
           new TextEditingController(text: prefs.getString("about"));
     });
@@ -162,7 +162,7 @@ class _TextInputsState extends State<TextInputs> {
                         nameController.text,
                         addressController.text,
                         emailController.text,
-                        int.parse(phoneController.text),
+                        phoneController.text,
                         aboutController.text);
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
@@ -197,12 +197,12 @@ class PersonalData {
 }
 
 Future<bool> savePersonalInfo(
-    String name, String address, email, int phone, about) async {
+    String name, String address, email, String phone, about) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   prefs.setString('name', name);
   prefs.setString('address', address);
   prefs.setString('email', email);
-  prefs.setInt('phone', phone);
+  prefs.setString('phone', phone);
   prefs.setString('about', about);
   // ignore: deprecated_member_use
   return prefs.commit();

@@ -1,7 +1,4 @@
-import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:open_file/open_file.dart';
-import 'package:path_provider/path_provider.dart';
+
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
@@ -157,20 +154,4 @@ class Template2 {
     return pdf2;
   }
 
-  static Future<File> saveDocument2(
-      {required String name, required pw.Document pdf}) async {
-    final bytes = await pdf.save();
-
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/$name');
-
-    await file.writeAsBytes(bytes);
-    return file;
-  }
-
-  static Future openFile(File file2) async {
-    final url = file2.path;
-
-    await OpenFile.open(url);
-  }
 }

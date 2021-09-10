@@ -72,7 +72,7 @@ class _Templ1State extends State<Templ1> {
       body: Container(
         child: GridView.count(
           physics: BouncingScrollPhysics(),
-          childAspectRatio: 0.6,
+          childAspectRatio: 0.7,
           cacheExtent: 50,
           crossAxisSpacing: 0,
           crossAxisCount: 2,
