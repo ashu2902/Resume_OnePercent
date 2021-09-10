@@ -9,6 +9,13 @@ class PdfScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.indigo, Colors.blue], stops: [0.5, 1.0],
+              ),
+            ),
+          ),
           title: Text('${this.title}'),
         ),
         floatingActionButton: FloatingActionButton.extended(

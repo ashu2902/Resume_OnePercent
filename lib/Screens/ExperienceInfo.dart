@@ -10,6 +10,13 @@ class ExperienceInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.indigo, Colors.blue], stops: [0.5, 1.0],
+            ),
+          ),
+        ),
         title: Text('Experience Information'),
       ),
       body: SingleChildScrollView(
@@ -233,7 +240,7 @@ class _TextFieldsState extends State<TextFields> {
             child: Container(
               height: 5,
               decoration: BoxDecoration(
-                  color: Colors.lightBlue,
+                  color: Colors.indigo,
                   borderRadius: BorderRadius.all(Radius.circular(10.0))),
             ),
           ),
@@ -357,6 +364,9 @@ class _TextFieldsState extends State<TextFields> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => HomePage()));
               },
+              style: ElevatedButton.styleFrom(
+                primary: Colors.indigo,
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Text(

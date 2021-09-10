@@ -9,6 +9,13 @@ class ProjectsInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.indigo, Colors.blue], stops: [0.5, 1.0],
+            ),
+          ),
+        ),
         title: Text('Projects Information'),
       ),
       body: SingleChildScrollView(
@@ -123,7 +130,7 @@ class _TextFieldsState extends State<TextFields> {
             child: Container(
               height: 5,
               decoration: BoxDecoration(
-                  color: Colors.lightBlue,
+                  color: Colors.indigo,
                   borderRadius: BorderRadius.all(Radius.circular(10.0))
               ),
             ),
@@ -170,6 +177,9 @@ class _TextFieldsState extends State<TextFields> {
                       _projectTitle2.text, _projectDesc2.text);
                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                 },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.indigo,
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text('Save Info', style: TextStyle(

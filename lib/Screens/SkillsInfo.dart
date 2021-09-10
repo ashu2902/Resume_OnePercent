@@ -52,6 +52,13 @@ class _SkillsInfoState extends State<SkillsInfo> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.indigo, Colors.blue], stops: [0.5, 1.0],
+            ),
+          ),
+        ),
         title: Text('Skills Information'),
       ),
       body: SingleChildScrollView(
@@ -146,6 +153,9 @@ class _SkillsInfoState extends State<SkillsInfo> {
                             _lang1.text, _lang2.text);
                         Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                       },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.indigo,
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text('Save Information', style: TextStyle(fontSize: 18),),

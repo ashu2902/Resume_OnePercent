@@ -13,7 +13,6 @@ import 'package:resume/Templates/template27.dart';
 import 'package:resume/Templates/template28.dart';
 import 'package:resume/Templates/template29.dart';
 import 'package:resume/Templates/template3.dart';
-import 'package:resume/Templates/template1.dart';
 import 'package:resume/Templates/template10.dart';
 import 'package:resume/Templates/template11.dart';
 import 'package:resume/Templates/template12.dart';
@@ -67,12 +66,19 @@ class _Templ1State extends State<Templ1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.indigo, Colors.blue], stops: [0.5, 1.0],
+            ),
+          ),
+        ),
         title: Text('Select Template'),
       ),
       body: Container(
         child: GridView.count(
           physics: BouncingScrollPhysics(),
-          childAspectRatio: 0.6,
+          childAspectRatio: 0.7,
           cacheExtent: 50,
           crossAxisSpacing: 0,
           crossAxisCount: 2,

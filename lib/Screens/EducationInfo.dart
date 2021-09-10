@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdf/pdf.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'HomePage.dart';
@@ -11,6 +12,13 @@ class EducationInfo extends StatelessWidget {
     // final _height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.indigo, Colors.blue], stops: [0.5, 1.0],
+            ),
+          ),
+        ),
         title: Text('Education Information'),
       ),
       body: ListView(
@@ -176,7 +184,7 @@ class _TextFieldsState extends State<TextFields> {
               child: Container(
                 height: 5,
                 decoration: BoxDecoration(
-                    color: Colors.lightBlue,
+                    color: Colors.indigo,
                     borderRadius: BorderRadius.all(Radius.circular(10.0))
                 ),
               ),
@@ -273,6 +281,7 @@ class _TextFieldsState extends State<TextFields> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
+
                 onPressed: () {
                   print('$name,$course,$date,$name2,$course2,$date2');
                   print(_name.text);
@@ -292,6 +301,9 @@ class _TextFieldsState extends State<TextFields> {
                     MaterialPageRoute(builder: (context) => HomePage()),
                   );
                 },
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.indigo,
+                ),
                 child:Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Text(
