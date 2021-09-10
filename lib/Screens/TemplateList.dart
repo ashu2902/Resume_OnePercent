@@ -1524,7 +1524,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template32.jpg',
+              image: 'assets/images/template32.jpeg',
               srno: 32,
             ),
             //33
