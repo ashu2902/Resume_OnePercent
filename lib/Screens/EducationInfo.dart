@@ -102,7 +102,7 @@ class _TextFieldsState extends State<TextFields> {
           children: [
             //Education Details 1
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(18.0),
               child: Text('Education Details: 1', textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 22,
@@ -191,7 +191,7 @@ class _TextFieldsState extends State<TextFields> {
 
             // Education details 2
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(18.0),
               child: Text('Education Details: 2', textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 22,

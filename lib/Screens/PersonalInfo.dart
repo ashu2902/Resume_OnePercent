@@ -91,11 +91,14 @@ class _TextInputsState extends State<TextInputs> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            'Enter Your Personal Information',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Text(
+              'Enter Your Personal Information',
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           SizedBox(
