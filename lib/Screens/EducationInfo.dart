@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'HomePage.dart';
+
 class EducationInfo extends StatelessWidget {
   const EducationInfo({Key? key}) : super(key: key);
 
@@ -11,22 +13,11 @@ class EducationInfo extends StatelessWidget {
       appBar: AppBar(
         title: Text('Education Information'),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFields(),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      body: ListView(
+        children: [
+          TextFields(),
+        ],
+      )
     );
   }
 }
@@ -98,14 +89,18 @@ class _TextFieldsState extends State<TextFields> {
     final _width = MediaQuery.of(context).size.width;
 
     return Container(
-        width: _width,
         child: Center(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             //Education Details 1
             Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Text('Education details :1'),
+              padding: const EdgeInsets.all(10.0),
+              child: Text('Education Details: 1', textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -130,8 +125,8 @@ class _TextFieldsState extends State<TextFields> {
                 ),
               ),
             ),
-            Container(
-              width: _width / 2,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: TextField(
                 controller: _course,
                 decoration: InputDecoration(
@@ -177,17 +172,24 @@ class _TextFieldsState extends State<TextFields> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Divider(
-                color: Colors.black.withOpacity(0.3),
-                thickness: 3,
+              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+              child: Container(
+                height: 5,
+                decoration: BoxDecoration(
+                    color: Colors.lightBlue,
+                    borderRadius: BorderRadius.all(Radius.circular(10.0))
+                ),
               ),
             ),
 
             // Education details 2
             Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Text('Education details :2'),
+              padding: const EdgeInsets.all(8.0),
+              child: Text('Education Details: 2', textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -217,8 +219,8 @@ class _TextFieldsState extends State<TextFields> {
                 ),
               ),
             ),
-            Container(
-              width: _width / 2,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: TextField(
                 controller: _course2,
                 decoration: InputDecoration(
@@ -268,23 +270,38 @@ class _TextFieldsState extends State<TextFields> {
                 ),
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                print('$name,$course,$date,$name2,$course2,$date2');
-                print(_name.text);
-                savePersonalInfo(
-                    _name.text,
-                    _edLocation1.text,
-                    _course.text,
-                    _date.text,
-                    _summary1.text,
-                    _name2.text,
-                    _edLocation2.text,
-                    _course2.text,
-                    _date2.text,
-                    _summary2.text);
-              },
-              child: Text('Save Details'),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  print('$name,$course,$date,$name2,$course2,$date2');
+                  print(_name.text);
+                  savePersonalInfo(
+                      _name.text,
+                      _edLocation1.text,
+                      _course.text,
+                      _date.text,
+                      _summary1.text,
+                      _name2.text,
+                      _edLocation2.text,
+                      _course2.text,
+                      _date2.text,
+                      _summary2.text);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
+                child:Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Text(
+                    'Save Details',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         )));
