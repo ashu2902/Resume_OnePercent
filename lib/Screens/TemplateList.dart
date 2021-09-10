@@ -13,7 +13,6 @@ import 'package:resume/Templates/template27.dart';
 import 'package:resume/Templates/template28.dart';
 import 'package:resume/Templates/template29.dart';
 import 'package:resume/Templates/template3.dart';
-import 'package:resume/Templates/template1.dart';
 import 'package:resume/Templates/template10.dart';
 import 'package:resume/Templates/template11.dart';
 import 'package:resume/Templates/template12.dart';
@@ -67,6 +66,13 @@ class _Templ1State extends State<Templ1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.indigo, Colors.blue], stops: [0.5, 1.0],
+            ),
+          ),
+        ),
         title: Text('Select Template'),
       ),
       body: Container(
@@ -1573,7 +1579,7 @@ class _Templ1State extends State<Templ1> {
                   ),
                 );
               },
-              image: 'assets/images/template32.jpg',
+              image: 'assets/images/template32.jpeg',
               srno: 32,
             ),
             //33

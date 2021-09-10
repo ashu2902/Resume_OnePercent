@@ -177,5 +177,4 @@ class Template32 {
 
     return pdf;
   }
-
 }

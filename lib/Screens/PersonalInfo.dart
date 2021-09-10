@@ -16,6 +16,14 @@ class _PersonalInfoState extends State<PersonalInfo> {
 
     return Scaffold(
         appBar: AppBar(
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.indigo, Colors.blue],
+                stops: [0.5, 1.0],
+              ),
+            ),
+          ),
           title: Text('Personal Information'),
         ),
         body: Container(
@@ -90,7 +98,9 @@ class _TextInputsState extends State<TextInputs> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 15,),
+          SizedBox(
+            height: 15,
+          ),
           TextField(
             decoration: InputDecoration(
               hintText: 'Name',
@@ -129,7 +139,7 @@ class _TextInputsState extends State<TextInputs> {
           space,
           TextField(
             decoration: InputDecoration(
-              hintText: 'Phone',
+              hintText: 'Phone'.toString(),
               border: OutlineInputBorder(),
               prefixIcon: Icon(Icons.phone),
             ),
@@ -142,7 +152,8 @@ class _TextInputsState extends State<TextInputs> {
           TextField(
             keyboardType: TextInputType.multiline,
             decoration: InputDecoration(
-                hintText: 'About - limit to 5 lines', border: OutlineInputBorder()),
+                hintText: 'About - limit to 5 lines',
+                border: OutlineInputBorder()),
             onEditingComplete: () {
               about = aboutController.text;
             },
@@ -167,6 +178,9 @@ class _TextInputsState extends State<TextInputs> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
                   },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.indigo,
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text(
