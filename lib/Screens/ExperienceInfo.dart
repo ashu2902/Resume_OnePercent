@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'HomePage.dart';
+
 class ExperienceInfo extends StatelessWidget {
   const ExperienceInfo({Key? key}) : super(key: key);
 
@@ -123,16 +125,17 @@ class _TextFieldsState extends State<TextFields> {
     final _width = MediaQuery.of(context).size.width;
 
     return Container(
-      width: _width,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: const EdgeInsets.all(18.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 18.0, horizontal: 8.0),
             child: Text(
-              'Experience:1',
-              style: TextStyle(fontSize: 20),
+              'Experience - 1',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
           ),
           //Job Title 1
@@ -175,7 +178,7 @@ class _TextFieldsState extends State<TextFields> {
           ),
           //start date&endDate
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -187,6 +190,13 @@ class _TextFieldsState extends State<TextFields> {
                         hintText: 'Enter Start Date',
                         border: OutlineInputBorder()),
                   ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  'To',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
               ),
               Padding(
@@ -218,14 +228,22 @@ class _TextFieldsState extends State<TextFields> {
             ),
           ),
 
-          Divider(
-            color: Colors.black,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+            child: Container(
+              height: 5,
+              decoration: BoxDecoration(
+                  color: Colors.lightBlue,
+                  borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.all(18.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 18.0, horizontal: 8.0),
             child: Text(
-              'Experience:2',
-              style: TextStyle(fontSize: 20),
+              'Experience - 2',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
             //job Title 2
           ),
@@ -268,7 +286,7 @@ class _TextFieldsState extends State<TextFields> {
           ),
           //start date&endDate
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -280,6 +298,13 @@ class _TextFieldsState extends State<TextFields> {
                         hintText: 'Enter Start Date',
                         border: OutlineInputBorder()),
                   ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  'To',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
               ),
               Padding(
@@ -310,25 +335,38 @@ class _TextFieldsState extends State<TextFields> {
               ),
             ),
           ),
-          ElevatedButton(
-            onPressed: () {
-              print('Details Saved');
-              print(_jobTitle1.text);
-              savePersonalInfo(
-                  _jobTitle1.text,
-                  _compName1.text,
-                  _location1.text,
-                  _startDate1.text,
-                  _endDate1.text,
-                  _summary1.text,
-                  _jobTitle2.text,
-                  _compName2.text,
-                  _location2.text,
-                  _startDate2.text,
-                  _endDate2.text,
-                  _summary2.text);
-            },
-            child: Text('Save Details'),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              onPressed: () {
+                print('Details Saved');
+                print(_jobTitle1.text);
+                savePersonalInfo(
+                    _jobTitle1.text,
+                    _compName1.text,
+                    _location1.text,
+                    _startDate1.text,
+                    _endDate1.text,
+                    _summary1.text,
+                    _jobTitle2.text,
+                    _compName2.text,
+                    _location2.text,
+                    _startDate2.text,
+                    _endDate2.text,
+                    _summary2.text);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Text(
+                  'Save Details',
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
           ),
         ],
       ),

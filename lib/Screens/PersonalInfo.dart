@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/Screens/HomePage.dart';
 import 'package:resume/Widgets/ProfilePic.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -14,24 +15,17 @@ class _PersonalInfoState extends State<PersonalInfo> {
     final _height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Enter Personal Information'),
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+        appBar: AppBar(
+          title: Text('Personal Information'),
+        ),
+        body: Container(
+          height: _height,
+          child: ListView(
             children: [
-              Container(height: _height / 5, child: ProfilePic()),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextInputs(),
-              ),
+              TextInputs(),
             ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
 
@@ -77,57 +71,88 @@ class _TextInputsState extends State<TextInputs> {
 
   @override
   Widget build(BuildContext context) {
+    final space = SizedBox(
+      height: 5,
+    );
     final _width = MediaQuery.of(context).size.width;
+    final _height = MediaQuery.of(context).size.height;
     // final _height = MediaQuery.of(context).size.height;
-    return Center(
-      child: Container(
-        alignment: Alignment.center,
-        width: _width / 1.2,
-        child: Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'Enter Your Personal Information',
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 15,),
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Name',
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(Icons.account_circle_outlined),
+            ),
+            onEditingComplete: () {
+              name = nameController.text;
+            },
+            controller: nameController,
+          ),
+          space,
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Address',
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(Icons.home),
+            ),
+            onEditingComplete: () {
+              address = addressController.text;
+            },
+            controller: addressController,
+          ),
+          space,
+          TextField(
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(
+                hintText: 'email@email.com',
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.email),
+              ),
+              onEditingComplete: () {
+                email = emailController.text;
+              },
+              controller: emailController),
+          space,
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Phone',
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(Icons.phone),
+            ),
+            onEditingComplete: () {
+              phone = phoneController.text;
+            },
+            controller: phoneController,
+          ),
+          space,
+          TextField(
+            keyboardType: TextInputType.multiline,
+            decoration: InputDecoration(
+                hintText: 'About - limit to 5 lines', border: OutlineInputBorder()),
+            onEditingComplete: () {
+              about = aboutController.text;
+            },
+            controller: aboutController,
+            maxLines: 5,
+          ),
+          space,
+          Row(
             children: [
-              TextField(
-                decoration: InputDecoration(
-                    hintText: 'Name', border: OutlineInputBorder()),
-                onEditingComplete: () {
-                  name = nameController.text;
-                },
-                controller: nameController,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: 'Address', border: OutlineInputBorder()),
-                onEditingComplete: () {
-                  address = addressController.text;
-                },
-                controller: addressController,
-              ),
-              TextField(
-                  decoration: InputDecoration(
-                      hintText: 'Email', border: OutlineInputBorder()),
-                  onEditingComplete: () {
-                    email = emailController.text;
-                  },
-                  controller: emailController),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: 'Phone', border: OutlineInputBorder()),
-                onEditingComplete: () {
-                  phone = phoneController.text;
-                },
-                controller: phoneController,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: 'About', border: OutlineInputBorder()),
-                onEditingComplete: () {
-                  about = aboutController.text;
-                },
-                controller: aboutController,
-              ),
-              Center(
+              Expanded(
                 child: ElevatedButton(
                   onPressed: () {
                     PersonalData(
@@ -139,13 +164,23 @@ class _TextInputsState extends State<TextInputs> {
                         emailController.text,
                         int.parse(phoneController.text),
                         aboutController.text);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   },
-                  child: Text('Save Details'),
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Text(
+                      'Save Details',
+                      style: TextStyle(
+                        fontSize: 21,
+                      ),
+                    ),
+                  ),
                 ),
-              )
+              ),
             ],
-          ),
-        ),
+          )
+        ],
       ),
     );
   }
@@ -157,6 +192,7 @@ class PersonalData {
   var email;
   var phone;
   var about;
+
   PersonalData(this.name, this.about, this.address, this.email, this.phone);
 }
 

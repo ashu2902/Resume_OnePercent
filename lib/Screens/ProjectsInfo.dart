@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/Screens/HomePage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ProjectsInfo extends StatelessWidget {
@@ -81,8 +82,17 @@ class _TextFieldsState extends State<TextFields> {
     return Container(
       width: _width,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text('Project: 1'),
+          Padding(
+            padding:
+            const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+            child: Text(
+              'Project - 1',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
@@ -109,10 +119,24 @@ class _TextFieldsState extends State<TextFields> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: Divider(),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+            child: Container(
+              height: 5,
+              decoration: BoxDecoration(
+                  color: Colors.lightBlue,
+                  borderRadius: BorderRadius.all(Radius.circular(10.0))
+              ),
+            ),
           ),
-          Text('Project: 2'),
+          Padding(
+            padding:
+            const EdgeInsets.symmetric(vertical: 10.0, horizontal: 8.0),
+            child: Text(
+              'Project - 1',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
@@ -138,12 +162,21 @@ class _TextFieldsState extends State<TextFields> {
               ),
             ),
           ),
-          ElevatedButton(
-              onPressed: () {
-                saveData(_projectTitle1.text, _projectDesc1.text,
-                    _projectTitle2.text, _projectDesc2.text);
-              },
-              child: Text('Save Info'))
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: ElevatedButton(
+                onPressed: () {
+                  saveData(_projectTitle1.text, _projectDesc1.text,
+                      _projectTitle2.text, _projectDesc2.text);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('Save Info', style: TextStyle(
+                    fontSize: 21,
+                  ),),
+                )),
+          )
         ],
       ),
     );

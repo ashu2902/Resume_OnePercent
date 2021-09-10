@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'HomePage.dart';
+
 class SkillsInfo extends StatefulWidget {
   const SkillsInfo({Key? key}) : super(key: key);
 
@@ -56,10 +58,16 @@ class _SkillsInfoState extends State<SkillsInfo> {
         child: Container(
           child: Center(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(
-                  'Enter 3 Skills',
-                  style: TextStyle(fontSize: 20),
+                Padding(
+                  padding:
+                  const EdgeInsets.symmetric(vertical: 18.0, horizontal: 8.0),
+                  child: Text(
+                    'Enter Three Skills',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -97,9 +105,14 @@ class _SkillsInfoState extends State<SkillsInfo> {
                     ),
                   ),
                 ),
-                Text(
-                  'Enter Languages',
-                  style: TextStyle(fontSize: 20),
+                Padding(
+                  padding:
+                  const EdgeInsets.symmetric(vertical: 18.0, horizontal: 8.0),
+                  child: Text(
+                    'Enter Languages',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -125,12 +138,19 @@ class _SkillsInfoState extends State<SkillsInfo> {
                     ),
                   ),
                 ),
-                ElevatedButton(
-                    onPressed: () {
-                      saveData(_skill1.text, _skill2.text, _skill3.text,
-                          _lang1.text, _lang2.text);
-                    },
-                    child: Text('Save Information'))
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        saveData(_skill1.text, _skill2.text, _skill3.text,
+                            _lang1.text, _lang2.text);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text('Save Information', style: TextStyle(fontSize: 18),),
+                      )),
+                )
               ],
             ),
           ),
