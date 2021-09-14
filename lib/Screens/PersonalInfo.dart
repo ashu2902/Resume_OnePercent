@@ -55,6 +55,10 @@ class _TextInputsState extends State<TextInputs> {
   TextEditingController phoneController = TextEditingController();
   var about = '';
   TextEditingController aboutController = TextEditingController();
+  var companyUrl = '';
+  TextEditingController urlTextController = TextEditingController();
+  var jobTitle = '';
+  TextEditingController jobTitleController = TextEditingController();
 
   Future<Null> getSharedPrefs() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -68,6 +72,10 @@ class _TextInputsState extends State<TextInputs> {
           new TextEditingController(text: prefs.getString("phone"));
       aboutController =
           new TextEditingController(text: prefs.getString("about"));
+      urlTextController =
+          new TextEditingController(text: prefs.getString("companyUrl"));
+      jobTitleController =
+          new TextEditingController(text: prefs.getString("jobTitle"));
     });
   }
 
@@ -142,7 +150,7 @@ class _TextInputsState extends State<TextInputs> {
           space,
           TextField(
             decoration: InputDecoration(
-              hintText: 'Phone'.toString(),
+              hintText: 'Phone',
               border: OutlineInputBorder(),
               prefixIcon: Icon(Icons.phone),
             ),
@@ -150,6 +158,31 @@ class _TextInputsState extends State<TextInputs> {
               phone = phoneController.text;
             },
             controller: phoneController,
+          ),
+          space,
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Job Title'.toString(),
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(Icons.work),
+            ),
+            onEditingComplete: () {
+              jobTitle = jobTitleController.text;
+            },
+            controller: jobTitleController,
+          ),
+          space,
+          TextField(
+            keyboardType: TextInputType.url,
+            decoration: InputDecoration(
+              hintText: 'Company Link'.toString(),
+              border: OutlineInputBorder(),
+              prefixIcon: Icon(Icons.link),
+            ),
+            onEditingComplete: () {
+              companyUrl = urlTextController.text;
+            },
+            controller: urlTextController,
           ),
           space,
           TextField(
@@ -170,14 +203,17 @@ class _TextInputsState extends State<TextInputs> {
                 child: ElevatedButton(
                   onPressed: () {
                     PersonalData(
-                        nameController.text, about, address, email, phone);
+                        nameController.text, about, address, email, phone, companyUrl, jobTitle);
                     print('Details saved');
                     savePersonalInfo(
                         nameController.text,
                         addressController.text,
                         emailController.text,
                         phoneController.text,
-                        aboutController.text);
+                        aboutController.text,
+                        urlTextController.text,
+                        jobTitleController.text,
+                    );
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
                   },
@@ -209,18 +245,23 @@ class PersonalData {
   var email;
   var phone;
   var about;
+  var companyUrl;
+  var jobTitle;
 
-  PersonalData(this.name, this.about, this.address, this.email, this.phone);
+  PersonalData(this.name, this.about, this.address, this.email, this.phone, this.companyUrl, this.jobTitle);
 }
 
 Future<bool> savePersonalInfo(
-    String name, String address, email, String phone, about) async {
+    String name, String address, email, String phone, String about,
+    String companyUrl, String jobTitle) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   prefs.setString('name', name);
   prefs.setString('address', address);
   prefs.setString('email', email);
   prefs.setString('phone', phone);
   prefs.setString('about', about);
+  prefs.setString('companyUrl', companyUrl);
+  prefs.setString('jobTitle', jobTitle);
   // ignore: deprecated_member_use
   return prefs.commit();
 }

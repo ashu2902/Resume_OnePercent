@@ -29,11 +29,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   image_picker: ^0.8.3
-  pdf: ^3.4.2
+  pdf: ^3.5.0
   path_provider: ^2.0.2
   open_file: ^3.2.1
   shared_preferences: ^2.0.6
   pdf_render: ^1.0.12
+  flutter_speed_dial: ^4.3.0
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +57,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
+    - assets/card_images/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
