@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:resume/BusinessCardTemplates/Constants.dart';
@@ -13,7 +15,7 @@ class CardTemplate1 {
   }
 
 
-  static pw.Document generateText1(
+  static pw.Document generateCardText1(
       name,
       jobTitle,
       linkToCompany,
@@ -21,6 +23,7 @@ class CardTemplate1 {
        phone,
       ) {
     final pdf = pw.Document();
+
     pdf.addPage(pw.Page(
       pageFormat: PdfPageFormat.roll80.copyWith(
           marginBottom: 0, marginTop: 0, marginLeft: 0, marginRight: 0),
@@ -46,7 +49,7 @@ class CardTemplate1 {
                         ),
                         TextContainer(
                             text: jobTitle,
-                            style: kTextStyle.copyWith(
+                            style: kCardTextStyle.copyWith(
                                 fontStyle: pw.FontStyle.italic)),
                         pw.UrlLink(
                           child: pw.Padding(
@@ -69,17 +72,17 @@ class CardTemplate1 {
                       children: [
                         TextContainer(
                           text: 'Contact',
-                          style: kTextStyle.copyWith(
+                          style: kCardTextStyle.copyWith(
                               fontWeight: pw.FontWeight.bold,
                               color: PdfColors.black),
                         ),
                         TextContainer(
                             text: email,
-                            style: kTextStyle.copyWith(
+                            style: kCardTextStyle.copyWith(
                                 color: PdfColors.black)),
                         TextContainer(
                           text: phone,
-                          style: kTextStyle.copyWith(color: PdfColors.black),
+                          style: kCardTextStyle.copyWith(color: PdfColors.black),
                         ),
                       ]),
                 ),
